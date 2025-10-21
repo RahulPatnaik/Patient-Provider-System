@@ -1,0 +1,7 @@
+fastapi[standard]
+pydantic-ai
+sqlalchemy
+selenium
+beautifulsoup4
+google-genai
+python-dotenv

@@ -43,41 +43,44 @@ patient-provider-system/
 
 ## Prerequisites
 
-- Python 3.11+
-- PostgreSQL (or SQLite for development)
-- Redis
-- Docker and Docker Compose (optional)
+- Python 3.12+
+- PostgreSQL (optional, for production)
+- Redis (optional, for caching)
 
 ## Setup
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd patient-provider-system
+git clone https://github.com/RahulPatnaik/Patient-Provider-System.git
+cd Patient-Provider-System
 ```
 
 ### 2. Environment Setup
 
-#### Using Poetry (Recommended)
+Choose one of the following methods:
+
+#### Option A: Using Conda (Recommended)
 
 ```bash
-# Install Poetry
-curl -sSL https://install.python-poetry.org | python3 -
+# Create environment from environment.yml
+conda env create -f environment.yml
 
-# Install dependencies
-poetry install
-
-# Activate virtual environment
-poetry shell
+# Activate environment
+conda activate 5THSEMEL
 ```
 
-#### Using pip
+#### Option B: Using pip with virtual environment
 
 ```bash
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Activate virtual environment
+# On Linux/Mac:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -90,21 +93,20 @@ pip install -r requirements.txt
 cp .env.example .env
 
 # Edit .env and add your API keys and configuration
-```
-
-### 4. Database Setup
-
-```bash
-# Run migrations
-python scripts/migrate_db.py
-
-# (Optional) Seed database with sample data
-python scripts/seed_db.py
+# Required: Add your LLM API keys (OpenAI, Anthropic, Google, etc.)
 ```
 
 ## Running the Application
 
-### Using Docker Compose (Recommended)
+### Development Mode
+
+```bash
+# Make sure your environment is activated
+# Then run:
+uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Using Docker (Optional)
 
 ```bash
 # Start all services (PostgreSQL, Redis, App, Celery, Selenium)
@@ -115,22 +117,6 @@ docker-compose logs -f app
 
 # Stop services
 docker-compose down
-```
-
-### Manual Run
-
-```bash
-# Start Redis (in separate terminal)
-redis-server
-
-# Start PostgreSQL (in separate terminal)
-# Or use your existing PostgreSQL instance
-
-# Run the application
-uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
-
-# Or use the development script
-python scripts/run_dev.py
 ```
 
 ## API Documentation
@@ -152,9 +138,6 @@ pytest --cov=src --cov-report=html
 
 # Run specific test file
 pytest tests/unit/test_agents/test_supervisor.py
-
-# Run specific test
-pytest tests/unit/test_agents/test_supervisor.py::test_supervisor_routing
 ```
 
 ### Code Quality
@@ -168,19 +151,6 @@ ruff src/ tests/
 
 # Type checking
 mypy src/
-
-# Run all quality checks
-black src/ && ruff src/ && mypy src/
-```
-
-### Pre-commit Hooks
-
-```bash
-# Install pre-commit hooks
-pre-commit install
-
-# Run manually
-pre-commit run --all-files
 ```
 
 ## API Endpoints
@@ -231,7 +201,7 @@ git commit -m "Description of changes"
 # Push to remote
 git push origin feature/your-feature-name
 
-# Create pull request
+# Create pull request on GitHub
 ```
 
 ## Configuration
@@ -245,35 +215,23 @@ Key configuration in `.env`:
 
 ## Troubleshooting
 
-### Database Connection Issues
-
-```bash
-# Check PostgreSQL is running
-docker-compose ps postgres
-
-# Check connection
-psql -h localhost -U provider_user -d provider_db
-```
-
-### Redis Connection Issues
-
-```bash
-# Check Redis is running
-docker-compose ps redis
-
-# Test connection
-redis-cli ping
-```
-
 ### Import Errors
 
 ```bash
-# Make sure you're in the virtual environment
-poetry shell  # or source venv/bin/activate
+# Make sure environment is activated
+conda activate 5THSEMEL  # or: source venv/bin/activate
 
 # Reinstall dependencies
-poetry install  # or pip install -r requirements.txt
+conda env update -f environment.yml  # or: pip install -r requirements.txt
 ```
+
+### Database Connection Issues
+
+Check PostgreSQL is running and credentials in `.env` are correct.
+
+### Redis Connection Issues
+
+Check Redis is running or disable caching in `.env` by setting `CACHE_ENABLED=false`.
 
 ## License
 
@@ -282,4 +240,3 @@ poetry install  # or pip install -r requirements.txt
 ## Contributors
 
 [Your Team Members]
-# Patient-Provider-System
