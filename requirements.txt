@@ -5,3 +5,5 @@ selenium
 beautifulsoup4
 google-genai
 python-dotenv
+redis[hiredis]
+httpx

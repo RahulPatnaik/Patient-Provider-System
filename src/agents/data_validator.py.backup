@@ -1,0 +1,326 @@
+"""
+Data Validation Agent - Validates provider data using NPI Registry and State License APIs.
+"""
+
+from typing import Dict, Any, List, Optional
+from pydantic import BaseModel, Field
+from pydantic_ai import Agent, RunContext
+
+from agents.base import BaseAgent, AgentName, AgentValidationError
+from services.npi_registry import NPIRegistryClient, NPIRegistryError
+from services.state_license import StateLicenseClient, StateLicenseError
+
+
+# ============================================================================
+# Response Models
+# ============================================================================
+
+
+class NPIValidationResult(BaseModel):
+    """NPI validation result."""
+    is_valid: bool
+    npi: str
+    exists: bool
+    is_active: bool
+    provider_type: Optional[str] = None
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
+class LicenseValidationResult(BaseModel):
+    """License validation result."""
+    is_valid: bool
+    license_number: str
+    state: str
+    exists: bool
+    is_active: bool
+    is_expired: bool
+    has_disciplinary_actions: bool
+    name_matches: bool
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
+class DataQualityResult(BaseModel):
+    """Data quality assessment result."""
+    completeness_score: float = Field(ge=0.0, le=1.0)
+    accuracy_score: float = Field(ge=0.0, le=1.0)
+    overall_score: float = Field(ge=0.0, le=1.0)
+    missing_fields: List[str]
+    issues: List[str]
+
+
+class DataValidatorResponse(BaseModel):
+    """Complete Data Validator Agent response."""
+    npi_validation: NPIValidationResult
+    license_validations: List[LicenseValidationResult]
+    data_quality: DataQualityResult
+    overall_confidence: float = Field(ge=0.0, le=1.0)
+    is_valid: bool
+    validation_timestamp: str
+
+
+# ============================================================================
+# Agent Dependencies
+# ============================================================================
+
+
+class DataValidatorDeps(BaseModel):
+    """Dependencies for Data Validator Agent."""
+    npi_client: NPIRegistryClient
+    license_client: StateLicenseClient
+    provider_data: Dict[str, Any]
+
+
+# ============================================================================
+# Data Validator Agent Class
+# ============================================================================
+
+
+class DataValidatorAgent(BaseAgent):
+    """
+    Data Validator Agent using Pydantic AI.
+
+    Validates provider data through:
+    1. NPI Registry verification
+    2. State license validation
+    3. Data quality assessment
+    4. Confidence scoring
+
+    Runs in parallel with other agents in Complex Validation Path.
+    """
+
+    def __init__(self):
+        super().__init__(AgentName.DATA_VALIDATOR)
+
+        # Initialize service clients
+        self.npi_client = NPIRegistryClient()
+        self.license_client = StateLicenseClient()
+
+        # Get API key from environment
+        api_key = self.get_env("GEMINI_API_KEY")
+
+        # Create Pydantic AI agent
+        self.agent = Agent(
+            "gemini-2.0-flash-exp",
+            deps_type=DataValidatorDeps,
+            result_type=DataValidatorResponse,
+            system_prompt="""You are a Data Validation Agent for healthcare provider verification.
+
+                Your responsibilities:
+                1. Validate NPI numbers against the NPI Registry
+                2. Validate state medical licenses
+                3. Assess data quality and completeness
+                4. Calculate confidence scores
+
+                Use the provided tools to validate data and return structured results.
+                Be thorough and accurate in your validation."""
+        )
+
+        # Register tools
+        self._register_tools()
+
+    def _register_tools(self):
+        """Register Pydantic AI tools."""
+
+        @self.agent.tool
+        async def validate_npi(ctx: RunContext[DataValidatorDeps], npi: str) -> Dict[str, Any]:
+            """
+            Validate NPI number against NPI Registry.
+
+            Args:
+                ctx: Runtime context with dependencies
+                npi: National Provider Identifier to validate
+
+            Returns:
+                Validation result with confidence score
+            """
+            try:
+                result = await ctx.deps.npi_client.validate_npi(npi)
+                return result
+            except NPIRegistryError as e:
+                return {
+                    "is_valid": False,
+                    "npi": npi,
+                    "exists": False,
+                    "is_active": False,
+                    "provider_type": None,
+                    "confidence": 0.0,
+                    "error": str(e)
+                }
+
+        @self.agent.tool
+        async def validate_licenses(
+            ctx: RunContext[DataValidatorDeps],
+            licenses: List[Dict[str, str]]
+        ) -> List[Dict[str, Any]]:
+            """
+            Validate multiple state licenses.
+
+            Args:
+                ctx: Runtime context with dependencies
+                licenses: List of license dicts with keys: license_number, state, provider_name
+
+            Returns:
+                List of validation results with confidence scores
+            """
+            try:
+                results = await ctx.deps.license_client.validate_multiple_licenses(licenses)
+                return results
+            except StateLicenseError as e:
+                return [{
+                    "is_valid": False,
+                    "exists": False,
+                    "is_active": False,
+                    "confidence": 0.0,
+                    "error": str(e)
+                } for _ in licenses]
+
+        @self.agent.tool
+        def calculate_data_quality(
+            ctx: RunContext[DataValidatorDeps]
+        ) -> Dict[str, Any]:
+            """
+            Calculate data quality metrics for provider data.
+
+            Args:
+                ctx: Runtime context with provider data
+
+            Returns:
+                Data quality assessment with scores and issues
+            """
+            data = ctx.deps.provider_data
+
+            # Required fields
+            required_fields = [
+                "npi", "first_name", "last_name", "specialty",
+                "address", "city", "state", "zip_code", "phone"
+            ]
+
+            # Check completeness
+            missing_fields = [f for f in required_fields if not data.get(f)]
+            completeness = 1.0 - (len(missing_fields) / len(required_fields))
+
+            # Check data accuracy (basic validation)
+            issues = []
+
+            # NPI format check
+            npi = data.get("npi", "")
+            if npi and (len(npi) != 10 or not npi.isdigit()):
+                issues.append("Invalid NPI format")
+
+            # Phone format check
+            phone = data.get("phone", "")
+            if phone and len(phone.replace("-", "").replace(" ", "")) != 10:
+                issues.append("Invalid phone format")
+
+            # Zip code format check
+            zip_code = data.get("zip_code", "")
+            if zip_code and len(str(zip_code)) not in [5, 9]:
+                issues.append("Invalid zip code format")
+
+            # Calculate accuracy score
+            accuracy = 1.0 - (len(issues) / 10)  # Normalize to 0-1
+
+            # Overall quality score
+            overall = (completeness * 0.6 + accuracy * 0.4)
+
+            return {
+                "completeness_score": completeness,
+                "accuracy_score": accuracy,
+                "overall_score": overall,
+                "missing_fields": missing_fields,
+                "issues": issues
+            }
+
+    async def validate(self, provider_data: Dict[str, Any]) -> DataValidatorResponse:
+        """
+        Validate provider data.
+
+        Args:
+            provider_data: Provider information to validate
+
+        Returns:
+            Complete validation result with confidence scores
+
+        Raises:
+            AgentValidationError: If validation fails
+        """
+        self.logger.info(f"Starting data validation for NPI: {provider_data.get('npi')}")
+
+        async with self.track_time_async() as timer:
+            try:
+                # Create dependencies
+                deps = DataValidatorDeps(
+                    npi_client=self.npi_client,
+                    license_client=self.license_client,
+                    provider_data=provider_data
+                )
+
+                # Build validation prompt
+                prompt = f"""Validate this provider data:
+
+                            NPI: {provider_data.get('npi')}
+                            Name: {provider_data.get('first_name')} {provider_data.get('last_name')}
+                            Specialty: {provider_data.get('specialty')}
+                            State: {provider_data.get('state')}
+                            Licenses: {provider_data.get('licenses', [])}
+
+                            Use the tools to:
+                            1. Validate the NPI
+                            2. Validate all state licenses
+                            3. Calculate data quality
+
+                            Return a complete validation result."""
+
+                # Run agent
+                result = await self.agent.run(prompt, deps=deps)
+
+                execution_time = timer.get("execution_time_ms", 0)
+                self.logger.info(
+                    f"Data validation completed in {execution_time}ms. "
+                    f"Confidence: {result.data.overall_confidence:.2f}"
+                )
+
+                return result.data
+
+            except Exception as e:
+                self.logger.error(f"Data validation failed: {str(e)}")
+                raise AgentValidationError(f"Data validation failed: {str(e)}")
+
+    def calculate_confidence(
+        self,
+        npi_result: NPIValidationResult,
+        license_results: List[LicenseValidationResult],
+        data_quality: DataQualityResult
+    ) -> float:
+        """
+        Calculate overall confidence score.
+
+        Weights:
+        - NPI validation: 40%
+        - License validation: 40%
+        - Data quality: 20%
+
+        Args:
+            npi_result: NPI validation result
+            license_results: List of license validation results
+            data_quality: Data quality assessment
+
+        Returns:
+            Overall confidence score (0.0-1.0)
+        """
+        # NPI confidence (40%)
+        npi_confidence = npi_result.confidence * 0.4
+
+        # License confidence (40%)
+        if license_results:
+            avg_license_confidence = sum(r.confidence for r in license_results) / len(license_results)
+            license_confidence = avg_license_confidence * 0.4
+        else:
+            license_confidence = 0.0
+
+        # Data quality (20%)
+        quality_confidence = data_quality.overall_score * 0.2
+
+        overall = npi_confidence + license_confidence + quality_confidence
+
+        return min(1.0, max(0.0, overall))  # Clamp to 0-1

@@ -39,7 +39,6 @@ logs/
 *.log
 
 # Cache and temp directories
-cache/
 .cache/
 temp/
 tmp/
