@@ -1,0 +1,246 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Healthcare Provider Schema",
+  "description": "Standardized schema for Karnataka healthcare providers (doctors) from NMC and KMC",
+  "type": "object",
+  "required": ["provider_id", "name", "state"],
+  "properties": {
+    "provider_id": {
+      "type": "string",
+      "description": "Unique generated identifier for the provider",
+      "pattern": "^PROV_[A-Z0-9]{12}$"
+    },
+    "source_ids": {
+      "type": "object",
+      "description": "Original identifiers from various data sources",
+      "properties": {
+        "nmr_id": {
+          "type": ["string", "null"],
+          "description": "National Medical Register ID"
+        },
+        "kmc_registration_number": {
+          "type": ["string", "null"],
+          "description": "Karnataka Medical Council registration number"
+        },
+        "hpr_id": {
+          "type": ["string", "null"],
+          "description": "Healthcare Professionals Registry ID"
+        }
+      }
+    },
+    "name": {
+      "type": "object",
+      "required": ["full_name"],
+      "properties": {
+        "prefix": {
+          "type": ["string", "null"],
+          "enum": ["Dr.", "Prof.", "Mr.", "Ms.", "Mrs.", null],
+          "description": "Name prefix"
+        },
+        "first_name": {
+          "type": ["string", "null"],
+          "description": "First name"
+        },
+        "middle_name": {
+          "type": ["string", "null"],
+          "description": "Middle name"
+        },
+        "last_name": {
+          "type": ["string", "null"],
+          "description": "Last name"
+        },
+        "full_name": {
+          "type": "string",
+          "description": "Complete name as registered"
+        }
+      }
+    },
+    "qualifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "degree": {
+            "type": "string",
+            "description": "Degree name (MBBS, MD, MS, etc.)"
+          },
+          "specialization": {
+            "type": ["string", "null"],
+            "description": "Specialization field"
+          },
+          "year": {
+            "type": ["integer", "null"],
+            "minimum": 1900,
+            "maximum": 2100,
+            "description": "Year of completion"
+          },
+          "institution": {
+            "type": ["string", "null"],
+            "description": "Institution name"
+          }
+        },
+        "required": ["degree"]
+      },
+      "description": "List of qualifications"
+    },
+    "primary_qualification": {
+      "type": ["string", "null"],
+      "description": "Primary medical degree (e.g., MBBS)"
+    },
+    "specialization": {
+      "type": ["string", "null"],
+      "description": "Primary area of specialization"
+    },
+    "subspecialization": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional subspecializations"
+    },
+    "registration": {
+      "type": "object",
+      "properties": {
+        "council": {
+          "type": ["string", "null"],
+          "description": "Name of medical council (Karnataka Medical Council)"
+        },
+        "number": {
+          "type": ["string", "null"],
+          "description": "Registration number"
+        },
+        "year": {
+          "type": ["integer", "null"],
+          "minimum": 1900,
+          "maximum": 2100,
+          "description": "Year of registration"
+        },
+        "valid_from": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Registration validity start date"
+        },
+        "valid_until": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Registration validity end date"
+        },
+        "status": {
+          "type": ["string", "null"],
+          "enum": ["Active", "Expired", "Suspended", "Revoked", "Unknown"],
+          "description": "Current registration status"
+        }
+      }
+    },
+    "practice_type": {
+      "type": ["string", "null"],
+      "enum": ["Private Practice", "Government Service", "Both", "Academic", "Retired", "Unknown"],
+      "description": "Type of practice"
+    },
+    "practice_locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "facility_id": {
+            "type": ["string", "null"],
+            "description": "Linked facility ID"
+          },
+          "facility_name": {
+            "type": ["string", "null"],
+            "description": "Facility name"
+          },
+          "address": {
+            "type": ["string", "null"],
+            "description": "Practice address"
+          },
+          "district": {
+            "type": ["string", "null"],
+            "description": "District"
+          },
+          "is_primary": {
+            "type": "boolean",
+            "default": false,
+            "description": "Is this the primary practice location"
+          }
+        }
+      },
+      "description": "List of practice locations"
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "phone": {
+          "type": ["string", "null"],
+          "description": "Contact phone number"
+        },
+        "email": {
+          "type": ["string", "null"],
+          "format": "email",
+          "description": "Contact email address"
+        }
+      }
+    },
+    "gender": {
+      "type": ["string", "null"],
+      "enum": ["Male", "Female", "Other", "Unknown"],
+      "description": "Gender"
+    },
+    "year_of_birth": {
+      "type": ["integer", "null"],
+      "minimum": 1900,
+      "maximum": 2100,
+      "description": "Year of birth"
+    },
+    "state": {
+      "type": "string",
+      "const": "Karnataka",
+      "description": "State of practice (must be Karnataka)"
+    },
+    "district": {
+      "type": ["string", "null"],
+      "description": "Primary district of practice"
+    },
+    "system_of_medicine": {
+      "type": ["string", "null"],
+      "enum": ["Allopathy", "Ayurveda", "Yoga", "Unani", "Siddha", "Homeopathy", "Unknown"],
+      "description": "System of medicine practiced"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Languages spoken"
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["NMC", "KMC", "HPR", "Manual"]
+      },
+      "minItems": 1,
+      "description": "List of data sources this record was compiled from"
+    },
+    "quality_score": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Data quality/completeness score (0-1)"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last update (YYYY-MM-DD)"
+    },
+    "last_verified": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Date of last verification (YYYY-MM-DD)"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Additional notes or comments"
+    }
+  }
+}

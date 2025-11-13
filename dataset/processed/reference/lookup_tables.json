@@ -1,0 +1,6005 @@
+{
+  "district_by_id": {
+    "266": {
+      "district_id": 266,
+      "district_name": "BAGALKOTE",
+      "district_iso_code": "524",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "267": {
+      "district_id": 267,
+      "district_name": "BALLARI",
+      "district_iso_code": "528",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "268": {
+      "district_id": 268,
+      "district_name": "BELAGAVI",
+      "district_iso_code": "527",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "269": {
+      "district_id": 269,
+      "district_name": "BENGALURU RURAL",
+      "district_iso_code": "526",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "270": {
+      "district_id": 270,
+      "district_name": "BENGALURU URBAN",
+      "district_iso_code": "525",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "271": {
+      "district_id": 271,
+      "district_name": "BIDAR",
+      "district_iso_code": "529",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "272": {
+      "district_id": 272,
+      "district_name": "CHAMARAJANAGARA",
+      "district_iso_code": "531",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "273": {
+      "district_id": 273,
+      "district_name": "CHIKKABALLAPURA",
+      "district_iso_code": "630",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "274": {
+      "district_id": 274,
+      "district_name": "CHIKKAMAGALURU",
+      "district_iso_code": "532",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "275": {
+      "district_id": 275,
+      "district_name": "CHITRADURGA",
+      "district_iso_code": "533",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "276": {
+      "district_id": 276,
+      "district_name": "DAKSHINA KANNADA",
+      "district_iso_code": "534",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "277": {
+      "district_id": 277,
+      "district_name": "DAVANGERE",
+      "district_iso_code": "535",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "278": {
+      "district_id": 278,
+      "district_name": "DHARWAD",
+      "district_iso_code": "536",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "279": {
+      "district_id": 279,
+      "district_name": "GADAG",
+      "district_iso_code": "537",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "280": {
+      "district_id": 280,
+      "district_name": "HASSAN",
+      "district_iso_code": "539",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "281": {
+      "district_id": 281,
+      "district_name": "HAVERI",
+      "district_iso_code": "540",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "282": {
+      "district_id": 282,
+      "district_name": "KALABURAGI",
+      "district_iso_code": "538",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "283": {
+      "district_id": 283,
+      "district_name": "KODAGU",
+      "district_iso_code": "541",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "284": {
+      "district_id": 284,
+      "district_name": "KOLAR",
+      "district_iso_code": "542",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "285": {
+      "district_id": 285,
+      "district_name": "KOPPAL",
+      "district_iso_code": "543",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "286": {
+      "district_id": 286,
+      "district_name": "MANDYA",
+      "district_iso_code": "544",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "287": {
+      "district_id": 287,
+      "district_name": "MYSURU",
+      "district_iso_code": "545",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "288": {
+      "district_id": 288,
+      "district_name": "RAICHUR",
+      "district_iso_code": "546",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "289": {
+      "district_id": 289,
+      "district_name": "RAMANAGARA",
+      "district_iso_code": "631",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "290": {
+      "district_id": 290,
+      "district_name": "SHIVAMOGGA",
+      "district_iso_code": "547",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "291": {
+      "district_id": 291,
+      "district_name": "TUMAKURU",
+      "district_iso_code": "548",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "292": {
+      "district_id": 292,
+      "district_name": "UDUPI",
+      "district_iso_code": "549",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "293": {
+      "district_id": 293,
+      "district_name": "UTTARA KANNADA",
+      "district_iso_code": "550",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "294": {
+      "district_id": 294,
+      "district_name": "VIJAYAPURA",
+      "district_iso_code": "530",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "295": {
+      "district_id": 295,
+      "district_name": "YADGIR",
+      "district_iso_code": "635",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "758": {
+      "district_id": 758,
+      "district_name": "VIJAYANAGAR",
+      "district_iso_code": "738",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    }
+  },
+  "district_by_name": {
+    "BAGALKOTE": {
+      "district_id": 266,
+      "district_name": "BAGALKOTE",
+      "district_iso_code": "524",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "BALLARI": {
+      "district_id": 267,
+      "district_name": "BALLARI",
+      "district_iso_code": "528",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "BELAGAVI": {
+      "district_id": 268,
+      "district_name": "BELAGAVI",
+      "district_iso_code": "527",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "BENGALURU RURAL": {
+      "district_id": 269,
+      "district_name": "BENGALURU RURAL",
+      "district_iso_code": "526",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "BENGALURU URBAN": {
+      "district_id": 270,
+      "district_name": "BENGALURU URBAN",
+      "district_iso_code": "525",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "BIDAR": {
+      "district_id": 271,
+      "district_name": "BIDAR",
+      "district_iso_code": "529",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "CHAMARAJANAGARA": {
+      "district_id": 272,
+      "district_name": "CHAMARAJANAGARA",
+      "district_iso_code": "531",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "CHIKKABALLAPURA": {
+      "district_id": 273,
+      "district_name": "CHIKKABALLAPURA",
+      "district_iso_code": "630",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "CHIKKAMAGALURU": {
+      "district_id": 274,
+      "district_name": "CHIKKAMAGALURU",
+      "district_iso_code": "532",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "CHITRADURGA": {
+      "district_id": 275,
+      "district_name": "CHITRADURGA",
+      "district_iso_code": "533",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "DAKSHINA KANNADA": {
+      "district_id": 276,
+      "district_name": "DAKSHINA KANNADA",
+      "district_iso_code": "534",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "DAVANGERE": {
+      "district_id": 277,
+      "district_name": "DAVANGERE",
+      "district_iso_code": "535",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "DHARWAD": {
+      "district_id": 278,
+      "district_name": "DHARWAD",
+      "district_iso_code": "536",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "GADAG": {
+      "district_id": 279,
+      "district_name": "GADAG",
+      "district_iso_code": "537",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "HASSAN": {
+      "district_id": 280,
+      "district_name": "HASSAN",
+      "district_iso_code": "539",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "HAVERI": {
+      "district_id": 281,
+      "district_name": "HAVERI",
+      "district_iso_code": "540",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "KALABURAGI": {
+      "district_id": 282,
+      "district_name": "KALABURAGI",
+      "district_iso_code": "538",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "KODAGU": {
+      "district_id": 283,
+      "district_name": "KODAGU",
+      "district_iso_code": "541",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "KOLAR": {
+      "district_id": 284,
+      "district_name": "KOLAR",
+      "district_iso_code": "542",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "KOPPAL": {
+      "district_id": 285,
+      "district_name": "KOPPAL",
+      "district_iso_code": "543",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "MANDYA": {
+      "district_id": 286,
+      "district_name": "MANDYA",
+      "district_iso_code": "544",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "MYSURU": {
+      "district_id": 287,
+      "district_name": "MYSURU",
+      "district_iso_code": "545",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "RAICHUR": {
+      "district_id": 288,
+      "district_name": "RAICHUR",
+      "district_iso_code": "546",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "RAMANAGARA": {
+      "district_id": 289,
+      "district_name": "RAMANAGARA",
+      "district_iso_code": "631",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "SHIVAMOGGA": {
+      "district_id": 290,
+      "district_name": "SHIVAMOGGA",
+      "district_iso_code": "547",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "TUMAKURU": {
+      "district_id": 291,
+      "district_name": "TUMAKURU",
+      "district_iso_code": "548",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "UDUPI": {
+      "district_id": 292,
+      "district_name": "UDUPI",
+      "district_iso_code": "549",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "UTTARA KANNADA": {
+      "district_id": 293,
+      "district_name": "UTTARA KANNADA",
+      "district_iso_code": "550",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "VIJAYAPURA": {
+      "district_id": 294,
+      "district_name": "VIJAYAPURA",
+      "district_iso_code": "530",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "YADGIR": {
+      "district_id": 295,
+      "district_name": "YADGIR",
+      "district_iso_code": "635",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "VIJAYANAGAR": {
+      "district_id": 758,
+      "district_name": "VIJAYANAGAR",
+      "district_iso_code": "738",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    }
+  },
+  "district_by_iso": {
+    "524": {
+      "district_id": 266,
+      "district_name": "BAGALKOTE",
+      "district_iso_code": "524",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "528": {
+      "district_id": 267,
+      "district_name": "BALLARI",
+      "district_iso_code": "528",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "527": {
+      "district_id": 268,
+      "district_name": "BELAGAVI",
+      "district_iso_code": "527",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "526": {
+      "district_id": 269,
+      "district_name": "BENGALURU RURAL",
+      "district_iso_code": "526",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "525": {
+      "district_id": 270,
+      "district_name": "BENGALURU URBAN",
+      "district_iso_code": "525",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "529": {
+      "district_id": 271,
+      "district_name": "BIDAR",
+      "district_iso_code": "529",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "531": {
+      "district_id": 272,
+      "district_name": "CHAMARAJANAGARA",
+      "district_iso_code": "531",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "630": {
+      "district_id": 273,
+      "district_name": "CHIKKABALLAPURA",
+      "district_iso_code": "630",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "532": {
+      "district_id": 274,
+      "district_name": "CHIKKAMAGALURU",
+      "district_iso_code": "532",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "533": {
+      "district_id": 275,
+      "district_name": "CHITRADURGA",
+      "district_iso_code": "533",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "534": {
+      "district_id": 276,
+      "district_name": "DAKSHINA KANNADA",
+      "district_iso_code": "534",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "535": {
+      "district_id": 277,
+      "district_name": "DAVANGERE",
+      "district_iso_code": "535",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "536": {
+      "district_id": 278,
+      "district_name": "DHARWAD",
+      "district_iso_code": "536",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "537": {
+      "district_id": 279,
+      "district_name": "GADAG",
+      "district_iso_code": "537",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "539": {
+      "district_id": 280,
+      "district_name": "HASSAN",
+      "district_iso_code": "539",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "540": {
+      "district_id": 281,
+      "district_name": "HAVERI",
+      "district_iso_code": "540",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "538": {
+      "district_id": 282,
+      "district_name": "KALABURAGI",
+      "district_iso_code": "538",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "541": {
+      "district_id": 283,
+      "district_name": "KODAGU",
+      "district_iso_code": "541",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "542": {
+      "district_id": 284,
+      "district_name": "KOLAR",
+      "district_iso_code": "542",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "543": {
+      "district_id": 285,
+      "district_name": "KOPPAL",
+      "district_iso_code": "543",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "544": {
+      "district_id": 286,
+      "district_name": "MANDYA",
+      "district_iso_code": "544",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "545": {
+      "district_id": 287,
+      "district_name": "MYSURU",
+      "district_iso_code": "545",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "546": {
+      "district_id": 288,
+      "district_name": "RAICHUR",
+      "district_iso_code": "546",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "631": {
+      "district_id": 289,
+      "district_name": "RAMANAGARA",
+      "district_iso_code": "631",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "547": {
+      "district_id": 290,
+      "district_name": "SHIVAMOGGA",
+      "district_iso_code": "547",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "548": {
+      "district_id": 291,
+      "district_name": "TUMAKURU",
+      "district_iso_code": "548",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "549": {
+      "district_id": 292,
+      "district_name": "UDUPI",
+      "district_iso_code": "549",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "550": {
+      "district_id": 293,
+      "district_name": "UTTARA KANNADA",
+      "district_iso_code": "550",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "530": {
+      "district_id": 294,
+      "district_name": "VIJAYAPURA",
+      "district_iso_code": "530",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "635": {
+      "district_id": 295,
+      "district_name": "YADGIR",
+      "district_iso_code": "635",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    },
+    "738": {
+      "district_id": 758,
+      "district_name": "VIJAYANAGAR",
+      "district_iso_code": "738",
+      "state": "KARNATAKA",
+      "state_iso_code": "29"
+    }
+  },
+  "specialization_by_name": {
+    "1": {
+      "name": "1",
+      "system": "Modern Medicine"
+    },
+    "2": {
+      "name": "2",
+      "system": "Modern Medicine"
+    },
+    "3": {
+      "name": "3",
+      "system": "Modern Medicine"
+    },
+    "4": {
+      "name": "4",
+      "system": "Modern Medicine"
+    },
+    "5": {
+      "name": "5",
+      "system": "Modern Medicine"
+    },
+    "6": {
+      "name": "6",
+      "system": "Modern Medicine"
+    },
+    "7": {
+      "name": "7",
+      "system": "Modern Medicine"
+    },
+    "8": {
+      "name": "8",
+      "system": "Modern Medicine"
+    },
+    "10": {
+      "name": "10",
+      "system": "Modern Medicine"
+    },
+    "11": {
+      "name": "11",
+      "system": "Modern Medicine"
+    },
+    "12": {
+      "name": "12",
+      "system": "Modern Medicine"
+    },
+    "13": {
+      "name": "13",
+      "system": "Modern Medicine"
+    },
+    "14": {
+      "name": "14",
+      "system": "Modern Medicine"
+    },
+    "15": {
+      "name": "15",
+      "system": "Modern Medicine"
+    },
+    "16": {
+      "name": "16",
+      "system": "Modern Medicine"
+    },
+    "17": {
+      "name": "17",
+      "system": "Modern Medicine"
+    },
+    "18": {
+      "name": "18",
+      "system": "Modern Medicine"
+    },
+    "19": {
+      "name": "19",
+      "system": "Modern Medicine"
+    },
+    "20": {
+      "name": "20",
+      "system": "Modern Medicine"
+    },
+    "21": {
+      "name": "21",
+      "system": "Modern Medicine"
+    },
+    "22": {
+      "name": "22",
+      "system": "Modern Medicine"
+    },
+    "23": {
+      "name": "23",
+      "system": "Modern Medicine"
+    },
+    "24": {
+      "name": "24",
+      "system": "Modern Medicine"
+    },
+    "25": {
+      "name": "25",
+      "system": "Modern Medicine"
+    },
+    "26": {
+      "name": "26",
+      "system": "Modern Medicine"
+    },
+    "27": {
+      "name": "27",
+      "system": "Modern Medicine"
+    },
+    "28": {
+      "name": "28",
+      "system": "Modern Medicine"
+    },
+    "29": {
+      "name": "29",
+      "system": "Modern Medicine"
+    },
+    "30": {
+      "name": "30",
+      "system": "Modern Medicine"
+    },
+    "31": {
+      "name": "31",
+      "system": "Modern Medicine"
+    },
+    "32": {
+      "name": "32",
+      "system": "Modern Medicine"
+    },
+    "33": {
+      "name": "33",
+      "system": "Modern Medicine"
+    },
+    "34": {
+      "name": "34",
+      "system": "Modern Medicine"
+    },
+    "35": {
+      "name": "35",
+      "system": "Modern Medicine"
+    },
+    "36": {
+      "name": "36",
+      "system": "Modern Medicine"
+    },
+    "37": {
+      "name": "37",
+      "system": "Modern Medicine"
+    },
+    "39": {
+      "name": "39",
+      "system": "Modern Medicine"
+    },
+    "40": {
+      "name": "40",
+      "system": "Modern Medicine"
+    },
+    "41": {
+      "name": "41",
+      "system": "Modern Medicine"
+    },
+    "42": {
+      "name": "42",
+      "system": "Modern Medicine"
+    },
+    "43": {
+      "name": "43",
+      "system": "Modern Medicine"
+    },
+    "44": {
+      "name": "44",
+      "system": "Modern Medicine"
+    },
+    "45": {
+      "name": "45",
+      "system": "Modern Medicine"
+    },
+    "46": {
+      "name": "46",
+      "system": "Modern Medicine"
+    },
+    "47": {
+      "name": "47",
+      "system": "Modern Medicine"
+    },
+    "48": {
+      "name": "48",
+      "system": "Modern Medicine"
+    },
+    "49": {
+      "name": "49",
+      "system": "Modern Medicine"
+    },
+    "50": {
+      "name": "50",
+      "system": "Modern Medicine"
+    },
+    "51": {
+      "name": "51",
+      "system": "Modern Medicine"
+    },
+    "54": {
+      "name": "54",
+      "system": "Modern Medicine"
+    },
+    "55": {
+      "name": "55",
+      "system": "Modern Medicine"
+    },
+    "56": {
+      "name": "56",
+      "system": "Modern Medicine"
+    },
+    "57": {
+      "name": "57",
+      "system": "Modern Medicine"
+    },
+    "58": {
+      "name": "58",
+      "system": "Modern Medicine"
+    },
+    "59": {
+      "name": "59",
+      "system": "Modern Medicine"
+    },
+    "60": {
+      "name": "60",
+      "system": "Modern Medicine"
+    },
+    "61": {
+      "name": "61",
+      "system": "Modern Medicine"
+    },
+    "62": {
+      "name": "62",
+      "system": "Modern Medicine"
+    },
+    "63": {
+      "name": "63",
+      "system": "Modern Medicine"
+    },
+    "64": {
+      "name": "64",
+      "system": "Modern Medicine"
+    },
+    "66": {
+      "name": "66",
+      "system": "Modern Medicine"
+    },
+    "68": {
+      "name": "68",
+      "system": "Modern Medicine"
+    },
+    "69": {
+      "name": "69",
+      "system": "Modern Medicine"
+    },
+    "71": {
+      "name": "71",
+      "system": "Modern Medicine"
+    },
+    "75": {
+      "name": "75",
+      "system": "Modern Medicine"
+    },
+    "76": {
+      "name": "76",
+      "system": "Modern Medicine"
+    },
+    "78": {
+      "name": "78",
+      "system": "Modern Medicine"
+    },
+    "79": {
+      "name": "79",
+      "system": "Modern Medicine"
+    },
+    "81": {
+      "name": "81",
+      "system": "Modern Medicine"
+    },
+    "82": {
+      "name": "82",
+      "system": "Modern Medicine"
+    },
+    "86": {
+      "name": "86",
+      "system": "Modern Medicine"
+    },
+    "87": {
+      "name": "87",
+      "system": "Modern Medicine"
+    },
+    "89": {
+      "name": "89",
+      "system": "Modern Medicine"
+    },
+    "102": {
+      "name": "102",
+      "system": "Modern Medicine"
+    },
+    "103": {
+      "name": "103",
+      "system": "Modern Medicine"
+    },
+    "104": {
+      "name": "104",
+      "system": "Modern Medicine"
+    },
+    "106": {
+      "name": "106",
+      "system": "Modern Medicine"
+    },
+    "107": {
+      "name": "107",
+      "system": "Modern Medicine"
+    },
+    "109": {
+      "name": "109",
+      "system": "Modern Medicine"
+    },
+    "112": {
+      "name": "112",
+      "system": "Modern Medicine"
+    },
+    "114": {
+      "name": "114",
+      "system": "Modern Medicine"
+    },
+    "115": {
+      "name": "115",
+      "system": "Modern Medicine"
+    },
+    "116": {
+      "name": "116",
+      "system": "Modern Medicine"
+    },
+    "117": {
+      "name": "117",
+      "system": "Modern Medicine"
+    },
+    "118": {
+      "name": "118",
+      "system": "Modern Medicine"
+    },
+    "119": {
+      "name": "119",
+      "system": "Modern Medicine"
+    },
+    "121": {
+      "name": "121",
+      "system": "Modern Medicine"
+    },
+    "122": {
+      "name": "122",
+      "system": "Modern Medicine"
+    },
+    "123": {
+      "name": "123",
+      "system": "Modern Medicine"
+    },
+    "124": {
+      "name": "124",
+      "system": "Modern Medicine"
+    },
+    "135": {
+      "name": "135",
+      "system": "Modern Medicine"
+    },
+    "141": {
+      "name": "141",
+      "system": "Modern Medicine"
+    },
+    "143": {
+      "name": "143",
+      "system": "Modern Medicine"
+    },
+    "144": {
+      "name": "144",
+      "system": "Modern Medicine"
+    },
+    "146": {
+      "name": "146",
+      "system": "Modern Medicine"
+    },
+    "147": {
+      "name": "147",
+      "system": "Modern Medicine"
+    },
+    "150": {
+      "name": "150",
+      "system": "Modern Medicine"
+    },
+    "152": {
+      "name": "152",
+      "system": "Modern Medicine"
+    },
+    "153": {
+      "name": "153",
+      "system": "Modern Medicine"
+    },
+    "156": {
+      "name": "156",
+      "system": "Modern Medicine"
+    },
+    "161": {
+      "name": "161",
+      "system": "Modern Medicine"
+    },
+    "163": {
+      "name": "163",
+      "system": "Modern Medicine"
+    },
+    "171": {
+      "name": "171",
+      "system": "Modern Medicine"
+    },
+    "182": {
+      "name": "182",
+      "system": "Modern Medicine"
+    },
+    "185": {
+      "name": "185",
+      "system": "Modern Medicine"
+    },
+    "186": {
+      "name": "186",
+      "system": "Modern Medicine"
+    },
+    "188": {
+      "name": "188",
+      "system": "Modern Medicine"
+    },
+    "189": {
+      "name": "189",
+      "system": "Modern Medicine"
+    },
+    "192": {
+      "name": "192",
+      "system": "Modern Medicine"
+    },
+    "194": {
+      "name": "194",
+      "system": "Modern Medicine"
+    },
+    "195": {
+      "name": "195",
+      "system": "Modern Medicine"
+    },
+    "197": {
+      "name": "197",
+      "system": "Modern Medicine"
+    },
+    "202": {
+      "name": "202",
+      "system": "Modern Medicine"
+    },
+    "205": {
+      "name": "205",
+      "system": "Modern Medicine"
+    },
+    "207": {
+      "name": "207",
+      "system": "Modern Medicine"
+    },
+    "209": {
+      "name": "209",
+      "system": "Modern Medicine"
+    },
+    "211": {
+      "name": "211",
+      "system": "Modern Medicine"
+    },
+    "212": {
+      "name": "212",
+      "system": "Modern Medicine"
+    },
+    "213": {
+      "name": "213",
+      "system": "Modern Medicine"
+    },
+    "214": {
+      "name": "214",
+      "system": "Modern Medicine"
+    },
+    "216": {
+      "name": "216",
+      "system": "Modern Medicine"
+    },
+    "217": {
+      "name": "217",
+      "system": "Modern Medicine"
+    },
+    "219": {
+      "name": "219",
+      "system": "Modern Medicine"
+    },
+    "222": {
+      "name": "222",
+      "system": "Modern Medicine"
+    },
+    "223": {
+      "name": "223",
+      "system": "Modern Medicine"
+    },
+    "224": {
+      "name": "224",
+      "system": "Modern Medicine"
+    },
+    "243": {
+      "name": "243",
+      "system": "Modern Medicine"
+    },
+    "244": {
+      "name": "244",
+      "system": "Modern Medicine"
+    },
+    "245": {
+      "name": "245",
+      "system": "Modern Medicine"
+    },
+    "246": {
+      "name": "246",
+      "system": "Modern Medicine"
+    },
+    "247": {
+      "name": "247",
+      "system": "Modern Medicine"
+    },
+    "249": {
+      "name": "249",
+      "system": "Modern Medicine"
+    },
+    "250": {
+      "name": "250",
+      "system": "Modern Medicine"
+    },
+    "251": {
+      "name": "251",
+      "system": "Modern Medicine"
+    },
+    "252": {
+      "name": "252",
+      "system": "Modern Medicine"
+    },
+    "253": {
+      "name": "253",
+      "system": "Modern Medicine"
+    },
+    "259": {
+      "name": "259",
+      "system": "Modern Medicine"
+    },
+    "260": {
+      "name": "260",
+      "system": "Modern Medicine"
+    },
+    "262": {
+      "name": "262",
+      "system": "Modern Medicine"
+    },
+    "277": {
+      "name": "277",
+      "system": "Modern Medicine"
+    },
+    "281": {
+      "name": "281",
+      "system": "Modern Medicine"
+    },
+    "284": {
+      "name": "284",
+      "system": "Modern Medicine"
+    },
+    "285": {
+      "name": "285",
+      "system": "Modern Medicine"
+    },
+    "291": {
+      "name": "291",
+      "system": "Modern Medicine"
+    },
+    "303": {
+      "name": "303",
+      "system": "Modern Medicine"
+    },
+    "304": {
+      "name": "304",
+      "system": "Modern Medicine"
+    },
+    "309": {
+      "name": "309",
+      "system": "Modern Medicine"
+    },
+    "313": {
+      "name": "313",
+      "system": "Modern Medicine"
+    },
+    "315": {
+      "name": "315",
+      "system": "Modern Medicine"
+    },
+    "316": {
+      "name": "316",
+      "system": "Modern Medicine"
+    },
+    "317": {
+      "name": "317",
+      "system": "Modern Medicine"
+    },
+    "318": {
+      "name": "318",
+      "system": "Modern Medicine"
+    },
+    "319": {
+      "name": "319",
+      "system": "Modern Medicine"
+    },
+    "320": {
+      "name": "320",
+      "system": "Modern Medicine"
+    },
+    "323": {
+      "name": "323",
+      "system": "Modern Medicine"
+    },
+    "325": {
+      "name": "325",
+      "system": "Modern Medicine"
+    },
+    "331": {
+      "name": "331",
+      "system": "Modern Medicine"
+    },
+    "333": {
+      "name": "333",
+      "system": "Modern Medicine"
+    },
+    "336": {
+      "name": "336",
+      "system": "Modern Medicine"
+    },
+    "344": {
+      "name": "344",
+      "system": "Modern Medicine"
+    },
+    "346": {
+      "name": "346",
+      "system": "Modern Medicine"
+    },
+    "364": {
+      "name": "364",
+      "system": "Modern Medicine"
+    },
+    "365": {
+      "name": "365",
+      "system": "Modern Medicine"
+    },
+    "366": {
+      "name": "366",
+      "system": "Modern Medicine"
+    },
+    "369": {
+      "name": "369",
+      "system": "Modern Medicine"
+    },
+    "370": {
+      "name": "370",
+      "system": "Modern Medicine"
+    },
+    "371": {
+      "name": "371",
+      "system": "Modern Medicine"
+    },
+    "373": {
+      "name": "373",
+      "system": "Modern Medicine"
+    },
+    "394": {
+      "name": "394",
+      "system": "Modern Medicine"
+    },
+    "396": {
+      "name": "396",
+      "system": "Modern Medicine"
+    },
+    "528": {
+      "name": "528",
+      "system": "Modern Medicine"
+    },
+    "1127": {
+      "name": "1127",
+      "system": "Modern Medicine"
+    },
+    "1128": {
+      "name": "1128",
+      "system": "Modern Medicine"
+    },
+    "1132": {
+      "name": "1132",
+      "system": "Modern Medicine"
+    },
+    "1136": {
+      "name": "1136",
+      "system": "Modern Medicine"
+    },
+    "1137": {
+      "name": "1137",
+      "system": "Modern Medicine"
+    },
+    "1141": {
+      "name": "1141",
+      "system": "Modern Medicine"
+    },
+    "1142": {
+      "name": "1142",
+      "system": "Modern Medicine"
+    },
+    "1147": {
+      "name": "1147",
+      "system": "Modern Medicine"
+    },
+    "1160": {
+      "name": "1160",
+      "system": "Modern Medicine"
+    },
+    "1169": {
+      "name": "1169",
+      "system": "Modern Medicine"
+    },
+    "1181": {
+      "name": "1181",
+      "system": "Modern Medicine"
+    },
+    "1194": {
+      "name": "1194",
+      "system": "Modern Medicine"
+    },
+    "1195": {
+      "name": "1195",
+      "system": "Modern Medicine"
+    },
+    "1196": {
+      "name": "1196",
+      "system": "Modern Medicine"
+    },
+    "1199": {
+      "name": "1199",
+      "system": "Modern Medicine"
+    },
+    "1206": {
+      "name": "1206",
+      "system": "Modern Medicine"
+    },
+    "1208": {
+      "name": "1208",
+      "system": "Modern Medicine"
+    },
+    "1213": {
+      "name": "1213",
+      "system": "Modern Medicine"
+    },
+    "1220": {
+      "name": "1220",
+      "system": "Modern Medicine"
+    },
+    "1225": {
+      "name": "1225",
+      "system": "Modern Medicine"
+    },
+    "1226": {
+      "name": "1226",
+      "system": "Modern Medicine"
+    },
+    "1241": {
+      "name": "1241",
+      "system": "Modern Medicine"
+    },
+    "1242": {
+      "name": "1242",
+      "system": "Modern Medicine"
+    },
+    "1272": {
+      "name": "1272",
+      "system": "Modern Medicine"
+    },
+    "1274": {
+      "name": "1274",
+      "system": "Modern Medicine"
+    },
+    "1276": {
+      "name": "1276",
+      "system": "Modern Medicine"
+    },
+    "1285": {
+      "name": "1285",
+      "system": "Modern Medicine"
+    },
+    "1300": {
+      "name": "1300",
+      "system": "Modern Medicine"
+    },
+    "1310": {
+      "name": "1310",
+      "system": "Modern Medicine"
+    },
+    "1324": {
+      "name": "1324",
+      "system": "Modern Medicine"
+    },
+    "1328": {
+      "name": "1328",
+      "system": "Modern Medicine"
+    },
+    "1331": {
+      "name": "1331",
+      "system": "Modern Medicine"
+    },
+    "1341": {
+      "name": "1341",
+      "system": "Modern Medicine"
+    },
+    "1347": {
+      "name": "1347",
+      "system": "Modern Medicine"
+    },
+    "1348": {
+      "name": "1348",
+      "system": "Modern Medicine"
+    },
+    "1352": {
+      "name": "1352",
+      "system": "Modern Medicine"
+    },
+    "1384": {
+      "name": "1384",
+      "system": "Modern Medicine"
+    },
+    "1385": {
+      "name": "1385",
+      "system": "Modern Medicine"
+    },
+    "1396": {
+      "name": "1396",
+      "system": "Modern Medicine"
+    },
+    "1428": {
+      "name": "1428",
+      "system": "Modern Medicine"
+    },
+    "1462": {
+      "name": "1462",
+      "system": "Modern Medicine"
+    },
+    "1471": {
+      "name": "1471",
+      "system": "Modern Medicine"
+    },
+    "1485": {
+      "name": "1485",
+      "system": "Modern Medicine"
+    },
+    "1487": {
+      "name": "1487",
+      "system": "Modern Medicine"
+    },
+    "1495": {
+      "name": "1495",
+      "system": "Modern Medicine"
+    },
+    "1540": {
+      "name": "1540",
+      "system": "Modern Medicine"
+    },
+    "1544": {
+      "name": "1544",
+      "system": "Modern Medicine"
+    },
+    "1548": {
+      "name": "1548",
+      "system": "Modern Medicine"
+    },
+    "1554": {
+      "name": "1554",
+      "system": "Modern Medicine"
+    },
+    "1565": {
+      "name": "1565",
+      "system": "Modern Medicine"
+    },
+    "1592": {
+      "name": "1592",
+      "system": "Modern Medicine"
+    },
+    "1622": {
+      "name": "1622",
+      "system": "Modern Medicine"
+    },
+    "1628": {
+      "name": "1628",
+      "system": "Modern Medicine"
+    },
+    "1635": {
+      "name": "1635",
+      "system": "Modern Medicine"
+    },
+    "1652": {
+      "name": "1652",
+      "system": "Modern Medicine"
+    },
+    "1658": {
+      "name": "1658",
+      "system": "Modern Medicine"
+    },
+    "1689": {
+      "name": "1689",
+      "system": "Modern Medicine"
+    },
+    "1765": {
+      "name": "1765",
+      "system": "Modern Medicine"
+    },
+    "1785": {
+      "name": "1785",
+      "system": "Modern Medicine"
+    },
+    "1833": {
+      "name": "1833",
+      "system": "Modern Medicine"
+    },
+    "1834": {
+      "name": "1834",
+      "system": "Modern Medicine"
+    },
+    "1848": {
+      "name": "1848",
+      "system": "Modern Medicine"
+    },
+    "1850": {
+      "name": "1850",
+      "system": "Modern Medicine"
+    },
+    "1859": {
+      "name": "1859",
+      "system": "Modern Medicine"
+    },
+    "1870": {
+      "name": "1870",
+      "system": "Modern Medicine"
+    },
+    "1887": {
+      "name": "1887",
+      "system": "Modern Medicine"
+    },
+    "1892": {
+      "name": "1892",
+      "system": "Modern Medicine"
+    },
+    "1893": {
+      "name": "1893",
+      "system": "Modern Medicine"
+    },
+    "1936": {
+      "name": "1936",
+      "system": "Modern Medicine"
+    },
+    "1946": {
+      "name": "1946",
+      "system": "Modern Medicine"
+    },
+    "1991": {
+      "name": "1991",
+      "system": "Modern Medicine"
+    },
+    "1996": {
+      "name": "1996",
+      "system": "Modern Medicine"
+    },
+    "2015": {
+      "name": "2015",
+      "system": "Modern Medicine"
+    },
+    "2022": {
+      "name": "2022",
+      "system": "Modern Medicine"
+    },
+    "2045": {
+      "name": "2045",
+      "system": "Modern Medicine"
+    },
+    "2057": {
+      "name": "2057",
+      "system": "Modern Medicine"
+    },
+    "2069": {
+      "name": "2069",
+      "system": "Modern Medicine"
+    },
+    "2074": {
+      "name": "2074",
+      "system": "Modern Medicine"
+    },
+    "2085": {
+      "name": "2085",
+      "system": "Modern Medicine"
+    },
+    "2090": {
+      "name": "2090",
+      "system": "Modern Medicine"
+    },
+    "2094": {
+      "name": "2094",
+      "system": "Modern Medicine"
+    },
+    "2108": {
+      "name": "2108",
+      "system": "Modern Medicine"
+    },
+    "2114": {
+      "name": "2114",
+      "system": "Modern Medicine"
+    },
+    "2132": {
+      "name": "2132",
+      "system": "Modern Medicine"
+    },
+    "2143": {
+      "name": "2143",
+      "system": "Modern Medicine"
+    },
+    "2151": {
+      "name": "2151",
+      "system": "Modern Medicine"
+    },
+    "2157": {
+      "name": "2157",
+      "system": "Modern Medicine"
+    },
+    "2171": {
+      "name": "2171",
+      "system": "Modern Medicine"
+    },
+    "2172": {
+      "name": "2172",
+      "system": "Modern Medicine"
+    },
+    "2201": {
+      "name": "2201",
+      "system": "Modern Medicine"
+    },
+    "2210": {
+      "name": "2210",
+      "system": "Modern Medicine"
+    },
+    "2215": {
+      "name": "2215",
+      "system": "Modern Medicine"
+    },
+    "2228": {
+      "name": "2228",
+      "system": "Modern Medicine"
+    },
+    "2239": {
+      "name": "2239",
+      "system": "Modern Medicine"
+    },
+    "2260": {
+      "name": "2260",
+      "system": "Modern Medicine"
+    },
+    "2261": {
+      "name": "2261",
+      "system": "Modern Medicine"
+    },
+    "2269": {
+      "name": "2269",
+      "system": "Modern Medicine"
+    },
+    "2271": {
+      "name": "2271",
+      "system": "Modern Medicine"
+    },
+    "2272": {
+      "name": "2272",
+      "system": "Modern Medicine"
+    },
+    "2284": {
+      "name": "2284",
+      "system": "Modern Medicine"
+    },
+    "2285": {
+      "name": "2285",
+      "system": "Modern Medicine"
+    },
+    "2286": {
+      "name": "2286",
+      "system": "Modern Medicine"
+    },
+    "2291": {
+      "name": "2291",
+      "system": "Modern Medicine"
+    },
+    "2292": {
+      "name": "2292",
+      "system": "Modern Medicine"
+    },
+    "2304": {
+      "name": "2304",
+      "system": "Modern Medicine"
+    },
+    "2342": {
+      "name": "2342",
+      "system": "Modern Medicine"
+    },
+    "2358": {
+      "name": "2358",
+      "system": "Modern Medicine"
+    },
+    "2404": {
+      "name": "2404",
+      "system": "Modern Medicine"
+    },
+    "2408": {
+      "name": "2408",
+      "system": "Modern Medicine"
+    },
+    "2424": {
+      "name": "2424",
+      "system": "Modern Medicine"
+    },
+    "2431": {
+      "name": "2431",
+      "system": "Modern Medicine"
+    },
+    "2442": {
+      "name": "2442",
+      "system": "Modern Medicine"
+    },
+    "2444": {
+      "name": "2444",
+      "system": "Modern Medicine"
+    },
+    "2446": {
+      "name": "2446",
+      "system": "Modern Medicine"
+    },
+    "2448": {
+      "name": "2448",
+      "system": "Modern Medicine"
+    },
+    "2449": {
+      "name": "2449",
+      "system": "Modern Medicine"
+    },
+    "2451": {
+      "name": "2451",
+      "system": "Modern Medicine"
+    },
+    "2491": {
+      "name": "2491",
+      "system": "Modern Medicine"
+    },
+    "2504": {
+      "name": "2504",
+      "system": "Modern Medicine"
+    },
+    "2510": {
+      "name": "2510",
+      "system": "Modern Medicine"
+    },
+    "2519": {
+      "name": "2519",
+      "system": "Modern Medicine"
+    },
+    "2523": {
+      "name": "2523",
+      "system": "Modern Medicine"
+    },
+    "2539": {
+      "name": "2539",
+      "system": "Modern Medicine"
+    },
+    "2540": {
+      "name": "2540",
+      "system": "Modern Medicine"
+    },
+    "2551": {
+      "name": "2551",
+      "system": "Modern Medicine"
+    },
+    "2554": {
+      "name": "2554",
+      "system": "Modern Medicine"
+    },
+    "2567": {
+      "name": "2567",
+      "system": "Modern Medicine"
+    },
+    "2573": {
+      "name": "2573",
+      "system": "Modern Medicine"
+    },
+    "2581": {
+      "name": "2581",
+      "system": "Modern Medicine"
+    },
+    "2601": {
+      "name": "2601",
+      "system": "Modern Medicine"
+    },
+    "2611": {
+      "name": "2611",
+      "system": "Modern Medicine"
+    },
+    "2626": {
+      "name": "2626",
+      "system": "Modern Medicine"
+    },
+    "2627": {
+      "name": "2627",
+      "system": "Modern Medicine"
+    },
+    "2629": {
+      "name": "2629",
+      "system": "Modern Medicine"
+    },
+    "2634": {
+      "name": "2634",
+      "system": "Modern Medicine"
+    },
+    "2640": {
+      "name": "2640",
+      "system": "Modern Medicine"
+    },
+    "2642": {
+      "name": "2642",
+      "system": "Modern Medicine"
+    },
+    "2662": {
+      "name": "2662",
+      "system": "Modern Medicine"
+    },
+    "2665": {
+      "name": "2665",
+      "system": "Modern Medicine"
+    },
+    "2675": {
+      "name": "2675",
+      "system": "Modern Medicine"
+    },
+    "2680": {
+      "name": "2680",
+      "system": "Modern Medicine"
+    },
+    "2687": {
+      "name": "2687",
+      "system": "Modern Medicine"
+    },
+    "2696": {
+      "name": "2696",
+      "system": "Modern Medicine"
+    },
+    "2697": {
+      "name": "2697",
+      "system": "Modern Medicine"
+    },
+    "2703": {
+      "name": "2703",
+      "system": "Modern Medicine"
+    },
+    "2720": {
+      "name": "2720",
+      "system": "Modern Medicine"
+    },
+    "2725": {
+      "name": "2725",
+      "system": "Modern Medicine"
+    },
+    "2730": {
+      "name": "2730",
+      "system": "Modern Medicine"
+    },
+    "2739": {
+      "name": "2739",
+      "system": "Modern Medicine"
+    },
+    "2741": {
+      "name": "2741",
+      "system": "Modern Medicine"
+    },
+    "2742": {
+      "name": "2742",
+      "system": "Modern Medicine"
+    },
+    "2750": {
+      "name": "2750",
+      "system": "Modern Medicine"
+    },
+    "2771": {
+      "name": "2771",
+      "system": "Modern Medicine"
+    },
+    "2783": {
+      "name": "2783",
+      "system": "Modern Medicine"
+    },
+    "2790": {
+      "name": "2790",
+      "system": "Modern Medicine"
+    },
+    "2791": {
+      "name": "2791",
+      "system": "Modern Medicine"
+    },
+    "2792": {
+      "name": "2792",
+      "system": "Modern Medicine"
+    },
+    "2793": {
+      "name": "2793",
+      "system": "Modern Medicine"
+    },
+    "2817": {
+      "name": "2817",
+      "system": "Modern Medicine"
+    },
+    "2822": {
+      "name": "2822",
+      "system": "Modern Medicine"
+    },
+    "2843": {
+      "name": "2843",
+      "system": "Modern Medicine"
+    },
+    "2859": {
+      "name": "2859",
+      "system": "Modern Medicine"
+    },
+    "2882": {
+      "name": "2882",
+      "system": "Modern Medicine"
+    },
+    "2889": {
+      "name": "2889",
+      "system": "Modern Medicine"
+    },
+    "2896": {
+      "name": "2896",
+      "system": "Modern Medicine"
+    },
+    "2912": {
+      "name": "2912",
+      "system": "Modern Medicine"
+    },
+    "2920": {
+      "name": "2920",
+      "system": "Modern Medicine"
+    },
+    "2928": {
+      "name": "2928",
+      "system": "Modern Medicine"
+    },
+    "2933": {
+      "name": "2933",
+      "system": "Modern Medicine"
+    },
+    "2937": {
+      "name": "2937",
+      "system": "Modern Medicine"
+    },
+    "2939": {
+      "name": "2939",
+      "system": "Modern Medicine"
+    },
+    "2961": {
+      "name": "2961",
+      "system": "Modern Medicine"
+    },
+    "2970": {
+      "name": "2970",
+      "system": "Modern Medicine"
+    },
+    "2979": {
+      "name": "2979",
+      "system": "Modern Medicine"
+    },
+    "2992": {
+      "name": "2992",
+      "system": "Modern Medicine"
+    },
+    "3002": {
+      "name": "3002",
+      "system": "Modern Medicine"
+    },
+    "3010": {
+      "name": "3010",
+      "system": "Modern Medicine"
+    },
+    "3012": {
+      "name": "3012",
+      "system": "Modern Medicine"
+    },
+    "3024": {
+      "name": "3024",
+      "system": "Modern Medicine"
+    },
+    "3026": {
+      "name": "3026",
+      "system": "Modern Medicine"
+    },
+    "3027": {
+      "name": "3027",
+      "system": "Modern Medicine"
+    },
+    "3034": {
+      "name": "3034",
+      "system": "Modern Medicine"
+    },
+    "3052": {
+      "name": "3052",
+      "system": "Modern Medicine"
+    },
+    "3054": {
+      "name": "3054",
+      "system": "Modern Medicine"
+    },
+    "3065": {
+      "name": "3065",
+      "system": "Modern Medicine"
+    },
+    "3067": {
+      "name": "3067",
+      "system": "Modern Medicine"
+    },
+    "3107": {
+      "name": "3107",
+      "system": "Modern Medicine"
+    },
+    "3115": {
+      "name": "3115",
+      "system": "Modern Medicine"
+    },
+    "3127": {
+      "name": "3127",
+      "system": "Modern Medicine"
+    },
+    "3133": {
+      "name": "3133",
+      "system": "Modern Medicine"
+    },
+    "3147": {
+      "name": "3147",
+      "system": "Modern Medicine"
+    },
+    "3171": {
+      "name": "3171",
+      "system": "Modern Medicine"
+    },
+    "3172": {
+      "name": "3172",
+      "system": "Modern Medicine"
+    },
+    "3180": {
+      "name": "3180",
+      "system": "Modern Medicine"
+    },
+    "3182": {
+      "name": "3182",
+      "system": "Modern Medicine"
+    },
+    "3193": {
+      "name": "3193",
+      "system": "Modern Medicine"
+    },
+    "3210": {
+      "name": "3210",
+      "system": "Modern Medicine"
+    },
+    "3236": {
+      "name": "3236",
+      "system": "Modern Medicine"
+    },
+    "3242": {
+      "name": "3242",
+      "system": "Modern Medicine"
+    },
+    "3265": {
+      "name": "3265",
+      "system": "Modern Medicine"
+    },
+    "3283": {
+      "name": "3283",
+      "system": "Modern Medicine"
+    },
+    "3302": {
+      "name": "3302",
+      "system": "Modern Medicine"
+    },
+    "3308": {
+      "name": "3308",
+      "system": "Modern Medicine"
+    },
+    "3313": {
+      "name": "3313",
+      "system": "Modern Medicine"
+    },
+    "3324": {
+      "name": "3324",
+      "system": "Modern Medicine"
+    },
+    "3372": {
+      "name": "3372",
+      "system": "Modern Medicine"
+    },
+    "3385": {
+      "name": "3385",
+      "system": "Modern Medicine"
+    },
+    "3392": {
+      "name": "3392",
+      "system": "Modern Medicine"
+    },
+    "3410": {
+      "name": "3410",
+      "system": "Modern Medicine"
+    },
+    "3414": {
+      "name": "3414",
+      "system": "Modern Medicine"
+    },
+    "3418": {
+      "name": "3418",
+      "system": "Modern Medicine"
+    },
+    "3421": {
+      "name": "3421",
+      "system": "Modern Medicine"
+    },
+    "3456": {
+      "name": "3456",
+      "system": "Modern Medicine"
+    },
+    "3470": {
+      "name": "3470",
+      "system": "Modern Medicine"
+    },
+    "3474": {
+      "name": "3474",
+      "system": "Modern Medicine"
+    },
+    "3478": {
+      "name": "3478",
+      "system": "Modern Medicine"
+    },
+    "3481": {
+      "name": "3481",
+      "system": "Modern Medicine"
+    },
+    "3499": {
+      "name": "3499",
+      "system": "Modern Medicine"
+    },
+    "3500": {
+      "name": "3500",
+      "system": "Modern Medicine"
+    },
+    "3536": {
+      "name": "3536",
+      "system": "Modern Medicine"
+    },
+    "3537": {
+      "name": "3537",
+      "system": "Modern Medicine"
+    },
+    "3556": {
+      "name": "3556",
+      "system": "Modern Medicine"
+    },
+    "3561": {
+      "name": "3561",
+      "system": "Modern Medicine"
+    },
+    "3593": {
+      "name": "3593",
+      "system": "Modern Medicine"
+    },
+    "3595": {
+      "name": "3595",
+      "system": "Modern Medicine"
+    },
+    "3599": {
+      "name": "3599",
+      "system": "Modern Medicine"
+    },
+    "3617": {
+      "name": "3617",
+      "system": "Modern Medicine"
+    },
+    "3660": {
+      "name": "3660",
+      "system": "Modern Medicine"
+    },
+    "3667": {
+      "name": "3667",
+      "system": "Modern Medicine"
+    },
+    "3678": {
+      "name": "3678",
+      "system": "Modern Medicine"
+    },
+    "3698": {
+      "name": "3698",
+      "system": "Modern Medicine"
+    },
+    "3705": {
+      "name": "3705",
+      "system": "Modern Medicine"
+    },
+    "3706": {
+      "name": "3706",
+      "system": "Modern Medicine"
+    },
+    "3712": {
+      "name": "3712",
+      "system": "Modern Medicine"
+    },
+    "3738": {
+      "name": "3738",
+      "system": "Modern Medicine"
+    },
+    "3749": {
+      "name": "3749",
+      "system": "Modern Medicine"
+    },
+    "3758": {
+      "name": "3758",
+      "system": "Modern Medicine"
+    },
+    "3760": {
+      "name": "3760",
+      "system": "Modern Medicine"
+    },
+    "3761": {
+      "name": "3761",
+      "system": "Modern Medicine"
+    },
+    "3768": {
+      "name": "3768",
+      "system": "Modern Medicine"
+    },
+    "3771": {
+      "name": "3771",
+      "system": "Modern Medicine"
+    },
+    "3773": {
+      "name": "3773",
+      "system": "Modern Medicine"
+    },
+    "3774": {
+      "name": "3774",
+      "system": "Modern Medicine"
+    },
+    "3775": {
+      "name": "3775",
+      "system": "Modern Medicine"
+    },
+    "3779": {
+      "name": "3779",
+      "system": "Modern Medicine"
+    },
+    "3794": {
+      "name": "3794",
+      "system": "Modern Medicine"
+    },
+    "3811": {
+      "name": "3811",
+      "system": "Modern Medicine"
+    },
+    "3815": {
+      "name": "3815",
+      "system": "Modern Medicine"
+    },
+    "3823": {
+      "name": "3823",
+      "system": "Modern Medicine"
+    },
+    "3829": {
+      "name": "3829",
+      "system": "Modern Medicine"
+    },
+    "3836": {
+      "name": "3836",
+      "system": "Modern Medicine"
+    },
+    "3856": {
+      "name": "3856",
+      "system": "Modern Medicine"
+    },
+    "3860": {
+      "name": "3860",
+      "system": "Modern Medicine"
+    },
+    "3865": {
+      "name": "3865",
+      "system": "Modern Medicine"
+    },
+    "3866": {
+      "name": "3866",
+      "system": "Modern Medicine"
+    },
+    "3870": {
+      "name": "3870",
+      "system": "Modern Medicine"
+    },
+    "3871": {
+      "name": "3871",
+      "system": "Modern Medicine"
+    },
+    "3886": {
+      "name": "3886",
+      "system": "Modern Medicine"
+    },
+    "3897": {
+      "name": "3897",
+      "system": "Modern Medicine"
+    },
+    "3902": {
+      "name": "3902",
+      "system": "Modern Medicine"
+    },
+    "3928": {
+      "name": "3928",
+      "system": "Modern Medicine"
+    },
+    "3939": {
+      "name": "3939",
+      "system": "Modern Medicine"
+    },
+    "3940": {
+      "name": "3940",
+      "system": "Modern Medicine"
+    },
+    "3943": {
+      "name": "3943",
+      "system": "Modern Medicine"
+    },
+    "3945": {
+      "name": "3945",
+      "system": "Modern Medicine"
+    },
+    "3956": {
+      "name": "3956",
+      "system": "Modern Medicine"
+    },
+    "3958": {
+      "name": "3958",
+      "system": "Modern Medicine"
+    },
+    "3972": {
+      "name": "3972",
+      "system": "Modern Medicine"
+    },
+    "3975": {
+      "name": "3975",
+      "system": "Modern Medicine"
+    },
+    "3978": {
+      "name": "3978",
+      "system": "Modern Medicine"
+    },
+    "3980": {
+      "name": "3980",
+      "system": "Modern Medicine"
+    },
+    "9.0": {
+      "name": "9.0",
+      "system": "Dentistry"
+    },
+    "38.0": {
+      "name": "38.0",
+      "system": "Dentistry"
+    },
+    "52.0": {
+      "name": "52.0",
+      "system": "Dentistry"
+    },
+    "92.0": {
+      "name": "92.0",
+      "system": "Dentistry"
+    },
+    "93.0": {
+      "name": "93.0",
+      "system": "Dentistry"
+    },
+    "94.0": {
+      "name": "94.0",
+      "system": "Dentistry"
+    },
+    "95.0": {
+      "name": "95.0",
+      "system": "Dentistry"
+    },
+    "97.0": {
+      "name": "97.0",
+      "system": "Dentistry"
+    },
+    "98.0": {
+      "name": "98.0",
+      "system": "Dentistry"
+    },
+    "99.0": {
+      "name": "99.0",
+      "system": "Dentistry"
+    },
+    "1179.0": {
+      "name": "1179.0",
+      "system": "Dentistry"
+    },
+    "1480.0": {
+      "name": "1480.0",
+      "system": "Dentistry"
+    },
+    "1502.0": {
+      "name": "1502.0",
+      "system": "Dentistry"
+    },
+    "1516.0": {
+      "name": "1516.0",
+      "system": "Dentistry"
+    },
+    "1541.0": {
+      "name": "1541.0",
+      "system": "Dentistry"
+    },
+    "1551.0": {
+      "name": "1551.0",
+      "system": "Dentistry"
+    },
+    "1607.0": {
+      "name": "1607.0",
+      "system": "Dentistry"
+    },
+    "1888.0": {
+      "name": "1888.0",
+      "system": "Dentistry"
+    },
+    "1910.0": {
+      "name": "1910.0",
+      "system": "Dentistry"
+    },
+    "2027.0": {
+      "name": "2027.0",
+      "system": "Dentistry"
+    },
+    "2429.0": {
+      "name": "2429.0",
+      "system": "Dentistry"
+    },
+    "2511.0": {
+      "name": "2511.0",
+      "system": "Dentistry"
+    },
+    "2759.0": {
+      "name": "2759.0",
+      "system": "Dentistry"
+    },
+    "2842.0": {
+      "name": "2842.0",
+      "system": "Dentistry"
+    },
+    "2945.0": {
+      "name": "2945.0",
+      "system": "Dentistry"
+    },
+    "3009.0": {
+      "name": "3009.0",
+      "system": "Dentistry"
+    },
+    "3143.0": {
+      "name": "3143.0",
+      "system": "Dentistry"
+    },
+    "3288.0": {
+      "name": "3288.0",
+      "system": "Dentistry"
+    },
+    "3354.0": {
+      "name": "3354.0",
+      "system": "Dentistry"
+    },
+    "3484.0": {
+      "name": "3484.0",
+      "system": "Dentistry"
+    },
+    "3644.0": {
+      "name": "3644.0",
+      "system": "Dentistry"
+    },
+    "3661.0": {
+      "name": "3661.0",
+      "system": "Dentistry"
+    },
+    "3680.0": {
+      "name": "3680.0",
+      "system": "Dentistry"
+    },
+    "468.0": {
+      "name": "468.0",
+      "system": "Ayurveda"
+    },
+    "469.0": {
+      "name": "469.0",
+      "system": "Ayurveda"
+    },
+    "470.0": {
+      "name": "470.0",
+      "system": "Ayurveda"
+    },
+    "471.0": {
+      "name": "471.0",
+      "system": "Ayurveda"
+    },
+    "472.0": {
+      "name": "472.0",
+      "system": "Ayurveda"
+    },
+    "473.0": {
+      "name": "473.0",
+      "system": "Ayurveda"
+    },
+    "474.0": {
+      "name": "474.0",
+      "system": "Ayurveda"
+    },
+    "475.0": {
+      "name": "475.0",
+      "system": "Ayurveda"
+    },
+    "476.0": {
+      "name": "476.0",
+      "system": "Ayurveda"
+    },
+    "477.0": {
+      "name": "477.0",
+      "system": "Ayurveda"
+    },
+    "478.0": {
+      "name": "478.0",
+      "system": "Ayurveda"
+    },
+    "479.0": {
+      "name": "479.0",
+      "system": "Ayurveda"
+    },
+    "480.0": {
+      "name": "480.0",
+      "system": "Ayurveda"
+    },
+    "481.0": {
+      "name": "481.0",
+      "system": "Ayurveda"
+    },
+    "482.0": {
+      "name": "482.0",
+      "system": "Ayurveda"
+    },
+    "483.0": {
+      "name": "483.0",
+      "system": "Ayurveda"
+    },
+    "484.0": {
+      "name": "484.0",
+      "system": "Ayurveda"
+    },
+    "1134.0": {
+      "name": "1134.0",
+      "system": "Ayurveda"
+    },
+    "1158.0": {
+      "name": "1158.0",
+      "system": "Ayurveda"
+    },
+    "1170.0": {
+      "name": "1170.0",
+      "system": "Ayurveda"
+    },
+    "1234.0": {
+      "name": "1234.0",
+      "system": "Ayurveda"
+    },
+    "1236.0": {
+      "name": "1236.0",
+      "system": "Ayurveda"
+    },
+    "1244.0": {
+      "name": "1244.0",
+      "system": "Ayurveda"
+    },
+    "1249.0": {
+      "name": "1249.0",
+      "system": "Ayurveda"
+    },
+    "1255.0": {
+      "name": "1255.0",
+      "system": "Ayurveda"
+    },
+    "1294.0": {
+      "name": "1294.0",
+      "system": "Ayurveda"
+    },
+    "1346.0": {
+      "name": "1346.0",
+      "system": "Ayurveda"
+    },
+    "1362.0": {
+      "name": "1362.0",
+      "system": "Ayurveda"
+    },
+    "1368.0": {
+      "name": "1368.0",
+      "system": "Ayurveda"
+    },
+    "1369.0": {
+      "name": "1369.0",
+      "system": "Ayurveda"
+    },
+    "1381.0": {
+      "name": "1381.0",
+      "system": "Ayurveda"
+    },
+    "1397.0": {
+      "name": "1397.0",
+      "system": "Ayurveda"
+    },
+    "1409.0": {
+      "name": "1409.0",
+      "system": "Ayurveda"
+    },
+    "1416.0": {
+      "name": "1416.0",
+      "system": "Ayurveda"
+    },
+    "1421.0": {
+      "name": "1421.0",
+      "system": "Ayurveda"
+    },
+    "1422.0": {
+      "name": "1422.0",
+      "system": "Ayurveda"
+    },
+    "1423.0": {
+      "name": "1423.0",
+      "system": "Ayurveda"
+    },
+    "1424.0": {
+      "name": "1424.0",
+      "system": "Ayurveda"
+    },
+    "1442.0": {
+      "name": "1442.0",
+      "system": "Ayurveda"
+    },
+    "1443.0": {
+      "name": "1443.0",
+      "system": "Ayurveda"
+    },
+    "1444.0": {
+      "name": "1444.0",
+      "system": "Ayurveda"
+    },
+    "1446.0": {
+      "name": "1446.0",
+      "system": "Ayurveda"
+    },
+    "1488.0": {
+      "name": "1488.0",
+      "system": "Ayurveda"
+    },
+    "1517.0": {
+      "name": "1517.0",
+      "system": "Ayurveda"
+    },
+    "1518.0": {
+      "name": "1518.0",
+      "system": "Ayurveda"
+    },
+    "1522.0": {
+      "name": "1522.0",
+      "system": "Ayurveda"
+    },
+    "1539.0": {
+      "name": "1539.0",
+      "system": "Ayurveda"
+    },
+    "1552.0": {
+      "name": "1552.0",
+      "system": "Ayurveda"
+    },
+    "1560.0": {
+      "name": "1560.0",
+      "system": "Ayurveda"
+    },
+    "1587.0": {
+      "name": "1587.0",
+      "system": "Ayurveda"
+    },
+    "1653.0": {
+      "name": "1653.0",
+      "system": "Ayurveda"
+    },
+    "1657.0": {
+      "name": "1657.0",
+      "system": "Ayurveda"
+    },
+    "1671.0": {
+      "name": "1671.0",
+      "system": "Ayurveda"
+    },
+    "1673.0": {
+      "name": "1673.0",
+      "system": "Ayurveda"
+    },
+    "1675.0": {
+      "name": "1675.0",
+      "system": "Ayurveda"
+    },
+    "1685.0": {
+      "name": "1685.0",
+      "system": "Ayurveda"
+    },
+    "1688.0": {
+      "name": "1688.0",
+      "system": "Ayurveda"
+    },
+    "1699.0": {
+      "name": "1699.0",
+      "system": "Ayurveda"
+    },
+    "1700.0": {
+      "name": "1700.0",
+      "system": "Ayurveda"
+    },
+    "1701.0": {
+      "name": "1701.0",
+      "system": "Ayurveda"
+    },
+    "1704.0": {
+      "name": "1704.0",
+      "system": "Ayurveda"
+    },
+    "1713.0": {
+      "name": "1713.0",
+      "system": "Ayurveda"
+    },
+    "1717.0": {
+      "name": "1717.0",
+      "system": "Ayurveda"
+    },
+    "1730.0": {
+      "name": "1730.0",
+      "system": "Ayurveda"
+    },
+    "1737.0": {
+      "name": "1737.0",
+      "system": "Ayurveda"
+    },
+    "1750.0": {
+      "name": "1750.0",
+      "system": "Ayurveda"
+    },
+    "1757.0": {
+      "name": "1757.0",
+      "system": "Ayurveda"
+    },
+    "1762.0": {
+      "name": "1762.0",
+      "system": "Ayurveda"
+    },
+    "1767.0": {
+      "name": "1767.0",
+      "system": "Ayurveda"
+    },
+    "1779.0": {
+      "name": "1779.0",
+      "system": "Ayurveda"
+    },
+    "1791.0": {
+      "name": "1791.0",
+      "system": "Ayurveda"
+    },
+    "1797.0": {
+      "name": "1797.0",
+      "system": "Ayurveda"
+    },
+    "1798.0": {
+      "name": "1798.0",
+      "system": "Ayurveda"
+    },
+    "1800.0": {
+      "name": "1800.0",
+      "system": "Ayurveda"
+    },
+    "1802.0": {
+      "name": "1802.0",
+      "system": "Ayurveda"
+    },
+    "1814.0": {
+      "name": "1814.0",
+      "system": "Ayurveda"
+    },
+    "1816.0": {
+      "name": "1816.0",
+      "system": "Ayurveda"
+    },
+    "1824.0": {
+      "name": "1824.0",
+      "system": "Ayurveda"
+    },
+    "1835.0": {
+      "name": "1835.0",
+      "system": "Ayurveda"
+    },
+    "1855.0": {
+      "name": "1855.0",
+      "system": "Ayurveda"
+    },
+    "1856.0": {
+      "name": "1856.0",
+      "system": "Ayurveda"
+    },
+    "1880.0": {
+      "name": "1880.0",
+      "system": "Ayurveda"
+    },
+    "1902.0": {
+      "name": "1902.0",
+      "system": "Ayurveda"
+    },
+    "1924.0": {
+      "name": "1924.0",
+      "system": "Ayurveda"
+    },
+    "1953.0": {
+      "name": "1953.0",
+      "system": "Ayurveda"
+    },
+    "1955.0": {
+      "name": "1955.0",
+      "system": "Ayurveda"
+    },
+    "1957.0": {
+      "name": "1957.0",
+      "system": "Ayurveda"
+    },
+    "1960.0": {
+      "name": "1960.0",
+      "system": "Ayurveda"
+    },
+    "1963.0": {
+      "name": "1963.0",
+      "system": "Ayurveda"
+    },
+    "1977.0": {
+      "name": "1977.0",
+      "system": "Ayurveda"
+    },
+    "1982.0": {
+      "name": "1982.0",
+      "system": "Ayurveda"
+    },
+    "2079.0": {
+      "name": "2079.0",
+      "system": "Ayurveda"
+    },
+    "2081.0": {
+      "name": "2081.0",
+      "system": "Ayurveda"
+    },
+    "2093.0": {
+      "name": "2093.0",
+      "system": "Ayurveda"
+    },
+    "2096.0": {
+      "name": "2096.0",
+      "system": "Ayurveda"
+    },
+    "2097.0": {
+      "name": "2097.0",
+      "system": "Ayurveda"
+    },
+    "2099.0": {
+      "name": "2099.0",
+      "system": "Ayurveda"
+    },
+    "2102.0": {
+      "name": "2102.0",
+      "system": "Ayurveda"
+    },
+    "2116.0": {
+      "name": "2116.0",
+      "system": "Ayurveda"
+    },
+    "2121.0": {
+      "name": "2121.0",
+      "system": "Ayurveda"
+    },
+    "2135.0": {
+      "name": "2135.0",
+      "system": "Ayurveda"
+    },
+    "2145.0": {
+      "name": "2145.0",
+      "system": "Ayurveda"
+    },
+    "2147.0": {
+      "name": "2147.0",
+      "system": "Ayurveda"
+    },
+    "2148.0": {
+      "name": "2148.0",
+      "system": "Ayurveda"
+    },
+    "2155.0": {
+      "name": "2155.0",
+      "system": "Ayurveda"
+    },
+    "2193.0": {
+      "name": "2193.0",
+      "system": "Ayurveda"
+    },
+    "2198.0": {
+      "name": "2198.0",
+      "system": "Ayurveda"
+    },
+    "2259.0": {
+      "name": "2259.0",
+      "system": "Ayurveda"
+    },
+    "2279.0": {
+      "name": "2279.0",
+      "system": "Ayurveda"
+    },
+    "2323.0": {
+      "name": "2323.0",
+      "system": "Ayurveda"
+    },
+    "2329.0": {
+      "name": "2329.0",
+      "system": "Ayurveda"
+    },
+    "2330.0": {
+      "name": "2330.0",
+      "system": "Ayurveda"
+    },
+    "2336.0": {
+      "name": "2336.0",
+      "system": "Ayurveda"
+    },
+    "2339.0": {
+      "name": "2339.0",
+      "system": "Ayurveda"
+    },
+    "2361.0": {
+      "name": "2361.0",
+      "system": "Ayurveda"
+    },
+    "2362.0": {
+      "name": "2362.0",
+      "system": "Ayurveda"
+    },
+    "2372.0": {
+      "name": "2372.0",
+      "system": "Ayurveda"
+    },
+    "2373.0": {
+      "name": "2373.0",
+      "system": "Ayurveda"
+    },
+    "2390.0": {
+      "name": "2390.0",
+      "system": "Ayurveda"
+    },
+    "2396.0": {
+      "name": "2396.0",
+      "system": "Ayurveda"
+    },
+    "2417.0": {
+      "name": "2417.0",
+      "system": "Ayurveda"
+    },
+    "2458.0": {
+      "name": "2458.0",
+      "system": "Ayurveda"
+    },
+    "2464.0": {
+      "name": "2464.0",
+      "system": "Ayurveda"
+    },
+    "2489.0": {
+      "name": "2489.0",
+      "system": "Ayurveda"
+    },
+    "2506.0": {
+      "name": "2506.0",
+      "system": "Ayurveda"
+    },
+    "2604.0": {
+      "name": "2604.0",
+      "system": "Ayurveda"
+    },
+    "2670.0": {
+      "name": "2670.0",
+      "system": "Ayurveda"
+    },
+    "2715.0": {
+      "name": "2715.0",
+      "system": "Ayurveda"
+    },
+    "2733.0": {
+      "name": "2733.0",
+      "system": "Ayurveda"
+    },
+    "2736.0": {
+      "name": "2736.0",
+      "system": "Ayurveda"
+    },
+    "2752.0": {
+      "name": "2752.0",
+      "system": "Ayurveda"
+    },
+    "2781.0": {
+      "name": "2781.0",
+      "system": "Ayurveda"
+    },
+    "2807.0": {
+      "name": "2807.0",
+      "system": "Ayurveda"
+    },
+    "2826.0": {
+      "name": "2826.0",
+      "system": "Ayurveda"
+    },
+    "2835.0": {
+      "name": "2835.0",
+      "system": "Ayurveda"
+    },
+    "2847.0": {
+      "name": "2847.0",
+      "system": "Ayurveda"
+    },
+    "2849.0": {
+      "name": "2849.0",
+      "system": "Ayurveda"
+    },
+    "2865.0": {
+      "name": "2865.0",
+      "system": "Ayurveda"
+    },
+    "2878.0": {
+      "name": "2878.0",
+      "system": "Ayurveda"
+    },
+    "2899.0": {
+      "name": "2899.0",
+      "system": "Ayurveda"
+    },
+    "2904.0": {
+      "name": "2904.0",
+      "system": "Ayurveda"
+    },
+    "2953.0": {
+      "name": "2953.0",
+      "system": "Ayurveda"
+    },
+    "2968.0": {
+      "name": "2968.0",
+      "system": "Ayurveda"
+    },
+    "3048.0": {
+      "name": "3048.0",
+      "system": "Ayurveda"
+    },
+    "3049.0": {
+      "name": "3049.0",
+      "system": "Ayurveda"
+    },
+    "3109.0": {
+      "name": "3109.0",
+      "system": "Ayurveda"
+    },
+    "3185.0": {
+      "name": "3185.0",
+      "system": "Ayurveda"
+    },
+    "3186.0": {
+      "name": "3186.0",
+      "system": "Ayurveda"
+    },
+    "3187.0": {
+      "name": "3187.0",
+      "system": "Ayurveda"
+    },
+    "3188.0": {
+      "name": "3188.0",
+      "system": "Ayurveda"
+    },
+    "3189.0": {
+      "name": "3189.0",
+      "system": "Ayurveda"
+    },
+    "3190.0": {
+      "name": "3190.0",
+      "system": "Ayurveda"
+    },
+    "3195.0": {
+      "name": "3195.0",
+      "system": "Ayurveda"
+    },
+    "3261.0": {
+      "name": "3261.0",
+      "system": "Ayurveda"
+    },
+    "3294.0": {
+      "name": "3294.0",
+      "system": "Ayurveda"
+    },
+    "3357.0": {
+      "name": "3357.0",
+      "system": "Ayurveda"
+    },
+    "3485.0": {
+      "name": "3485.0",
+      "system": "Ayurveda"
+    },
+    "3533.0": {
+      "name": "3533.0",
+      "system": "Ayurveda"
+    },
+    "3564.0": {
+      "name": "3564.0",
+      "system": "Ayurveda"
+    },
+    "3584.0": {
+      "name": "3584.0",
+      "system": "Ayurveda"
+    },
+    "3600.0": {
+      "name": "3600.0",
+      "system": "Ayurveda"
+    },
+    "3616.0": {
+      "name": "3616.0",
+      "system": "Ayurveda"
+    },
+    "3665.0": {
+      "name": "3665.0",
+      "system": "Ayurveda"
+    },
+    "3694.0": {
+      "name": "3694.0",
+      "system": "Ayurveda"
+    },
+    "3769.0": {
+      "name": "3769.0",
+      "system": "Ayurveda"
+    },
+    "3965.0": {
+      "name": "3965.0",
+      "system": "Ayurveda"
+    },
+    "485.0": {
+      "name": "485.0",
+      "system": "Unani"
+    },
+    "486.0": {
+      "name": "486.0",
+      "system": "Unani"
+    },
+    "487.0": {
+      "name": "487.0",
+      "system": "Unani"
+    },
+    "488.0": {
+      "name": "488.0",
+      "system": "Unani"
+    },
+    "489.0": {
+      "name": "489.0",
+      "system": "Unani"
+    },
+    "490.0": {
+      "name": "490.0",
+      "system": "Unani"
+    },
+    "491.0": {
+      "name": "491.0",
+      "system": "Unani"
+    },
+    "492.0": {
+      "name": "492.0",
+      "system": "Unani"
+    },
+    "493.0": {
+      "name": "493.0",
+      "system": "Unani"
+    },
+    "494.0": {
+      "name": "494.0",
+      "system": "Unani"
+    },
+    "495.0": {
+      "name": "495.0",
+      "system": "Unani"
+    },
+    "496.0": {
+      "name": "496.0",
+      "system": "Unani"
+    },
+    "497.0": {
+      "name": "497.0",
+      "system": "Unani"
+    },
+    "498.0": {
+      "name": "498.0",
+      "system": "Unani"
+    },
+    "1185.0": {
+      "name": "1185.0",
+      "system": "Unani"
+    },
+    "1253.0": {
+      "name": "1253.0",
+      "system": "Unani"
+    },
+    "1402.0": {
+      "name": "1402.0",
+      "system": "Unani"
+    },
+    "1531.0": {
+      "name": "1531.0",
+      "system": "Unani"
+    },
+    "1837.0": {
+      "name": "1837.0",
+      "system": "Unani"
+    },
+    "1918.0": {
+      "name": "1918.0",
+      "system": "Unani"
+    },
+    "2034.0": {
+      "name": "2034.0",
+      "system": "Unani"
+    },
+    "2105.0": {
+      "name": "2105.0",
+      "system": "Unani"
+    },
+    "2169.0": {
+      "name": "2169.0",
+      "system": "Unani"
+    },
+    "2177.0": {
+      "name": "2177.0",
+      "system": "Unani"
+    },
+    "2407.0": {
+      "name": "2407.0",
+      "system": "Unani"
+    },
+    "2492.0": {
+      "name": "2492.0",
+      "system": "Unani"
+    },
+    "2580.0": {
+      "name": "2580.0",
+      "system": "Unani"
+    },
+    "2688.0": {
+      "name": "2688.0",
+      "system": "Unani"
+    },
+    "2766.0": {
+      "name": "2766.0",
+      "system": "Unani"
+    },
+    "2825.0": {
+      "name": "2825.0",
+      "system": "Unani"
+    },
+    "2942.0": {
+      "name": "2942.0",
+      "system": "Unani"
+    },
+    "3161.0": {
+      "name": "3161.0",
+      "system": "Unani"
+    },
+    "3276.0": {
+      "name": "3276.0",
+      "system": "Unani"
+    },
+    "3289.0": {
+      "name": "3289.0",
+      "system": "Unani"
+    },
+    "3309.0": {
+      "name": "3309.0",
+      "system": "Unani"
+    },
+    "3320.0": {
+      "name": "3320.0",
+      "system": "Unani"
+    },
+    "3356.0": {
+      "name": "3356.0",
+      "system": "Unani"
+    },
+    "3563.0": {
+      "name": "3563.0",
+      "system": "Unani"
+    },
+    "438.0": {
+      "name": "438.0",
+      "system": "Siddha"
+    },
+    "439.0": {
+      "name": "439.0",
+      "system": "Siddha"
+    },
+    "440.0": {
+      "name": "440.0",
+      "system": "Siddha"
+    },
+    "441.0": {
+      "name": "441.0",
+      "system": "Siddha"
+    },
+    "442.0": {
+      "name": "442.0",
+      "system": "Siddha"
+    },
+    "443.0": {
+      "name": "443.0",
+      "system": "Siddha"
+    },
+    "444.0": {
+      "name": "444.0",
+      "system": "Siddha"
+    },
+    "445.0": {
+      "name": "445.0",
+      "system": "Siddha"
+    },
+    "1228.0": {
+      "name": "1228.0",
+      "system": "Siddha"
+    },
+    "1383.0": {
+      "name": "1383.0",
+      "system": "Siddha"
+    },
+    "1398.0": {
+      "name": "1398.0",
+      "system": "Siddha"
+    },
+    "1412.0": {
+      "name": "1412.0",
+      "system": "Siddha"
+    },
+    "1414.0": {
+      "name": "1414.0",
+      "system": "Siddha"
+    },
+    "1427.0": {
+      "name": "1427.0",
+      "system": "Siddha"
+    },
+    "1620.0": {
+      "name": "1620.0",
+      "system": "Siddha"
+    },
+    "1639.0": {
+      "name": "1639.0",
+      "system": "Siddha"
+    },
+    "1680.0": {
+      "name": "1680.0",
+      "system": "Siddha"
+    },
+    "1695.0": {
+      "name": "1695.0",
+      "system": "Siddha"
+    },
+    "2118.0": {
+      "name": "2118.0",
+      "system": "Siddha"
+    },
+    "2317.0": {
+      "name": "2317.0",
+      "system": "Siddha"
+    },
+    "2527.0": {
+      "name": "2527.0",
+      "system": "Siddha"
+    },
+    "2869.0": {
+      "name": "2869.0",
+      "system": "Siddha"
+    },
+    "3146.0": {
+      "name": "3146.0",
+      "system": "Siddha"
+    },
+    "3867.0": {
+      "name": "3867.0",
+      "system": "Siddha"
+    },
+    "53.0": {
+      "name": "53.0",
+      "system": "Homeopathy"
+    },
+    "432.0": {
+      "name": "432.0",
+      "system": "Homeopathy"
+    },
+    "433.0": {
+      "name": "433.0",
+      "system": "Homeopathy"
+    },
+    "434.0": {
+      "name": "434.0",
+      "system": "Homeopathy"
+    },
+    "435.0": {
+      "name": "435.0",
+      "system": "Homeopathy"
+    },
+    "436.0": {
+      "name": "436.0",
+      "system": "Homeopathy"
+    },
+    "437.0": {
+      "name": "437.0",
+      "system": "Homeopathy"
+    },
+    "1143.0": {
+      "name": "1143.0",
+      "system": "Homeopathy"
+    },
+    "1149.0": {
+      "name": "1149.0",
+      "system": "Homeopathy"
+    },
+    "1191.0": {
+      "name": "1191.0",
+      "system": "Homeopathy"
+    },
+    "1238.0": {
+      "name": "1238.0",
+      "system": "Homeopathy"
+    },
+    "1304.0": {
+      "name": "1304.0",
+      "system": "Homeopathy"
+    },
+    "1574.0": {
+      "name": "1574.0",
+      "system": "Homeopathy"
+    },
+    "1600.0": {
+      "name": "1600.0",
+      "system": "Homeopathy"
+    },
+    "1683.0": {
+      "name": "1683.0",
+      "system": "Homeopathy"
+    },
+    "1710.0": {
+      "name": "1710.0",
+      "system": "Homeopathy"
+    },
+    "1726.0": {
+      "name": "1726.0",
+      "system": "Homeopathy"
+    },
+    "1731.0": {
+      "name": "1731.0",
+      "system": "Homeopathy"
+    },
+    "2115.0": {
+      "name": "2115.0",
+      "system": "Homeopathy"
+    },
+    "2313.0": {
+      "name": "2313.0",
+      "system": "Homeopathy"
+    },
+    "2398.0": {
+      "name": "2398.0",
+      "system": "Homeopathy"
+    },
+    "2453.0": {
+      "name": "2453.0",
+      "system": "Homeopathy"
+    },
+    "2594.0": {
+      "name": "2594.0",
+      "system": "Homeopathy"
+    },
+    "2649.0": {
+      "name": "2649.0",
+      "system": "Homeopathy"
+    },
+    "2677.0": {
+      "name": "2677.0",
+      "system": "Homeopathy"
+    },
+    "2683.0": {
+      "name": "2683.0",
+      "system": "Homeopathy"
+    },
+    "2704.0": {
+      "name": "2704.0",
+      "system": "Homeopathy"
+    },
+    "2747.0": {
+      "name": "2747.0",
+      "system": "Homeopathy"
+    },
+    "2772.0": {
+      "name": "2772.0",
+      "system": "Homeopathy"
+    },
+    "2839.0": {
+      "name": "2839.0",
+      "system": "Homeopathy"
+    },
+    "2873.0": {
+      "name": "2873.0",
+      "system": "Homeopathy"
+    },
+    "2927.0": {
+      "name": "2927.0",
+      "system": "Homeopathy"
+    },
+    "2936.0": {
+      "name": "2936.0",
+      "system": "Homeopathy"
+    },
+    "2938.0": {
+      "name": "2938.0",
+      "system": "Homeopathy"
+    },
+    "2950.0": {
+      "name": "2950.0",
+      "system": "Homeopathy"
+    },
+    "2951.0": {
+      "name": "2951.0",
+      "system": "Homeopathy"
+    },
+    "3083.0": {
+      "name": "3083.0",
+      "system": "Homeopathy"
+    },
+    "3279.0": {
+      "name": "3279.0",
+      "system": "Homeopathy"
+    },
+    "3290.0": {
+      "name": "3290.0",
+      "system": "Homeopathy"
+    },
+    "3301.0": {
+      "name": "3301.0",
+      "system": "Homeopathy"
+    },
+    "3409.0": {
+      "name": "3409.0",
+      "system": "Homeopathy"
+    },
+    "3439.0": {
+      "name": "3439.0",
+      "system": "Homeopathy"
+    },
+    "3521.0": {
+      "name": "3521.0",
+      "system": "Homeopathy"
+    },
+    "3540.0": {
+      "name": "3540.0",
+      "system": "Homeopathy"
+    },
+    "3864.0": {
+      "name": "3864.0",
+      "system": "Homeopathy"
+    }
+  },
+  "degree_by_name": {
+    "1842": {
+      "name": "1842",
+      "system": "Modern Medicine"
+    },
+    "2005": {
+      "name": "2005",
+      "system": "Modern Medicine"
+    },
+    "2009": {
+      "name": "2009",
+      "system": "Modern Medicine"
+    },
+    "2326": {
+      "name": "2326",
+      "system": "Modern Medicine"
+    },
+    "3007": {
+      "name": "3007",
+      "system": "Modern Medicine"
+    },
+    "3012": {
+      "name": "3012",
+      "system": "Modern Medicine"
+    },
+    "3675": {
+      "name": "3675",
+      "system": "Modern Medicine"
+    },
+    "3677": {
+      "name": "3677",
+      "system": "Modern Medicine"
+    },
+    "3741": {
+      "name": "3741",
+      "system": "Modern Medicine"
+    },
+    "3744": {
+      "name": "3744",
+      "system": "Modern Medicine"
+    },
+    "3745": {
+      "name": "3745",
+      "system": "Modern Medicine"
+    },
+    "3746": {
+      "name": "3746",
+      "system": "Modern Medicine"
+    },
+    "3753": {
+      "name": "3753",
+      "system": "Modern Medicine"
+    },
+    "3755": {
+      "name": "3755",
+      "system": "Modern Medicine"
+    },
+    "3760": {
+      "name": "3760",
+      "system": "Modern Medicine"
+    },
+    "3777": {
+      "name": "3777",
+      "system": "Modern Medicine"
+    },
+    "3780": {
+      "name": "3780",
+      "system": "Modern Medicine"
+    },
+    "3782": {
+      "name": "3782",
+      "system": "Modern Medicine"
+    },
+    "3787": {
+      "name": "3787",
+      "system": "Modern Medicine"
+    },
+    "3790": {
+      "name": "3790",
+      "system": "Modern Medicine"
+    },
+    "3791": {
+      "name": "3791",
+      "system": "Modern Medicine"
+    },
+    "3792": {
+      "name": "3792",
+      "system": "Modern Medicine"
+    },
+    "3794": {
+      "name": "3794",
+      "system": "Modern Medicine"
+    },
+    "3795": {
+      "name": "3795",
+      "system": "Modern Medicine"
+    },
+    "3797": {
+      "name": "3797",
+      "system": "Modern Medicine"
+    },
+    "3798": {
+      "name": "3798",
+      "system": "Modern Medicine"
+    },
+    "3804": {
+      "name": "3804",
+      "system": "Modern Medicine"
+    },
+    "3806": {
+      "name": "3806",
+      "system": "Modern Medicine"
+    },
+    "3807": {
+      "name": "3807",
+      "system": "Modern Medicine"
+    },
+    "3817": {
+      "name": "3817",
+      "system": "Modern Medicine"
+    },
+    "3818": {
+      "name": "3818",
+      "system": "Modern Medicine"
+    },
+    "3820": {
+      "name": "3820",
+      "system": "Modern Medicine"
+    },
+    "3821": {
+      "name": "3821",
+      "system": "Modern Medicine"
+    },
+    "3825": {
+      "name": "3825",
+      "system": "Modern Medicine"
+    },
+    "3827": {
+      "name": "3827",
+      "system": "Modern Medicine"
+    },
+    "3830": {
+      "name": "3830",
+      "system": "Modern Medicine"
+    },
+    "3831": {
+      "name": "3831",
+      "system": "Modern Medicine"
+    },
+    "3834": {
+      "name": "3834",
+      "system": "Modern Medicine"
+    },
+    "3841": {
+      "name": "3841",
+      "system": "Modern Medicine"
+    },
+    "3897": {
+      "name": "3897",
+      "system": "Modern Medicine"
+    },
+    "3907": {
+      "name": "3907",
+      "system": "Modern Medicine"
+    },
+    "3909": {
+      "name": "3909",
+      "system": "Modern Medicine"
+    },
+    "3911": {
+      "name": "3911",
+      "system": "Modern Medicine"
+    },
+    "3916": {
+      "name": "3916",
+      "system": "Modern Medicine"
+    },
+    "3921": {
+      "name": "3921",
+      "system": "Modern Medicine"
+    },
+    "3922": {
+      "name": "3922",
+      "system": "Modern Medicine"
+    },
+    "3925": {
+      "name": "3925",
+      "system": "Modern Medicine"
+    },
+    "3929": {
+      "name": "3929",
+      "system": "Modern Medicine"
+    },
+    "3930": {
+      "name": "3930",
+      "system": "Modern Medicine"
+    },
+    "3938": {
+      "name": "3938",
+      "system": "Modern Medicine"
+    },
+    "3943": {
+      "name": "3943",
+      "system": "Modern Medicine"
+    },
+    "3944": {
+      "name": "3944",
+      "system": "Modern Medicine"
+    },
+    "3946": {
+      "name": "3946",
+      "system": "Modern Medicine"
+    },
+    "3948": {
+      "name": "3948",
+      "system": "Modern Medicine"
+    },
+    "3954": {
+      "name": "3954",
+      "system": "Modern Medicine"
+    },
+    "3955": {
+      "name": "3955",
+      "system": "Modern Medicine"
+    },
+    "3957": {
+      "name": "3957",
+      "system": "Modern Medicine"
+    },
+    "3961": {
+      "name": "3961",
+      "system": "Modern Medicine"
+    },
+    "4021": {
+      "name": "4021",
+      "system": "Modern Medicine"
+    },
+    "4031": {
+      "name": "4031",
+      "system": "Modern Medicine"
+    },
+    "4032": {
+      "name": "4032",
+      "system": "Modern Medicine"
+    },
+    "4034": {
+      "name": "4034",
+      "system": "Modern Medicine"
+    },
+    "4036": {
+      "name": "4036",
+      "system": "Modern Medicine"
+    },
+    "4038": {
+      "name": "4038",
+      "system": "Modern Medicine"
+    },
+    "4039": {
+      "name": "4039",
+      "system": "Modern Medicine"
+    },
+    "4045": {
+      "name": "4045",
+      "system": "Modern Medicine"
+    },
+    "4053": {
+      "name": "4053",
+      "system": "Modern Medicine"
+    },
+    "4056": {
+      "name": "4056",
+      "system": "Modern Medicine"
+    },
+    "4060": {
+      "name": "4060",
+      "system": "Modern Medicine"
+    },
+    "4061": {
+      "name": "4061",
+      "system": "Modern Medicine"
+    },
+    "4065": {
+      "name": "4065",
+      "system": "Modern Medicine"
+    },
+    "4068": {
+      "name": "4068",
+      "system": "Modern Medicine"
+    },
+    "4095": {
+      "name": "4095",
+      "system": "Modern Medicine"
+    },
+    "4096": {
+      "name": "4096",
+      "system": "Modern Medicine"
+    },
+    "4097": {
+      "name": "4097",
+      "system": "Modern Medicine"
+    },
+    "4098": {
+      "name": "4098",
+      "system": "Modern Medicine"
+    },
+    "4099": {
+      "name": "4099",
+      "system": "Modern Medicine"
+    },
+    "4101": {
+      "name": "4101",
+      "system": "Modern Medicine"
+    },
+    "4102": {
+      "name": "4102",
+      "system": "Modern Medicine"
+    },
+    "4103": {
+      "name": "4103",
+      "system": "Modern Medicine"
+    },
+    "4104": {
+      "name": "4104",
+      "system": "Modern Medicine"
+    },
+    "4105": {
+      "name": "4105",
+      "system": "Modern Medicine"
+    },
+    "4108": {
+      "name": "4108",
+      "system": "Modern Medicine"
+    },
+    "4109": {
+      "name": "4109",
+      "system": "Modern Medicine"
+    },
+    "4111": {
+      "name": "4111",
+      "system": "Modern Medicine"
+    },
+    "4112": {
+      "name": "4112",
+      "system": "Modern Medicine"
+    },
+    "4114": {
+      "name": "4114",
+      "system": "Modern Medicine"
+    },
+    "4118": {
+      "name": "4118",
+      "system": "Modern Medicine"
+    },
+    "4123": {
+      "name": "4123",
+      "system": "Modern Medicine"
+    },
+    "4125": {
+      "name": "4125",
+      "system": "Modern Medicine"
+    },
+    "4126": {
+      "name": "4126",
+      "system": "Modern Medicine"
+    },
+    "4127": {
+      "name": "4127",
+      "system": "Modern Medicine"
+    },
+    "4128": {
+      "name": "4128",
+      "system": "Modern Medicine"
+    },
+    "4136": {
+      "name": "4136",
+      "system": "Modern Medicine"
+    },
+    "4138": {
+      "name": "4138",
+      "system": "Modern Medicine"
+    },
+    "4140": {
+      "name": "4140",
+      "system": "Modern Medicine"
+    },
+    "4141": {
+      "name": "4141",
+      "system": "Modern Medicine"
+    },
+    "4143": {
+      "name": "4143",
+      "system": "Modern Medicine"
+    },
+    "4144": {
+      "name": "4144",
+      "system": "Modern Medicine"
+    },
+    "4145": {
+      "name": "4145",
+      "system": "Modern Medicine"
+    },
+    "4146": {
+      "name": "4146",
+      "system": "Modern Medicine"
+    },
+    "4147": {
+      "name": "4147",
+      "system": "Modern Medicine"
+    },
+    "4149": {
+      "name": "4149",
+      "system": "Modern Medicine"
+    },
+    "4150": {
+      "name": "4150",
+      "system": "Modern Medicine"
+    },
+    "4151": {
+      "name": "4151",
+      "system": "Modern Medicine"
+    },
+    "4153": {
+      "name": "4153",
+      "system": "Modern Medicine"
+    },
+    "4154": {
+      "name": "4154",
+      "system": "Modern Medicine"
+    },
+    "4155": {
+      "name": "4155",
+      "system": "Modern Medicine"
+    },
+    "4346": {
+      "name": "4346",
+      "system": "Modern Medicine"
+    },
+    "4349": {
+      "name": "4349",
+      "system": "Modern Medicine"
+    },
+    "4352": {
+      "name": "4352",
+      "system": "Modern Medicine"
+    },
+    "4353": {
+      "name": "4353",
+      "system": "Modern Medicine"
+    },
+    "4354": {
+      "name": "4354",
+      "system": "Modern Medicine"
+    },
+    "4355": {
+      "name": "4355",
+      "system": "Modern Medicine"
+    },
+    "4356": {
+      "name": "4356",
+      "system": "Modern Medicine"
+    },
+    "4357": {
+      "name": "4357",
+      "system": "Modern Medicine"
+    },
+    "4358": {
+      "name": "4358",
+      "system": "Modern Medicine"
+    },
+    "4359": {
+      "name": "4359",
+      "system": "Modern Medicine"
+    },
+    "4360": {
+      "name": "4360",
+      "system": "Modern Medicine"
+    },
+    "4361": {
+      "name": "4361",
+      "system": "Modern Medicine"
+    },
+    "4362": {
+      "name": "4362",
+      "system": "Modern Medicine"
+    },
+    "4364": {
+      "name": "4364",
+      "system": "Modern Medicine"
+    },
+    "4365": {
+      "name": "4365",
+      "system": "Modern Medicine"
+    },
+    "4366": {
+      "name": "4366",
+      "system": "Modern Medicine"
+    },
+    "4367": {
+      "name": "4367",
+      "system": "Modern Medicine"
+    },
+    "4370": {
+      "name": "4370",
+      "system": "Modern Medicine"
+    },
+    "4371": {
+      "name": "4371",
+      "system": "Modern Medicine"
+    },
+    "4372": {
+      "name": "4372",
+      "system": "Modern Medicine"
+    },
+    "4373": {
+      "name": "4373",
+      "system": "Modern Medicine"
+    },
+    "4374": {
+      "name": "4374",
+      "system": "Modern Medicine"
+    },
+    "4375": {
+      "name": "4375",
+      "system": "Modern Medicine"
+    },
+    "4376": {
+      "name": "4376",
+      "system": "Modern Medicine"
+    },
+    "4377": {
+      "name": "4377",
+      "system": "Modern Medicine"
+    },
+    "4378": {
+      "name": "4378",
+      "system": "Modern Medicine"
+    },
+    "4379": {
+      "name": "4379",
+      "system": "Modern Medicine"
+    },
+    "4380": {
+      "name": "4380",
+      "system": "Modern Medicine"
+    },
+    "4381": {
+      "name": "4381",
+      "system": "Modern Medicine"
+    },
+    "4382": {
+      "name": "4382",
+      "system": "Modern Medicine"
+    },
+    "4383": {
+      "name": "4383",
+      "system": "Modern Medicine"
+    },
+    "4384": {
+      "name": "4384",
+      "system": "Modern Medicine"
+    },
+    "4385": {
+      "name": "4385",
+      "system": "Modern Medicine"
+    },
+    "4386": {
+      "name": "4386",
+      "system": "Modern Medicine"
+    },
+    "4387": {
+      "name": "4387",
+      "system": "Modern Medicine"
+    },
+    "4388": {
+      "name": "4388",
+      "system": "Modern Medicine"
+    },
+    "4389": {
+      "name": "4389",
+      "system": "Modern Medicine"
+    },
+    "4390": {
+      "name": "4390",
+      "system": "Modern Medicine"
+    },
+    "4392": {
+      "name": "4392",
+      "system": "Modern Medicine"
+    },
+    "4393": {
+      "name": "4393",
+      "system": "Modern Medicine"
+    },
+    "4394": {
+      "name": "4394",
+      "system": "Modern Medicine"
+    },
+    "4395": {
+      "name": "4395",
+      "system": "Modern Medicine"
+    },
+    "4396": {
+      "name": "4396",
+      "system": "Modern Medicine"
+    },
+    "4397": {
+      "name": "4397",
+      "system": "Modern Medicine"
+    },
+    "4398": {
+      "name": "4398",
+      "system": "Modern Medicine"
+    },
+    "4399": {
+      "name": "4399",
+      "system": "Modern Medicine"
+    },
+    "4400": {
+      "name": "4400",
+      "system": "Modern Medicine"
+    },
+    "4401": {
+      "name": "4401",
+      "system": "Modern Medicine"
+    },
+    "4402": {
+      "name": "4402",
+      "system": "Modern Medicine"
+    },
+    "4403": {
+      "name": "4403",
+      "system": "Modern Medicine"
+    },
+    "4404": {
+      "name": "4404",
+      "system": "Modern Medicine"
+    },
+    "4405": {
+      "name": "4405",
+      "system": "Modern Medicine"
+    },
+    "4406": {
+      "name": "4406",
+      "system": "Modern Medicine"
+    },
+    "4407": {
+      "name": "4407",
+      "system": "Modern Medicine"
+    },
+    "4408": {
+      "name": "4408",
+      "system": "Modern Medicine"
+    },
+    "4409": {
+      "name": "4409",
+      "system": "Modern Medicine"
+    },
+    "4410": {
+      "name": "4410",
+      "system": "Modern Medicine"
+    },
+    "4411": {
+      "name": "4411",
+      "system": "Modern Medicine"
+    },
+    "4412": {
+      "name": "4412",
+      "system": "Modern Medicine"
+    },
+    "4413": {
+      "name": "4413",
+      "system": "Modern Medicine"
+    },
+    "4415": {
+      "name": "4415",
+      "system": "Modern Medicine"
+    },
+    "4416": {
+      "name": "4416",
+      "system": "Modern Medicine"
+    },
+    "4417": {
+      "name": "4417",
+      "system": "Modern Medicine"
+    },
+    "4418": {
+      "name": "4418",
+      "system": "Modern Medicine"
+    },
+    "4426": {
+      "name": "4426",
+      "system": "Modern Medicine"
+    },
+    "4427": {
+      "name": "4427",
+      "system": "Modern Medicine"
+    },
+    "4428": {
+      "name": "4428",
+      "system": "Modern Medicine"
+    },
+    "4429": {
+      "name": "4429",
+      "system": "Modern Medicine"
+    },
+    "4431": {
+      "name": "4431",
+      "system": "Modern Medicine"
+    },
+    "4432": {
+      "name": "4432",
+      "system": "Modern Medicine"
+    },
+    "4434": {
+      "name": "4434",
+      "system": "Modern Medicine"
+    },
+    "4435": {
+      "name": "4435",
+      "system": "Modern Medicine"
+    },
+    "4436": {
+      "name": "4436",
+      "system": "Modern Medicine"
+    },
+    "4437": {
+      "name": "4437",
+      "system": "Modern Medicine"
+    },
+    "4438": {
+      "name": "4438",
+      "system": "Modern Medicine"
+    },
+    "4439": {
+      "name": "4439",
+      "system": "Modern Medicine"
+    },
+    "4440": {
+      "name": "4440",
+      "system": "Modern Medicine"
+    },
+    "4441": {
+      "name": "4441",
+      "system": "Modern Medicine"
+    },
+    "4442": {
+      "name": "4442",
+      "system": "Modern Medicine"
+    },
+    "4448": {
+      "name": "4448",
+      "system": "Modern Medicine"
+    },
+    "4449": {
+      "name": "4449",
+      "system": "Modern Medicine"
+    },
+    "4450": {
+      "name": "4450",
+      "system": "Modern Medicine"
+    },
+    "4451": {
+      "name": "4451",
+      "system": "Modern Medicine"
+    },
+    "4452": {
+      "name": "4452",
+      "system": "Modern Medicine"
+    },
+    "4454": {
+      "name": "4454",
+      "system": "Modern Medicine"
+    },
+    "4455": {
+      "name": "4455",
+      "system": "Modern Medicine"
+    },
+    "4457": {
+      "name": "4457",
+      "system": "Modern Medicine"
+    },
+    "4458": {
+      "name": "4458",
+      "system": "Modern Medicine"
+    },
+    "4460": {
+      "name": "4460",
+      "system": "Modern Medicine"
+    },
+    "4461": {
+      "name": "4461",
+      "system": "Modern Medicine"
+    },
+    "4462": {
+      "name": "4462",
+      "system": "Modern Medicine"
+    },
+    "4463": {
+      "name": "4463",
+      "system": "Modern Medicine"
+    },
+    "4464": {
+      "name": "4464",
+      "system": "Modern Medicine"
+    },
+    "4467": {
+      "name": "4467",
+      "system": "Modern Medicine"
+    },
+    "4468": {
+      "name": "4468",
+      "system": "Modern Medicine"
+    },
+    "4469": {
+      "name": "4469",
+      "system": "Modern Medicine"
+    },
+    "4470": {
+      "name": "4470",
+      "system": "Modern Medicine"
+    },
+    "4472": {
+      "name": "4472",
+      "system": "Modern Medicine"
+    },
+    "4474": {
+      "name": "4474",
+      "system": "Modern Medicine"
+    },
+    "4476": {
+      "name": "4476",
+      "system": "Modern Medicine"
+    },
+    "4477": {
+      "name": "4477",
+      "system": "Modern Medicine"
+    },
+    "4478": {
+      "name": "4478",
+      "system": "Modern Medicine"
+    },
+    "4479": {
+      "name": "4479",
+      "system": "Modern Medicine"
+    },
+    "4480": {
+      "name": "4480",
+      "system": "Modern Medicine"
+    },
+    "4481": {
+      "name": "4481",
+      "system": "Modern Medicine"
+    },
+    "4486": {
+      "name": "4486",
+      "system": "Modern Medicine"
+    },
+    "4487": {
+      "name": "4487",
+      "system": "Modern Medicine"
+    },
+    "4489": {
+      "name": "4489",
+      "system": "Modern Medicine"
+    },
+    "4490": {
+      "name": "4490",
+      "system": "Modern Medicine"
+    },
+    "4492": {
+      "name": "4492",
+      "system": "Modern Medicine"
+    },
+    "4493": {
+      "name": "4493",
+      "system": "Modern Medicine"
+    },
+    "4494": {
+      "name": "4494",
+      "system": "Modern Medicine"
+    },
+    "4496": {
+      "name": "4496",
+      "system": "Modern Medicine"
+    },
+    "4497": {
+      "name": "4497",
+      "system": "Modern Medicine"
+    },
+    "4500": {
+      "name": "4500",
+      "system": "Modern Medicine"
+    },
+    "4501": {
+      "name": "4501",
+      "system": "Modern Medicine"
+    },
+    "4503": {
+      "name": "4503",
+      "system": "Modern Medicine"
+    },
+    "4504": {
+      "name": "4504",
+      "system": "Modern Medicine"
+    },
+    "4505": {
+      "name": "4505",
+      "system": "Modern Medicine"
+    },
+    "4506": {
+      "name": "4506",
+      "system": "Modern Medicine"
+    },
+    "4507": {
+      "name": "4507",
+      "system": "Modern Medicine"
+    },
+    "4509": {
+      "name": "4509",
+      "system": "Modern Medicine"
+    },
+    "4510": {
+      "name": "4510",
+      "system": "Modern Medicine"
+    },
+    "4511": {
+      "name": "4511",
+      "system": "Modern Medicine"
+    },
+    "4512": {
+      "name": "4512",
+      "system": "Modern Medicine"
+    },
+    "4513": {
+      "name": "4513",
+      "system": "Modern Medicine"
+    },
+    "4515": {
+      "name": "4515",
+      "system": "Modern Medicine"
+    },
+    "4517": {
+      "name": "4517",
+      "system": "Modern Medicine"
+    },
+    "4518": {
+      "name": "4518",
+      "system": "Modern Medicine"
+    },
+    "4519": {
+      "name": "4519",
+      "system": "Modern Medicine"
+    },
+    "4521": {
+      "name": "4521",
+      "system": "Modern Medicine"
+    },
+    "4522": {
+      "name": "4522",
+      "system": "Modern Medicine"
+    },
+    "4524": {
+      "name": "4524",
+      "system": "Modern Medicine"
+    },
+    "4525": {
+      "name": "4525",
+      "system": "Modern Medicine"
+    },
+    "4526": {
+      "name": "4526",
+      "system": "Modern Medicine"
+    },
+    "4527": {
+      "name": "4527",
+      "system": "Modern Medicine"
+    },
+    "4528": {
+      "name": "4528",
+      "system": "Modern Medicine"
+    },
+    "4529": {
+      "name": "4529",
+      "system": "Modern Medicine"
+    },
+    "4531": {
+      "name": "4531",
+      "system": "Modern Medicine"
+    },
+    "4532": {
+      "name": "4532",
+      "system": "Modern Medicine"
+    },
+    "4533": {
+      "name": "4533",
+      "system": "Modern Medicine"
+    },
+    "4534": {
+      "name": "4534",
+      "system": "Modern Medicine"
+    },
+    "4535": {
+      "name": "4535",
+      "system": "Modern Medicine"
+    },
+    "4537": {
+      "name": "4537",
+      "system": "Modern Medicine"
+    },
+    "4538": {
+      "name": "4538",
+      "system": "Modern Medicine"
+    },
+    "4539": {
+      "name": "4539",
+      "system": "Modern Medicine"
+    },
+    "4540": {
+      "name": "4540",
+      "system": "Modern Medicine"
+    },
+    "4542": {
+      "name": "4542",
+      "system": "Modern Medicine"
+    },
+    "4544": {
+      "name": "4544",
+      "system": "Modern Medicine"
+    },
+    "4545": {
+      "name": "4545",
+      "system": "Modern Medicine"
+    },
+    "4546": {
+      "name": "4546",
+      "system": "Modern Medicine"
+    },
+    "4548": {
+      "name": "4548",
+      "system": "Modern Medicine"
+    },
+    "4549": {
+      "name": "4549",
+      "system": "Modern Medicine"
+    },
+    "4551": {
+      "name": "4551",
+      "system": "Modern Medicine"
+    },
+    "4552": {
+      "name": "4552",
+      "system": "Modern Medicine"
+    },
+    "4557": {
+      "name": "4557",
+      "system": "Modern Medicine"
+    },
+    "4561": {
+      "name": "4561",
+      "system": "Modern Medicine"
+    },
+    "4563": {
+      "name": "4563",
+      "system": "Modern Medicine"
+    },
+    "4564": {
+      "name": "4564",
+      "system": "Modern Medicine"
+    },
+    "4565": {
+      "name": "4565",
+      "system": "Modern Medicine"
+    },
+    "4567": {
+      "name": "4567",
+      "system": "Modern Medicine"
+    },
+    "4568": {
+      "name": "4568",
+      "system": "Modern Medicine"
+    },
+    "4570": {
+      "name": "4570",
+      "system": "Modern Medicine"
+    },
+    "4571": {
+      "name": "4571",
+      "system": "Modern Medicine"
+    },
+    "4572": {
+      "name": "4572",
+      "system": "Modern Medicine"
+    },
+    "4573": {
+      "name": "4573",
+      "system": "Modern Medicine"
+    },
+    "4574": {
+      "name": "4574",
+      "system": "Modern Medicine"
+    },
+    "4575": {
+      "name": "4575",
+      "system": "Modern Medicine"
+    },
+    "4577": {
+      "name": "4577",
+      "system": "Modern Medicine"
+    },
+    "4578": {
+      "name": "4578",
+      "system": "Modern Medicine"
+    },
+    "4579": {
+      "name": "4579",
+      "system": "Modern Medicine"
+    },
+    "4581": {
+      "name": "4581",
+      "system": "Modern Medicine"
+    },
+    "4582": {
+      "name": "4582",
+      "system": "Modern Medicine"
+    },
+    "4584": {
+      "name": "4584",
+      "system": "Modern Medicine"
+    },
+    "4585": {
+      "name": "4585",
+      "system": "Modern Medicine"
+    },
+    "4586": {
+      "name": "4586",
+      "system": "Modern Medicine"
+    },
+    "4587": {
+      "name": "4587",
+      "system": "Modern Medicine"
+    },
+    "4588": {
+      "name": "4588",
+      "system": "Modern Medicine"
+    },
+    "4589": {
+      "name": "4589",
+      "system": "Modern Medicine"
+    },
+    "4590": {
+      "name": "4590",
+      "system": "Modern Medicine"
+    },
+    "4594": {
+      "name": "4594",
+      "system": "Modern Medicine"
+    },
+    "4595": {
+      "name": "4595",
+      "system": "Modern Medicine"
+    },
+    "4599": {
+      "name": "4599",
+      "system": "Modern Medicine"
+    },
+    "4600": {
+      "name": "4600",
+      "system": "Modern Medicine"
+    },
+    "4601": {
+      "name": "4601",
+      "system": "Modern Medicine"
+    },
+    "4602": {
+      "name": "4602",
+      "system": "Modern Medicine"
+    },
+    "4603": {
+      "name": "4603",
+      "system": "Modern Medicine"
+    },
+    "4604": {
+      "name": "4604",
+      "system": "Modern Medicine"
+    },
+    "4609": {
+      "name": "4609",
+      "system": "Modern Medicine"
+    },
+    "4611": {
+      "name": "4611",
+      "system": "Modern Medicine"
+    },
+    "4612": {
+      "name": "4612",
+      "system": "Modern Medicine"
+    },
+    "4614": {
+      "name": "4614",
+      "system": "Modern Medicine"
+    },
+    "4615": {
+      "name": "4615",
+      "system": "Modern Medicine"
+    },
+    "4617": {
+      "name": "4617",
+      "system": "Modern Medicine"
+    },
+    "4618": {
+      "name": "4618",
+      "system": "Modern Medicine"
+    },
+    "4619": {
+      "name": "4619",
+      "system": "Modern Medicine"
+    },
+    "4620": {
+      "name": "4620",
+      "system": "Modern Medicine"
+    },
+    "4621": {
+      "name": "4621",
+      "system": "Modern Medicine"
+    },
+    "4622": {
+      "name": "4622",
+      "system": "Modern Medicine"
+    },
+    "4625": {
+      "name": "4625",
+      "system": "Modern Medicine"
+    },
+    "4626": {
+      "name": "4626",
+      "system": "Modern Medicine"
+    },
+    "4627": {
+      "name": "4627",
+      "system": "Modern Medicine"
+    },
+    "4628": {
+      "name": "4628",
+      "system": "Modern Medicine"
+    },
+    "4629": {
+      "name": "4629",
+      "system": "Modern Medicine"
+    },
+    "4630": {
+      "name": "4630",
+      "system": "Modern Medicine"
+    },
+    "4631": {
+      "name": "4631",
+      "system": "Modern Medicine"
+    },
+    "4632": {
+      "name": "4632",
+      "system": "Modern Medicine"
+    },
+    "4633": {
+      "name": "4633",
+      "system": "Modern Medicine"
+    },
+    "11686": {
+      "name": "11686",
+      "system": "Modern Medicine"
+    },
+    "11688": {
+      "name": "11688",
+      "system": "Modern Medicine"
+    },
+    "11767": {
+      "name": "11767",
+      "system": "Modern Medicine"
+    },
+    "4074.0": {
+      "name": "4074.0",
+      "system": "Dentistry"
+    },
+    "4075.0": {
+      "name": "4075.0",
+      "system": "Dentistry"
+    },
+    "4076.0": {
+      "name": "4076.0",
+      "system": "Dentistry"
+    },
+    "4520.0": {
+      "name": "4520.0",
+      "system": "Dentistry"
+    },
+    "4543.0": {
+      "name": "4543.0",
+      "system": "Dentistry"
+    },
+    "4550.0": {
+      "name": "4550.0",
+      "system": "Dentistry"
+    },
+    "4576.0": {
+      "name": "4576.0",
+      "system": "Dentistry"
+    },
+    "4583.0": {
+      "name": "4583.0",
+      "system": "Dentistry"
+    },
+    "4593.0": {
+      "name": "4593.0",
+      "system": "Dentistry"
+    },
+    "4606.0": {
+      "name": "4606.0",
+      "system": "Dentistry"
+    },
+    "4610.0": {
+      "name": "4610.0",
+      "system": "Dentistry"
+    },
+    "4616.0": {
+      "name": "4616.0",
+      "system": "Dentistry"
+    },
+    "4079.0": {
+      "name": "4079.0",
+      "system": "Ayurveda"
+    },
+    "4080.0": {
+      "name": "4080.0",
+      "system": "Ayurveda"
+    },
+    "4081.0": {
+      "name": "4081.0",
+      "system": "Ayurveda"
+    },
+    "4541.0": {
+      "name": "4541.0",
+      "system": "Ayurveda"
+    },
+    "4547.0": {
+      "name": "4547.0",
+      "system": "Ayurveda"
+    },
+    "4569.0": {
+      "name": "4569.0",
+      "system": "Ayurveda"
+    },
+    "4580.0": {
+      "name": "4580.0",
+      "system": "Ayurveda"
+    },
+    "4592.0": {
+      "name": "4592.0",
+      "system": "Ayurveda"
+    },
+    "4597.0": {
+      "name": "4597.0",
+      "system": "Ayurveda"
+    },
+    "4598.0": {
+      "name": "4598.0",
+      "system": "Ayurveda"
+    },
+    "4605.0": {
+      "name": "4605.0",
+      "system": "Ayurveda"
+    },
+    "4607.0": {
+      "name": "4607.0",
+      "system": "Ayurveda"
+    },
+    "4623.0": {
+      "name": "4623.0",
+      "system": "Ayurveda"
+    },
+    "4624.0": {
+      "name": "4624.0",
+      "system": "Ayurveda"
+    },
+    "11786.0": {
+      "name": "11786.0",
+      "system": "Ayurveda"
+    },
+    "11787.0": {
+      "name": "11787.0",
+      "system": "Ayurveda"
+    },
+    "11788.0": {
+      "name": "11788.0",
+      "system": "Ayurveda"
+    },
+    "4082.0": {
+      "name": "4082.0",
+      "system": "Unani"
+    },
+    "4083.0": {
+      "name": "4083.0",
+      "system": "Unani"
+    },
+    "4608.0": {
+      "name": "4608.0",
+      "system": "Unani"
+    },
+    "61.0": {
+      "name": "61.0",
+      "system": "Siddha"
+    },
+    "62.0": {
+      "name": "62.0",
+      "system": "Siddha"
+    },
+    "63.0": {
+      "name": "63.0",
+      "system": "Siddha"
+    },
+    "64.0": {
+      "name": "64.0",
+      "system": "Siddha"
+    },
+    "65.0": {
+      "name": "65.0",
+      "system": "Siddha"
+    },
+    "66.0": {
+      "name": "66.0",
+      "system": "Siddha"
+    },
+    "67.0": {
+      "name": "67.0",
+      "system": "Siddha"
+    },
+    "68.0": {
+      "name": "68.0",
+      "system": "Siddha"
+    },
+    "69.0": {
+      "name": "69.0",
+      "system": "Siddha"
+    },
+    "70.0": {
+      "name": "70.0",
+      "system": "Siddha"
+    },
+    "71.0": {
+      "name": "71.0",
+      "system": "Siddha"
+    },
+    "72.0": {
+      "name": "72.0",
+      "system": "Siddha"
+    },
+    "73.0": {
+      "name": "73.0",
+      "system": "Siddha"
+    },
+    "4536.0": {
+      "name": "4536.0",
+      "system": "Siddha"
+    },
+    "4553.0": {
+      "name": "4553.0",
+      "system": "Siddha"
+    },
+    "4554.0": {
+      "name": "4554.0",
+      "system": "Siddha"
+    },
+    "4555.0": {
+      "name": "4555.0",
+      "system": "Siddha"
+    },
+    "4556.0": {
+      "name": "4556.0",
+      "system": "Siddha"
+    },
+    "4558.0": {
+      "name": "4558.0",
+      "system": "Siddha"
+    },
+    "4559.0": {
+      "name": "4559.0",
+      "system": "Siddha"
+    },
+    "4591.0": {
+      "name": "4591.0",
+      "system": "Siddha"
+    },
+    "74.0": {
+      "name": "74.0",
+      "system": "Sowa-Rigpa"
+    },
+    "4508.0": {
+      "name": "4508.0",
+      "system": "Sowa-Rigpa"
+    },
+    "4514.0": {
+      "name": "4514.0",
+      "system": "Sowa-Rigpa"
+    },
+    "4516.0": {
+      "name": "4516.0",
+      "system": "Sowa-Rigpa"
+    },
+    "11795.0": {
+      "name": "11795.0",
+      "system": "Sowa-Rigpa"
+    },
+    "11796.0": {
+      "name": "11796.0",
+      "system": "Sowa-Rigpa"
+    },
+    "40.0": {
+      "name": "40.0",
+      "system": "Homeopathy"
+    },
+    "41.0": {
+      "name": "41.0",
+      "system": "Homeopathy"
+    },
+    "4094.0": {
+      "name": "4094.0",
+      "system": "Homeopathy"
+    },
+    "4116.0": {
+      "name": "4116.0",
+      "system": "Homeopathy"
+    },
+    "4523.0": {
+      "name": "4523.0",
+      "system": "Homeopathy"
+    },
+    "4530.0": {
+      "name": "4530.0",
+      "system": "Homeopathy"
+    },
+    "4560.0": {
+      "name": "4560.0",
+      "system": "Homeopathy"
+    },
+    "4562.0": {
+      "name": "4562.0",
+      "system": "Homeopathy"
+    },
+    "4566.0": {
+      "name": "4566.0",
+      "system": "Homeopathy"
+    },
+    "4596.0": {
+      "name": "4596.0",
+      "system": "Homeopathy"
+    },
+    "4613.0": {
+      "name": "4613.0",
+      "system": "Homeopathy"
+    }
+  },
+  "council_by_name": {
+    "1": {
+      "name": "1",
+      "system": "Modern Medicine"
+    },
+    "2": {
+      "name": "2",
+      "system": "Modern Medicine"
+    },
+    "3": {
+      "name": "3",
+      "system": "Modern Medicine"
+    },
+    "4": {
+      "name": "4",
+      "system": "Modern Medicine"
+    },
+    "5": {
+      "name": "5",
+      "system": "Modern Medicine"
+    },
+    "6": {
+      "name": "6",
+      "system": "Modern Medicine"
+    },
+    "7": {
+      "name": "7",
+      "system": "Modern Medicine"
+    },
+    "8": {
+      "name": "8",
+      "system": "Modern Medicine"
+    },
+    "9": {
+      "name": "9",
+      "system": "Modern Medicine"
+    },
+    "10": {
+      "name": "10",
+      "system": "Modern Medicine"
+    },
+    "11": {
+      "name": "11",
+      "system": "Modern Medicine"
+    },
+    "12": {
+      "name": "12",
+      "system": "Modern Medicine"
+    },
+    "13": {
+      "name": "13",
+      "system": "Modern Medicine"
+    },
+    "14": {
+      "name": "14",
+      "system": "Modern Medicine"
+    },
+    "15": {
+      "name": "15",
+      "system": "Modern Medicine"
+    },
+    "16": {
+      "name": "16",
+      "system": "Modern Medicine"
+    },
+    "17": {
+      "name": "17",
+      "system": "Modern Medicine"
+    },
+    "18": {
+      "name": "18",
+      "system": "Modern Medicine"
+    },
+    "19": {
+      "name": "19",
+      "system": "Modern Medicine"
+    },
+    "20": {
+      "name": "20",
+      "system": "Modern Medicine"
+    },
+    "21": {
+      "name": "21",
+      "system": "Modern Medicine"
+    },
+    "22": {
+      "name": "22",
+      "system": "Modern Medicine"
+    },
+    "23": {
+      "name": "23",
+      "system": "Modern Medicine"
+    },
+    "24": {
+      "name": "24",
+      "system": "Modern Medicine"
+    },
+    "25": {
+      "name": "25",
+      "system": "Modern Medicine"
+    },
+    "26": {
+      "name": "26",
+      "system": "Modern Medicine"
+    },
+    "27": {
+      "name": "27",
+      "system": "Modern Medicine"
+    },
+    "28": {
+      "name": "28",
+      "system": "Modern Medicine"
+    },
+    "29": {
+      "name": "29",
+      "system": "Modern Medicine"
+    },
+    "118": {
+      "name": "118",
+      "system": "Modern Medicine"
+    },
+    "215": {
+      "name": "215",
+      "system": "Modern Medicine"
+    },
+    "217": {
+      "name": "217",
+      "system": "Modern Medicine"
+    },
+    "222": {
+      "name": "222",
+      "system": "Modern Medicine"
+    },
+    "30": {
+      "name": "30",
+      "system": "Dentistry"
+    },
+    "31": {
+      "name": "31",
+      "system": "Dentistry"
+    },
+    "32": {
+      "name": "32",
+      "system": "Dentistry"
+    },
+    "33": {
+      "name": "33",
+      "system": "Dentistry"
+    },
+    "34": {
+      "name": "34",
+      "system": "Dentistry"
+    },
+    "35": {
+      "name": "35",
+      "system": "Dentistry"
+    },
+    "36": {
+      "name": "36",
+      "system": "Dentistry"
+    },
+    "37": {
+      "name": "37",
+      "system": "Dentistry"
+    },
+    "38": {
+      "name": "38",
+      "system": "Dentistry"
+    },
+    "39": {
+      "name": "39",
+      "system": "Dentistry"
+    },
+    "40": {
+      "name": "40",
+      "system": "Dentistry"
+    },
+    "41": {
+      "name": "41",
+      "system": "Dentistry"
+    },
+    "42": {
+      "name": "42",
+      "system": "Dentistry"
+    },
+    "43": {
+      "name": "43",
+      "system": "Dentistry"
+    },
+    "44": {
+      "name": "44",
+      "system": "Dentistry"
+    },
+    "45": {
+      "name": "45",
+      "system": "Dentistry"
+    },
+    "46": {
+      "name": "46",
+      "system": "Dentistry"
+    },
+    "47": {
+      "name": "47",
+      "system": "Dentistry"
+    },
+    "48": {
+      "name": "48",
+      "system": "Dentistry"
+    },
+    "49": {
+      "name": "49",
+      "system": "Dentistry"
+    },
+    "50": {
+      "name": "50",
+      "system": "Dentistry"
+    },
+    "51": {
+      "name": "51",
+      "system": "Dentistry"
+    },
+    "52": {
+      "name": "52",
+      "system": "Dentistry"
+    },
+    "53": {
+      "name": "53",
+      "system": "Dentistry"
+    },
+    "54": {
+      "name": "54",
+      "system": "Dentistry"
+    },
+    "55": {
+      "name": "55",
+      "system": "Dentistry"
+    },
+    "56": {
+      "name": "56",
+      "system": "Dentistry"
+    },
+    "57": {
+      "name": "57",
+      "system": "Dentistry"
+    },
+    "58": {
+      "name": "58",
+      "system": "Dentistry"
+    },
+    "59": {
+      "name": "59",
+      "system": "Dentistry"
+    },
+    "60": {
+      "name": "60",
+      "system": "Dentistry"
+    },
+    "213": {
+      "name": "213",
+      "system": "Dentistry"
+    },
+    "221": {
+      "name": "221",
+      "system": "Dentistry"
+    },
+    "89.0": {
+      "name": "89.0",
+      "system": "Ayurveda"
+    },
+    "90.0": {
+      "name": "90.0",
+      "system": "Ayurveda"
+    },
+    "91.0": {
+      "name": "91.0",
+      "system": "Ayurveda"
+    },
+    "92.0": {
+      "name": "92.0",
+      "system": "Ayurveda"
+    },
+    "93.0": {
+      "name": "93.0",
+      "system": "Ayurveda"
+    },
+    "94.0": {
+      "name": "94.0",
+      "system": "Ayurveda"
+    },
+    "95.0": {
+      "name": "95.0",
+      "system": "Ayurveda"
+    },
+    "96.0": {
+      "name": "96.0",
+      "system": "Ayurveda"
+    },
+    "97.0": {
+      "name": "97.0",
+      "system": "Ayurveda"
+    },
+    "98.0": {
+      "name": "98.0",
+      "system": "Ayurveda"
+    },
+    "99.0": {
+      "name": "99.0",
+      "system": "Ayurveda"
+    },
+    "100.0": {
+      "name": "100.0",
+      "system": "Ayurveda"
+    },
+    "101.0": {
+      "name": "101.0",
+      "system": "Ayurveda"
+    },
+    "102.0": {
+      "name": "102.0",
+      "system": "Ayurveda"
+    },
+    "103.0": {
+      "name": "103.0",
+      "system": "Ayurveda"
+    },
+    "104.0": {
+      "name": "104.0",
+      "system": "Ayurveda"
+    },
+    "105.0": {
+      "name": "105.0",
+      "system": "Ayurveda"
+    },
+    "106.0": {
+      "name": "106.0",
+      "system": "Ayurveda"
+    },
+    "107.0": {
+      "name": "107.0",
+      "system": "Ayurveda"
+    },
+    "108.0": {
+      "name": "108.0",
+      "system": "Ayurveda"
+    },
+    "110.0": {
+      "name": "110.0",
+      "system": "Ayurveda"
+    },
+    "112.0": {
+      "name": "112.0",
+      "system": "Ayurveda"
+    },
+    "113.0": {
+      "name": "113.0",
+      "system": "Ayurveda"
+    },
+    "114.0": {
+      "name": "114.0",
+      "system": "Ayurveda"
+    },
+    "115.0": {
+      "name": "115.0",
+      "system": "Ayurveda"
+    },
+    "216.0": {
+      "name": "216.0",
+      "system": "Ayurveda"
+    },
+    "116.0": {
+      "name": "116.0",
+      "system": "Unani"
+    },
+    "120.0": {
+      "name": "120.0",
+      "system": "Unani"
+    },
+    "121.0": {
+      "name": "121.0",
+      "system": "Unani"
+    },
+    "122.0": {
+      "name": "122.0",
+      "system": "Unani"
+    },
+    "123.0": {
+      "name": "123.0",
+      "system": "Unani"
+    },
+    "124.0": {
+      "name": "124.0",
+      "system": "Unani"
+    },
+    "125.0": {
+      "name": "125.0",
+      "system": "Unani"
+    },
+    "126.0": {
+      "name": "126.0",
+      "system": "Unani"
+    },
+    "127.0": {
+      "name": "127.0",
+      "system": "Unani"
+    },
+    "128.0": {
+      "name": "128.0",
+      "system": "Unani"
+    },
+    "129.0": {
+      "name": "129.0",
+      "system": "Unani"
+    },
+    "130.0": {
+      "name": "130.0",
+      "system": "Unani"
+    },
+    "131.0": {
+      "name": "131.0",
+      "system": "Unani"
+    },
+    "132.0": {
+      "name": "132.0",
+      "system": "Unani"
+    },
+    "133.0": {
+      "name": "133.0",
+      "system": "Unani"
+    },
+    "134.0": {
+      "name": "134.0",
+      "system": "Unani"
+    },
+    "135.0": {
+      "name": "135.0",
+      "system": "Unani"
+    },
+    "136.0": {
+      "name": "136.0",
+      "system": "Unani"
+    },
+    "137.0": {
+      "name": "137.0",
+      "system": "Unani"
+    },
+    "138.0": {
+      "name": "138.0",
+      "system": "Unani"
+    },
+    "139.0": {
+      "name": "139.0",
+      "system": "Unani"
+    },
+    "140.0": {
+      "name": "140.0",
+      "system": "Unani"
+    },
+    "141.0": {
+      "name": "141.0",
+      "system": "Unani"
+    },
+    "142.0": {
+      "name": "142.0",
+      "system": "Unani"
+    },
+    "143.0": {
+      "name": "143.0",
+      "system": "Unani"
+    },
+    "111.0": {
+      "name": "111.0",
+      "system": "Siddha"
+    },
+    "151.0": {
+      "name": "151.0",
+      "system": "Siddha"
+    },
+    "152.0": {
+      "name": "152.0",
+      "system": "Siddha"
+    },
+    "153.0": {
+      "name": "153.0",
+      "system": "Siddha"
+    },
+    "154.0": {
+      "name": "154.0",
+      "system": "Siddha"
+    },
+    "155.0": {
+      "name": "155.0",
+      "system": "Siddha"
+    },
+    "156.0": {
+      "name": "156.0",
+      "system": "Siddha"
+    },
+    "157.0": {
+      "name": "157.0",
+      "system": "Siddha"
+    },
+    "158.0": {
+      "name": "158.0",
+      "system": "Siddha"
+    },
+    "159.0": {
+      "name": "159.0",
+      "system": "Siddha"
+    },
+    "160.0": {
+      "name": "160.0",
+      "system": "Siddha"
+    },
+    "161.0": {
+      "name": "161.0",
+      "system": "Siddha"
+    },
+    "162.0": {
+      "name": "162.0",
+      "system": "Siddha"
+    },
+    "163.0": {
+      "name": "163.0",
+      "system": "Siddha"
+    },
+    "164.0": {
+      "name": "164.0",
+      "system": "Siddha"
+    },
+    "165.0": {
+      "name": "165.0",
+      "system": "Siddha"
+    },
+    "166.0": {
+      "name": "166.0",
+      "system": "Siddha"
+    },
+    "167.0": {
+      "name": "167.0",
+      "system": "Siddha"
+    },
+    "168.0": {
+      "name": "168.0",
+      "system": "Siddha"
+    },
+    "169.0": {
+      "name": "169.0",
+      "system": "Siddha"
+    },
+    "170.0": {
+      "name": "170.0",
+      "system": "Siddha"
+    },
+    "171.0": {
+      "name": "171.0",
+      "system": "Siddha"
+    },
+    "173.0": {
+      "name": "173.0",
+      "system": "Siddha"
+    },
+    "174.0": {
+      "name": "174.0",
+      "system": "Siddha"
+    },
+    "175.0": {
+      "name": "175.0",
+      "system": "Siddha"
+    },
+    "182.0": {
+      "name": "182.0",
+      "system": "Sowa-Rigpa"
+    },
+    "183.0": {
+      "name": "183.0",
+      "system": "Sowa-Rigpa"
+    },
+    "184.0": {
+      "name": "184.0",
+      "system": "Sowa-Rigpa"
+    },
+    "185.0": {
+      "name": "185.0",
+      "system": "Sowa-Rigpa"
+    },
+    "186.0": {
+      "name": "186.0",
+      "system": "Sowa-Rigpa"
+    },
+    "187.0": {
+      "name": "187.0",
+      "system": "Sowa-Rigpa"
+    },
+    "188.0": {
+      "name": "188.0",
+      "system": "Sowa-Rigpa"
+    },
+    "189.0": {
+      "name": "189.0",
+      "system": "Sowa-Rigpa"
+    },
+    "190.0": {
+      "name": "190.0",
+      "system": "Sowa-Rigpa"
+    },
+    "191.0": {
+      "name": "191.0",
+      "system": "Sowa-Rigpa"
+    },
+    "192.0": {
+      "name": "192.0",
+      "system": "Sowa-Rigpa"
+    },
+    "193.0": {
+      "name": "193.0",
+      "system": "Sowa-Rigpa"
+    },
+    "194.0": {
+      "name": "194.0",
+      "system": "Sowa-Rigpa"
+    },
+    "195.0": {
+      "name": "195.0",
+      "system": "Sowa-Rigpa"
+    },
+    "196.0": {
+      "name": "196.0",
+      "system": "Sowa-Rigpa"
+    },
+    "197.0": {
+      "name": "197.0",
+      "system": "Sowa-Rigpa"
+    },
+    "198.0": {
+      "name": "198.0",
+      "system": "Sowa-Rigpa"
+    },
+    "199.0": {
+      "name": "199.0",
+      "system": "Sowa-Rigpa"
+    },
+    "200.0": {
+      "name": "200.0",
+      "system": "Sowa-Rigpa"
+    },
+    "201.0": {
+      "name": "201.0",
+      "system": "Sowa-Rigpa"
+    },
+    "202.0": {
+      "name": "202.0",
+      "system": "Sowa-Rigpa"
+    },
+    "203.0": {
+      "name": "203.0",
+      "system": "Sowa-Rigpa"
+    },
+    "204.0": {
+      "name": "204.0",
+      "system": "Sowa-Rigpa"
+    },
+    "205.0": {
+      "name": "205.0",
+      "system": "Sowa-Rigpa"
+    },
+    "206.0": {
+      "name": "206.0",
+      "system": "Sowa-Rigpa"
+    },
+    "61.0": {
+      "name": "61.0",
+      "system": "Homeopathy"
+    },
+    "62.0": {
+      "name": "62.0",
+      "system": "Homeopathy"
+    },
+    "63.0": {
+      "name": "63.0",
+      "system": "Homeopathy"
+    },
+    "64.0": {
+      "name": "64.0",
+      "system": "Homeopathy"
+    },
+    "66.0": {
+      "name": "66.0",
+      "system": "Homeopathy"
+    },
+    "67.0": {
+      "name": "67.0",
+      "system": "Homeopathy"
+    },
+    "68.0": {
+      "name": "68.0",
+      "system": "Homeopathy"
+    },
+    "69.0": {
+      "name": "69.0",
+      "system": "Homeopathy"
+    },
+    "70.0": {
+      "name": "70.0",
+      "system": "Homeopathy"
+    },
+    "71.0": {
+      "name": "71.0",
+      "system": "Homeopathy"
+    },
+    "72.0": {
+      "name": "72.0",
+      "system": "Homeopathy"
+    },
+    "73.0": {
+      "name": "73.0",
+      "system": "Homeopathy"
+    },
+    "74.0": {
+      "name": "74.0",
+      "system": "Homeopathy"
+    },
+    "75.0": {
+      "name": "75.0",
+      "system": "Homeopathy"
+    },
+    "76.0": {
+      "name": "76.0",
+      "system": "Homeopathy"
+    },
+    "77.0": {
+      "name": "77.0",
+      "system": "Homeopathy"
+    },
+    "78.0": {
+      "name": "78.0",
+      "system": "Homeopathy"
+    },
+    "79.0": {
+      "name": "79.0",
+      "system": "Homeopathy"
+    },
+    "80.0": {
+      "name": "80.0",
+      "system": "Homeopathy"
+    },
+    "81.0": {
+      "name": "81.0",
+      "system": "Homeopathy"
+    },
+    "82.0": {
+      "name": "82.0",
+      "system": "Homeopathy"
+    },
+    "83.0": {
+      "name": "83.0",
+      "system": "Homeopathy"
+    },
+    "84.0": {
+      "name": "84.0",
+      "system": "Homeopathy"
+    },
+    "85.0": {
+      "name": "85.0",
+      "system": "Homeopathy"
+    },
+    "86.0": {
+      "name": "86.0",
+      "system": "Homeopathy"
+    },
+    "87.0": {
+      "name": "87.0",
+      "system": "Homeopathy"
+    },
+    "88.0": {
+      "name": "88.0",
+      "system": "Homeopathy"
+    },
+    "117.0": {
+      "name": "117.0",
+      "system": "Homeopathy"
+    },
+    "119.0": {
+      "name": "119.0",
+      "system": "Homeopathy"
+    },
+    "214.0": {
+      "name": "214.0",
+      "system": "Homeopathy"
+    },
+    "220.0": {
+      "name": "220.0",
+      "system": "Homeopathy"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+================================================================================
+KARNATAKA HEALTHCARE MASTER DATASET
+================================================================================
+
+MAIN FILE:
+  karnataka_healthcare_master.csv (738 KB, 5,585 records)
+
+SUMMARY FILE:
+  karnataka_healthcare_summary.csv (statistics)
+
+================================================================================
+WHAT'S INCLUDED:
+================================================================================
+
+1. HEALTHCARE FACILITIES (4,219 records)
+   - Hospitals, clinics, pharmacies, dentists
+   - GPS coordinates (92.7% geocoded)
+   - Phone numbers, addresses
+   - District information
+
+2. DISTRICT REFERENCE (31 records)
+   - All Karnataka districts with official IDs
+   - District ISO codes
+
+3. MEDICAL SPECIALIZATIONS (748 records)
+   - Across 7 systems of medicine
+   - Modern Medicine, Ayurveda, Homeopathy, etc.
+
+4. MEDICAL DEGREES (389 records)
+   - MBBS, MD, MS, DM, MCh, DNB, etc.
+   - Organized by system of medicine
+
+5. MEDICAL COUNCILS (198 records)
+   - Including Karnataka Medical Council
+   - All systems of medicine
+
+================================================================================
+CSV COLUMNS:
+================================================================================
+
+data_type           - Record type (HEALTHCARE_FACILITY, DISTRICT_REFERENCE, etc.)
+district_id         - Official district ID
+district_name       - District name (uppercase)
+district_iso_code   - District ISO code
+state               - KARNATAKA
+state_iso_code      - 29
+facility_type       - HOSPITAL, CLINIC, PHARMACY, etc.
+facility_name       - Name of facility
+latitude            - GPS coordinate
+longitude           - GPS coordinate
+phone               - Contact number
+address             - Street address
+specialization      - Medical specialization
+degree              - Medical degree
+council             - Medical council
+system_of_medicine  - Modern Medicine, Ayurveda, etc.
+description         - Additional details
+
+================================================================================
+QUICK STATS:
+================================================================================
+
+Total Records:             5,585
+Healthcare Facilities:     4,219
+  - Hospitals:             1,968 (46.6%)
+  - Clinics:               1,043 (24.7%)
+  - With GPS:              3,911 (92.7%)
+
+Karnataka Districts:          31
+Medical Specializations:     748
+Medical Degrees:             389
+Medical Councils:            198
+
+================================================================================
+HOW TO USE:
+================================================================================
+
+PYTHON:
+  import pandas as pd
+  df = pd.read_csv('karnataka_healthcare_master.csv')
+
+  # Get all facilities
+  facilities = df[df['data_type'] == 'HEALTHCARE_FACILITY']
+
+  # Get Bengaluru hospitals
+  bengaluru_hospitals = df[
+      (df['district_name'] == 'BENGALURU URBAN') &
+      (df['facility_type'] == 'HOSPITAL')
+  ]
+
+EXCEL/GOOGLE SHEETS:
+  1. Open karnataka_healthcare_master.csv
+  2. Use Filter on 'data_type' column
+  3. Select type you need (HEALTHCARE_FACILITY, etc.)
+  4. Sort by district_name or facility_type
+
+COMMAND LINE:
+  # Count hospitals
+  grep "HEALTHCARE_FACILITY" karnataka_healthcare_master.csv | \
+    grep "HOSPITAL" | wc -l
+
+  # Get Bengaluru facilities
+  grep "BENGALURU URBAN" karnataka_healthcare_master.csv
+
+================================================================================
+DATA SOURCES:
+================================================================================
+
+- OpenStreetMap (OSM) - Healthcare facilities
+- ABDM Master Data Production Excel - Reference data
+- NFHS-5 - District health indicators
+
+================================================================================
+NEXT STEPS (OPTIONAL):
+================================================================================
+
+To add healthcare professional data:
+1. Register at https://sandbox.abdm.gov.in
+2. Get ABDM API credentials
+3. Run: python scripts/scrapers/abdm_master_data.py
+4. Collect 50,000+ Karnataka doctors from HPR
+
+================================================================================
+
+Last Updated: 2025-11-13
+Version: 1.0
+Status: READY FOR USE

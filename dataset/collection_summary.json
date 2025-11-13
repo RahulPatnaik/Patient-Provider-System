@@ -1,0 +1,23 @@
+{
+  "completed_at": "2025-11-12T22:30:09.490294",
+  "duration_seconds": 293.811705,
+  "results": {
+    "osm": {
+      "status": "success",
+      "count": 4219
+    },
+    "nfhs": {
+      "status": "success",
+      "count": 3120
+    },
+    "data_gov": {
+      "status": "success",
+      "datasets_found": 0,
+      "downloaded": "phc_data"
+    },
+    "hfr": {
+      "status": "warning",
+      "message": "No facilities found - API may require authentication"
+    }
+  }
+}
