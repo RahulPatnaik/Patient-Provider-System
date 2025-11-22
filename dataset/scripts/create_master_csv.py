@@ -21,6 +21,13 @@ def create_master_csv():
     with open('dataset/raw/osm/karnataka_health_osm.json') as f:
         facility_data = json.load(f)
 
+    # KPME data
+    kpme_df = None
+    kpme_path = Path('dataset/KPME_DATA.csv')
+    if kpme_path.exists():
+        print("Loading KPME data...")
+        kpme_df = pd.read_csv(kpme_path)
+
     # Prepare master dataset
     master_data = []
 
@@ -167,6 +174,41 @@ def create_master_csv():
                 'description': f'{system} medical council #{idx}'
             })
 
+    # Section 6: KPME Establishments
+    if kpme_df is not None and len(kpme_df) > 0:
+        print(f"Processing KPME establishment data ({len(kpme_df)} establishments)...")
+        for _, row in kpme_df.iterrows():
+            # Find district reference
+            district_name = row.get('district', '').upper() if pd.notna(row.get('district')) else ''
+            district_id = ''
+            district_iso = ''
+
+            for dist in ref_data['karnataka_districts']:
+                if district_name and (dist['district_name'] == district_name or district_name in dist['district_name']):
+                    district_id = dist['district_id']
+                    district_iso = dist['district_iso_code']
+                    break
+
+            master_data.append({
+                'data_type': 'KPME_ESTABLISHMENT',
+                'district_id': district_id,
+                'district_name': district_name,
+                'district_iso_code': district_iso,
+                'state': 'KARNATAKA',
+                'state_iso_code': '29',
+                'facility_type': row.get('category', '').upper() if pd.notna(row.get('category')) else '',
+                'facility_name': row.get('establishment_name', '') if pd.notna(row.get('establishment_name')) else '',
+                'latitude': '',
+                'longitude': '',
+                'phone': '',
+                'address': row.get('address', '') if pd.notna(row.get('address')) else '',
+                'specialization': '',
+                'degree': '',
+                'council': '',
+                'system_of_medicine': row.get('system_of_medicine', '') if pd.notna(row.get('system_of_medicine')) else '',
+                'description': f"KPME Cert: {row.get('certificate_number', '')}, Valid: {row.get('certificate_validity', '')}"
+            })
+
     # Convert to DataFrame
     print("Creating master CSV...")
     df = pd.DataFrame(master_data)
@@ -188,10 +230,13 @@ def create_master_csv():
     print(f"\n{'='*70}")
 
     # Create summary CSV
+    kpme_count = len(kpme_df) if kpme_df is not None else 0
+
     summary_data = {
         'Metric': [
             'Karnataka Districts',
-            'Healthcare Facilities',
+            'Healthcare Facilities (OSM)',
+            'KPME Establishments',
             'Medical Specializations',
             'Medical Degrees',
             'Medical Councils',
@@ -204,6 +249,7 @@ def create_master_csv():
         'Count': [
             len(ref_data['karnataka_districts']),
             len([r for r in master_data if r['data_type'] == 'HEALTHCARE_FACILITY']),
+            kpme_count,
             sum(len(v) for v in ref_data['medical_specializations'].values()),
             sum(len(v) for v in ref_data['medical_degrees'].values()),
             sum(len(v) for v in ref_data['medical_councils'].values()),
