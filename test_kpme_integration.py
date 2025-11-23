@@ -83,17 +83,17 @@ async def test_kpme_database():
         print(f"    Region Type: {result.region_type}")
 
     print("\n" + "=" * 80)
-    print("TEST 4: Fast Validator Agent")
+    print("TEST 4: Fast Validator Agent (Quick Check)")
     print("=" * 80)
 
-    fast_validator = FastValidatorAgent(region=Region.INDIA)
+    fast_validator = FastValidatorAgent()
 
     # Use the same certificate
     if results:
         cert_num = results[0]['certificate_number']
         print(f"\n✓ Testing fast validation with certificate: {cert_num}")
 
-        result = await fast_validator.quick_kpme_check(
+        result = fast_validator.quick_kpme_check(
             certificate_number=cert_num
         )
 
