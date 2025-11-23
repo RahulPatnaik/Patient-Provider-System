@@ -1,8 +1,12 @@
 """
-Demo script for Data Validator Agent (KPME Karnataka)
+Data Validator Agent Demo - KPME Karnataka
 
-This script demonstrates the Data Validator Agent validating
-KPME Karnataka healthcare establishment data.
+Shows the hybrid architecture:
+1. Deterministic KPME validation (no AI)
+2. Deterministic data quality checks (no AI)
+3. AI synthesis for final decision (only 1 API call)
+
+Note: Requires Gemini API quota for the AI synthesis step.
 """
 
 import asyncio
@@ -17,160 +21,141 @@ from database.kpme_db import get_kpme_db
 
 
 async def demo_data_validator():
-    """Demonstrate Data Validator Agent functionality."""
+    """Demonstrate Data Validator Agent."""
 
     print("=" * 80)
     print("DATA VALIDATOR AGENT DEMO - KPME Karnataka")
     print("=" * 80)
+    print("\nArchitecture:")
+    print("  1. Deterministic KPME validation (no AI)")
+    print("  2. Deterministic data quality checks (no AI)")
+    print("  3. AI synthesis for final confidence (1 API call)")
+    print("=" * 80)
 
-    # Initialize agent
+    # Initialize
     print("\n[1] Initializing Data Validator Agent...")
     agent = DataValidatorAgent()
-    print("✓ Agent initialized successfully")
+    print("✓ Agent initialized")
 
-    # Get sample data from database
+    # Get sample data
     print("\n[2] Fetching sample establishment from KPME database...")
     db = get_kpme_db()
     establishments = db.search_establishment_by_name("hospital", limit=1)
 
     if not establishments:
-        print("✗ No establishments found in database")
+        print("✗ No establishments found")
         return
 
-    sample_est = establishments[0]
-    print(f"✓ Found: {sample_est['establishment_name']}")
-    print(f"  Certificate: {sample_est['certificate_number']}")
-    print(f"  District: {sample_est['district']}")
+    sample = establishments[0]
+    print(f"✓ Found: {sample['establishment_name']}")
+    print(f"  Certificate: {sample['certificate_number']}")
+    print(f"  District: {sample['district']}")
 
     # Prepare provider data
     provider_data = {
-        "certificate_number": sample_est['certificate_number'],
-        "establishment_name": sample_est['establishment_name'],
-        "address": sample_est.get('address', ''),
-        "phone": sample_est.get('phone', ''),
-        "email": sample_est.get('email', ''),
-        "district": sample_est.get('district', '')
+        "certificate_number": sample['certificate_number'],
+        "establishment_name": sample['establishment_name'],
+        "address": sample.get('address', ''),
+        "phone": sample.get('phone', ''),
+        "email": sample.get('email', ''),
+        "district": sample.get('district', '')
     }
 
-    # Demo 1: Basic Validation
+    # Demo 1: Full Validation
     print("\n" + "=" * 80)
-    print("DEMO 1: Basic KPME Validation")
+    print("DEMO 1: Full KPME Validation (Hybrid Architecture)")
     print("=" * 80)
 
     print("\nValidating provider data...")
-    result = await agent.validate(provider_data=provider_data)
+    print("  [Step 1] Running deterministic KPME validation...")
+    print("  [Step 2] Running deterministic data quality checks...")
+    print("  [Step 3] Using AI to synthesize results...")
 
-    print(f"\n✓ Validation completed!")
-    print(f"\n  KPME Validation Result:")
-    print(f"    - Valid: {result.kpme_validation.is_valid}")
-    print(f"    - Exists: {result.kpme_validation.exists}")
-    print(f"    - Certificate: {result.kpme_validation.certificate_number}")
-    print(f"    - Name: {result.kpme_validation.establishment_name}")
-    print(f"    - Category: {result.kpme_validation.category}")
-    print(f"    - District: {result.kpme_validation.district}")
-    print(f"    - Expired: {result.kpme_validation.is_expired}")
-    print(f"    - Confidence: {result.kpme_validation.confidence:.2f}")
+    try:
+        result = await agent.validate(provider_data=provider_data)
 
-    print(f"\n  Data Quality Assessment:")
-    print(f"    - Completeness: {result.data_quality.completeness_score:.2%}")
-    print(f"    - Accuracy: {result.data_quality.accuracy_score:.2%}")
-    print(f"    - Overall Score: {result.data_quality.overall_score:.2%}")
-    print(f"    - Missing Fields: {result.data_quality.missing_fields}")
-    print(f"    - Issues: {result.data_quality.issues}")
+        print("\n✅ Validation completed!")
+        print(f"\n📊 KPME Validation:")
+        print(f"    Valid: {result.kpme_validation.is_valid}")
+        print(f"    Exists: {result.kpme_validation.exists}")
+        print(f"    Certificate: {result.kpme_validation.certificate_number}")
+        print(f"    Name: {result.kpme_validation.establishment_name}")
+        print(f"    Category: {result.kpme_validation.category}")
+        print(f"    District: {result.kpme_validation.district}")
+        print(f"    Expired: {result.kpme_validation.is_expired}")
+        print(f"    Confidence: {result.kpme_validation.confidence:.2%}")
 
-    print(f"\n  Overall:")
-    print(f"    - Is Valid: {result.is_valid}")
-    print(f"    - Overall Confidence: {result.overall_confidence:.2%}")
-    print(f"    - Timestamp: {result.validation_timestamp}")
+        print(f"\n📈 Data Quality:")
+        print(f"    Completeness: {result.data_quality.completeness_score:.2%}")
+        print(f"    Accuracy: {result.data_quality.accuracy_score:.2%}")
+        print(f"    Overall Score: {result.data_quality.overall_score:.2%}")
+        print(f"    Missing Fields: {result.data_quality.missing_fields}")
+        print(f"    Issues: {result.data_quality.issues}")
 
-    # Demo 2: Validation with incomplete data
+        print(f"\n🎯 Final Decision (AI Synthesis):")
+        print(f"    Is Valid: {result.is_valid}")
+        print(f"    Overall Confidence: {result.overall_confidence:.2%}")
+        print(f"    Timestamp: {result.validation_timestamp}")
+
+    except Exception as e:
+        print(f"\n❌ Validation failed: {str(e)}")
+        print("\nNote: This requires Gemini API quota for the AI synthesis step.")
+        print("If quota is exhausted, the deterministic steps still completed successfully.")
+
+    # Demo 2: With Incomplete Data
     print("\n" + "=" * 80)
     print("DEMO 2: Validation with Incomplete Data")
     print("=" * 80)
 
     incomplete_data = {
-        "certificate_number": sample_est['certificate_number'],
-        "establishment_name": sample_est['establishment_name']
+        "certificate_number": sample['certificate_number'],
+        "establishment_name": sample['establishment_name']
         # Missing address, phone, email
     }
 
     print("\nValidating incomplete provider data (missing address, phone, email)...")
-    result2 = await agent.validate(provider_data=incomplete_data)
 
-    print(f"\n✓ Validation completed!")
-    print(f"  - Completeness: {result2.data_quality.completeness_score:.2%}")
-    print(f"  - Missing Fields: {result2.data_quality.missing_fields}")
-    print(f"  - Overall Confidence: {result2.overall_confidence:.2%}")
+    try:
+        result2 = await agent.validate(provider_data=incomplete_data)
 
-    # Demo 3: Validation with agent integration flags
+        print("\n✅ Validation completed!")
+        print(f"    Completeness: {result2.data_quality.completeness_score:.2%}")
+        print(f"    Missing Fields: {result2.data_quality.missing_fields}")
+        print(f"    Overall Confidence: {result2.overall_confidence:.2%}")
+
+    except Exception as e:
+        print(f"\n❌ Validation failed: {str(e)}")
+
+    # Demo 3: With Agent Integration Flags
     print("\n" + "=" * 80)
     print("DEMO 3: Validation with Agent Integration Flags")
     print("=" * 80)
 
-    print("\nValidating with web scraper, enrichment, and compliance flags enabled...")
-    print("(Note: Integration not implemented yet, but flags are supported)")
+    print("\nValidating with web scraper, enrichment, compliance flags...")
+    print("(These agents are not yet implemented, but the architecture supports them)")
 
-    result3 = await agent.validate(
-        provider_data=provider_data,
-        use_web_scraper=True,
-        use_enrichment=True,
-        use_compliance=True
-    )
+    try:
+        result3 = await agent.validate(
+            provider_data=provider_data,
+            use_web_scraper=True,
+            use_enrichment=True,
+            use_compliance=True
+        )
 
-    print(f"\n✓ Validation completed with agent integration flags!")
-    print(f"  - Web Scraper Data: {result3.web_scraper_data}")
-    print(f"  - Enrichment Data: {result3.enrichment_data}")
-    print(f"  - Compliance Data: {result3.compliance_data}")
-    print(f"  - Overall Confidence: {result3.overall_confidence:.2%}")
+        print("\n✅ Validation completed with agent flags!")
+        print(f"    Overall Confidence: {result3.overall_confidence:.2%}")
 
-    # Demo 4: Validation with expected output (testing scenario)
-    print("\n" + "=" * 80)
-    print("DEMO 4: Validation with Expected Output (Testing Scenario)")
-    print("=" * 80)
-
-    expected_output = {
-        "kpme_validation": {
-            "is_valid": True,
-            "exists": True,
-            "certificate_number": "TEST123",
-            "establishment_name": "Test Hospital",
-            "category": "Hospital",
-            "district": "BANGALORE",
-            "is_expired": False,
-            "confidence": 0.95,
-            "details": {}
-        },
-        "data_quality": {
-            "completeness_score": 1.0,
-            "accuracy_score": 1.0,
-            "overall_score": 1.0,
-            "missing_fields": [],
-            "issues": []
-        },
-        "overall_confidence": 0.95,
-        "is_valid": True
-    }
-
-    print("\nValidating with expected output for testing...")
-    result4 = await agent.validate(
-        provider_data={"certificate_number": "TEST123", "establishment_name": "Test Hospital", "address": "Test", "phone": "1234567890"},
-        expected_output=expected_output
-    )
-
-    print(f"\n✓ Validation completed with expected output!")
-    print(f"  - Is Valid: {result4.is_valid}")
-    print(f"  - Overall Confidence: {result4.overall_confidence:.2%}")
+    except Exception as e:
+        print(f"\n❌ Validation failed: {str(e)}")
 
     print("\n" + "=" * 80)
     print("✅ DATA VALIDATOR AGENT DEMO COMPLETED!")
     print("=" * 80)
-    print("\nKey Features Demonstrated:")
-    print("  ✓ KPME certificate validation")
-    print("  ✓ Data quality assessment")
-    print("  ✓ Confidence scoring (KPME 70% + Quality 30%)")
-    print("  ✓ Agent integration flags support")
-    print("  ✓ Expected output for testing scenarios")
-    print("  ✓ KPME Karnataka-only implementation (EL Branch)")
+    print("\n🎯 Architecture Summary:")
+    print("  ✓ Deterministic KPME validation (no AI, fast)")
+    print("  ✓ Deterministic data quality checks (no AI, fast)")
+    print("  ✓ AI synthesis for final decision (1 API call)")
+    print("  ✓ Ready for multi-agent integration")
 
 
 if __name__ == "__main__":

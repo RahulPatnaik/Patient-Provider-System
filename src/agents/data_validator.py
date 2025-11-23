@@ -105,7 +105,7 @@ class DataValidatorAgent(BaseAgent):
 
         # Create Pydantic AI agent
         self.agent = Agent(
-            "gemini-2.0-flash-exp",
+            "gemini-2.0-flash",
             deps_type=DataValidatorDeps,
             system_prompt="""You are a Data Validation Agent for KPME Karnataka healthcare providers.
 
