@@ -196,6 +196,60 @@ Be thorough and accurate in your validation."""
                 } for lic in licenses]
 
         @self.agent.tool
+        async def search_kpme_by_phone(
+            ctx: RunContext[DataValidatorDeps],
+            phone: str
+        ) -> List[Dict[str, Any]]:
+            """
+            Search KPME establishments by phone number (India only).
+
+            Args:
+                ctx: Runtime context
+                phone: Phone number to search
+
+            Returns:
+                List of matching establishments
+            """
+            if ctx.deps.region != Region.INDIA:
+                return []
+
+            try:
+                # Import KPME validator
+                from services.india.kpme_validator import KPMEValidator
+                validator = KPMEValidator()
+                results = validator.search_by_phone(phone)
+                return results
+            except Exception as e:
+                return []
+
+        @self.agent.tool
+        async def search_kpme_by_name(
+            ctx: RunContext[DataValidatorDeps],
+            name: str
+        ) -> List[Dict[str, Any]]:
+            """
+            Search KPME establishments by name (India only).
+
+            Args:
+                ctx: Runtime context
+                name: Establishment name to search
+
+            Returns:
+                List of matching establishments
+            """
+            if ctx.deps.region != Region.INDIA:
+                return []
+
+            try:
+                # Import KPME validator
+                from services.india.kpme_validator import KPMEValidator
+                validator = KPMEValidator()
+                results = validator.search_by_name(name, limit=5)
+                return results
+            except Exception as e:
+                return []
+
+        @self.agent.tool
         def calculate_data_quality(
             ctx: RunContext[DataValidatorDeps]
         ) -> Dict[str, Any]:
