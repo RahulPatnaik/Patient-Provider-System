@@ -126,217 +126,126 @@ Be thorough and accurate in your validation."""
 
         self.logger.info("Initialized KPME Data Validator Agent (EL Branch - KPME-only)")
 
-    def _register_tools(self):
-        """Register Pydantic AI tools."""
+    def _validate_kpme_deterministic(self, certificate_number: str) -> Dict[str, Any]:
+        """
+        Deterministic KPME certificate validation (no AI).
 
-        @self.agent.tool
-        def validate_kpme_certificate(
-            ctx: RunContext[DataValidatorDeps],
-            certificate_number: str
-        ) -> Dict[str, Any]:
-            """
-            Validate KPME certificate number.
+        Args:
+            certificate_number: KPME certificate number
 
-            Args:
-                ctx: Runtime context with dependencies
-                certificate_number: KPME certificate number
+        Returns:
+            Validation result with establishment details
+        """
+        try:
+            establishment = self.db.get_establishment_by_certificate(certificate_number)
 
-            Returns:
-                Validation result with establishment details
-            """
-            try:
-                establishment = self.db.get_establishment_by_certificate(certificate_number)
+            if establishment:
+                # Check expiry
+                is_expired = False
+                cert_validity = establishment.get('certificate_validity', '')
+                if cert_validity:
+                    try:
+                        validity_date = datetime.strptime(cert_validity, "%d %b %Y")
+                        is_expired = validity_date < datetime.now()
+                    except:
+                        pass
 
-                if establishment:
-                    # Check expiry
-                    is_expired = False
-                    cert_validity = establishment.get('certificate_validity', '')
-                    if cert_validity:
-                        try:
-                            validity_date = datetime.strptime(cert_validity, "%d %b %Y")
-                            is_expired = validity_date < datetime.now()
-                        except:
-                            pass
-
-                    return {
-                        "is_valid": True,
-                        "exists": True,
-                        "certificate_number": certificate_number,
-                        "establishment_name": establishment.get('establishment_name'),
-                        "category": establishment.get('category'),
-                        "district": establishment.get('district'),
-                        "system_of_medicine": establishment.get('system_of_medicine'),
-                        "address": establishment.get('address'),
-                        "phone": establishment.get('phone'),
-                        "email": establishment.get('email'),
-                        "latitude": establishment.get('latitude'),
-                        "longitude": establishment.get('longitude'),
-                        "num_beds": establishment.get('num_beds'),
-                        "certificate_validity": cert_validity,
-                        "is_expired": is_expired,
-                        "confidence": 0.9 if not is_expired else 0.5
-                    }
-                else:
-                    return {
-                        "is_valid": False,
-                        "exists": False,
-                        "certificate_number": certificate_number,
-                        "confidence": 0.0,
-                        "error": "Certificate not found in KPME database"
-                    }
-            except Exception as e:
+                return {
+                    "is_valid": True and not is_expired,
+                    "exists": True,
+                    "certificate_number": certificate_number,
+                    "establishment_name": establishment.get('establishment_name'),
+                    "category": establishment.get('category'),
+                    "district": establishment.get('district'),
+                    "system_of_medicine": establishment.get('system_of_medicine'),
+                    "address": establishment.get('address'),
+                    "phone": establishment.get('phone'),
+                    "email": establishment.get('email'),
+                    "latitude": establishment.get('latitude'),
+                    "longitude": establishment.get('longitude'),
+                    "num_beds": establishment.get('num_beds'),
+                    "certificate_validity": cert_validity,
+                    "is_expired": is_expired,
+                    "confidence": 0.9 if not is_expired else 0.5
+                }
+            else:
                 return {
                     "is_valid": False,
                     "exists": False,
                     "certificate_number": certificate_number,
                     "confidence": 0.0,
-                    "error": str(e)
+                    "error": "Certificate not found in KPME database"
                 }
-
-        @self.agent.tool
-        def search_by_phone(
-            ctx: RunContext[DataValidatorDeps],
-            phone: str
-        ) -> List[Dict[str, Any]]:
-            """
-            Search KPME establishments by phone number.
-
-            Args:
-                ctx: Runtime context
-                phone: Phone number to search
-
-            Returns:
-                List of matching establishments
-            """
-            try:
-                results = self.db.get_establishment_by_phone(phone)
-                return results[:5]  # Return top 5 matches
-            except Exception as e:
-                self.logger.error(f"Phone search failed: {e}")
-                return []
-
-        @self.agent.tool
-        def search_by_name(
-            ctx: RunContext[DataValidatorDeps],
-            name: str
-        ) -> List[Dict[str, Any]]:
-            """
-            Search KPME establishments by name.
-
-            Args:
-                ctx: Runtime context
-                name: Establishment name to search
-
-            Returns:
-                List of matching establishments
-            """
-            try:
-                results = self.db.search_establishment_by_name(name, limit=5)
-                return results
-            except Exception as e:
-                self.logger.error(f"Name search failed: {e}")
-                return []
-
-        @self.agent.tool
-        def verify_staff_registration(
-            ctx: RunContext[DataValidatorDeps],
-            registration_no: str
-        ) -> Optional[Dict[str, Any]]:
-            """
-            Verify staff member by registration number.
-
-            Args:
-                ctx: Runtime context
-                registration_no: Medical council registration number
-
-            Returns:
-                Staff details or None
-            """
-            try:
-                staff = self.db.search_staff_by_registration(registration_no)
-                return staff
-            except Exception as e:
-                self.logger.error(f"Staff verification failed: {e}")
-                return None
-
-        @self.agent.tool
-        def calculate_data_quality(
-            ctx: RunContext[DataValidatorDeps]
-        ) -> Dict[str, Any]:
-            """
-            Calculate data quality metrics for provider data.
-
-            Args:
-                ctx: Runtime context with provider data
-
-            Returns:
-                Data quality assessment with scores and issues
-            """
-            data = ctx.deps.provider_data
-
-            # Required fields for KPME
-            required_fields = [
-                "certificate_number",
-                "establishment_name",
-                "address",
-                "phone"
-            ]
-
-            # Check completeness
-            missing_fields = [f for f in required_fields if not data.get(f)]
-            completeness = 1.0 - (len(missing_fields) / len(required_fields))
-
-            # Check data accuracy
-            issues = []
-
-            # Phone format check
-            phone = data.get("phone", "")
-            if phone:
-                digits = str(phone).replace("-", "").replace(" ", "").replace("+", "").replace(".0", "")
-                if len(digits) < 10:
-                    issues.append("Invalid phone format")
-
-            # Certificate format check (KPME format)
-            cert = data.get("certificate_number", "")
-            if cert and len(cert) < 8:
-                issues.append("Invalid certificate format")
-
-            # Email format check
-            email = data.get("email", "")
-            if email and "@" not in email:
-                issues.append("Invalid email format")
-
-            # Calculate accuracy score
-            accuracy = 1.0 - (len(issues) / 10)  # Normalize to 0-1
-
-            # Overall quality score
-            overall = (completeness * 0.6 + accuracy * 0.4)
-
+        except Exception as e:
             return {
-                "completeness_score": completeness,
-                "accuracy_score": accuracy,
-                "overall_score": overall,
-                "missing_fields": missing_fields,
-                "issues": issues
+                "is_valid": False,
+                "exists": False,
+                "certificate_number": certificate_number,
+                "confidence": 0.0,
+                "error": str(e)
             }
 
-        @self.agent.tool
-        def check_expected_output(
-            ctx: RunContext[DataValidatorDeps]
-        ) -> Optional[Dict[str, Any]]:
-            """
-            Check if expected output is provided (for testing scenarios).
+    def _calculate_data_quality_deterministic(self, provider_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Deterministic data quality calculation (no AI).
 
-            Args:
-                ctx: Runtime context
+        Args:
+            provider_data: Provider data to assess
 
-            Returns:
-                Expected output if provided, None otherwise
-            """
-            if ctx.deps.expected_output:
-                self.logger.info("Using expected output for validation scenario")
-                return ctx.deps.expected_output
-            return None
+        Returns:
+            Data quality assessment with scores and issues
+        """
+        # Required fields for KPME
+        required_fields = [
+            "certificate_number",
+            "establishment_name",
+            "address",
+            "phone"
+        ]
+
+        # Check completeness
+        missing_fields = [f for f in required_fields if not provider_data.get(f)]
+        completeness = 1.0 - (len(missing_fields) / len(required_fields))
+
+        # Check data accuracy
+        issues = []
+
+        # Phone format check
+        phone = provider_data.get("phone", "")
+        if phone:
+            digits = str(phone).replace("-", "").replace(" ", "").replace("+", "").replace(".0", "")
+            if len(digits) < 10:
+                issues.append("Invalid phone format")
+
+        # Certificate format check (KPME format)
+        cert = provider_data.get("certificate_number", "")
+        if cert and len(cert) < 8:
+            issues.append("Invalid certificate format")
+
+        # Email format check
+        email = provider_data.get("email", "")
+        if email and "@" not in email:
+            issues.append("Invalid email format")
+
+        # Calculate accuracy score
+        accuracy = 1.0 - (len(issues) / 10)  # Normalize to 0-1
+
+        # Overall quality score
+        overall = (completeness * 0.6 + accuracy * 0.4)
+
+        return {
+            "completeness_score": completeness,
+            "accuracy_score": accuracy,
+            "overall_score": overall,
+            "missing_fields": missing_fields,
+            "issues": issues
+        }
+
+    def _register_tools(self):
+        """Register Pydantic AI tools - AI only for final synthesis."""
+
+        # No tools needed - AI will only synthesize the deterministic results
+        pass
 
     async def validate(
         self,
@@ -348,6 +257,12 @@ Be thorough and accurate in your validation."""
     ) -> DataValidatorResponse:
         """
         Validate KPME provider data.
+
+        Architecture:
+        1. Run deterministic KPME validation (no AI)
+        2. Run deterministic data quality checks (no AI)
+        3. Gather web scraper/enrichment/compliance data (if requested)
+        4. Use AI ONLY to synthesize all results and calculate final confidence
 
         Args:
             provider_data: Provider information to validate
@@ -371,46 +286,88 @@ Be thorough and accurate in your validation."""
 
         async with self.track_time_async() as timer:
             try:
+                # If expected output provided, use it (for testing)
+                if expected_output:
+                    self.logger.info("Using expected output for validation scenario")
+                    return DataValidatorResponse(**expected_output)
+
+                # STEP 1: Deterministic KPME validation (NO AI)
+                self.logger.info("Running deterministic KPME certificate validation...")
+                kpme_result_dict = self._validate_kpme_deterministic(cert_number)
+
+                # STEP 2: Deterministic data quality calculation (NO AI)
+                self.logger.info("Running deterministic data quality assessment...")
+                quality_dict = self._calculate_data_quality_deterministic(provider_data)
+
+                # STEP 3: Gather agent data (if requested)
+                web_scraper_data = None
+                enrichment_data = None
+                compliance_data = None
+
+                if use_web_scraper:
+                    self.logger.info("Web scraper integration requested (not yet implemented)")
+                    # TODO: Call web scraper agent
+                    web_scraper_data = {"status": "not_implemented"}
+
+                if use_enrichment:
+                    self.logger.info("Enrichment integration requested (not yet implemented)")
+                    # TODO: Call enrichment agent
+                    enrichment_data = {"status": "not_implemented"}
+
+                if use_compliance:
+                    self.logger.info("Compliance integration requested (not yet implemented)")
+                    # TODO: Call compliance agent
+                    compliance_data = {"status": "not_implemented"}
+
+                # STEP 4: Use AI ONLY to synthesize all results and decide
+                self.logger.info("Using AI to synthesize results and calculate final confidence...")
+
+                synthesis_prompt = f"""You are a healthcare provider validation synthesis AI.
+
+You have received the following validation results for a KPME Karnataka establishment:
+
+**KPME Database Validation (Deterministic):**
+{kpme_result_dict}
+
+**Data Quality Assessment (Deterministic):**
+{quality_dict}
+
+**Additional Data Sources:**
+- Web Scraper Data: {web_scraper_data or "Not available"}
+- Enrichment Data: {enrichment_data or "Not available"}
+- Compliance Data: {compliance_data or "Not available"}
+
+**Your Task:**
+Analyze ALL the data above and provide a final validation decision with confidence score.
+
+Consider:
+1. Is the KPME certificate valid and not expired?
+2. Is the data quality acceptable?
+3. Do additional sources confirm or contradict the KPME data?
+4. Are there any red flags or inconsistencies?
+
+Return a DataValidatorResponse with:
+- kpme_validation: KPMEValidationResult based on the deterministic result
+- data_quality: DataQualityResult based on the deterministic assessment
+- overall_confidence: Your calculated confidence (0.0 to 1.0)
+- is_valid: Your final decision (true/false)
+- validation_timestamp: {datetime.utcnow().isoformat()}Z
+- web_scraper_data, enrichment_data, compliance_data (if provided)
+
+Be conservative - if there are discrepancies, lower the confidence.
+"""
+
                 # Create dependencies
                 deps = DataValidatorDeps(
                     provider_data=provider_data,
-                    expected_output=expected_output,
+                    expected_output=None,
                     use_web_scraper=use_web_scraper,
                     use_enrichment=use_enrichment,
                     use_compliance=use_compliance
                 )
 
-                # Build validation prompt
-                prompt = f"""Validate this KPME Karnataka healthcare provider:
-
-Certificate Number: {cert_number}
-Establishment Name: {est_name}
-Phone: {provider_data.get('phone', 'Not provided')}
-Address: {provider_data.get('address', 'Not provided')}
-District: {provider_data.get('district', 'Not provided')}
-
-Use the tools to:
-1. Check if expected output is provided (testing scenario)
-2. Validate the KPME certificate number
-3. Search by phone/name if needed
-4. Calculate data quality
-5. Verify staff registrations if provided
-
-Return a complete validation result with:
-- kpme_validation result
-- data_quality assessment
-- overall_confidence score (0.0 to 1.0)
-- is_valid boolean
-- validation_timestamp: {datetime.utcnow().isoformat()}Z
-
-Agent integration flags:
-- use_web_scraper: {use_web_scraper}
-- use_enrichment: {use_enrichment}
-- use_compliance: {use_compliance}
-"""
-
-                # Run agent
-                result = await self.agent.run(prompt, deps=deps)
+                # Run AI synthesis
+                result = await self.agent.run(synthesis_prompt, deps=deps)
 
                 execution_time = timer.get("execution_time_ms", 0)
                 self.logger.info(
