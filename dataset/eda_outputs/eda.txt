@@ -1,0 +1,111 @@
+===============================================================================
+KPME DATASET LOADED
+================================================================================
+Rows    : 1000
+Columns : 16
+Column Names:
+['id', 'establishment_name', 'category', 'system_of_medicine', 'address', 'district', 'certificate_number', 'certificate_validity', 'latitude', 'longitude', 'email', 'phone', 'num_beds', 'land_area_sqft', 'building_area_sqft', 'page_number']
+
+Numeric columns cleaned safely.
+
+================================================================================
+ENUMERATIONS
+================================================================================
+Districts (29):
+['BALLARI', 'BANGALORE', 'BELAGAVI', 'BELGAUM', 'BENGALURU', 'BIDAR', 'CHIKKAMAGALURU', 'CHITRADURGA', 'DAKSHINA KANNADA', 'DAVANAGERE', 'DHARWAD', 'GADAG', 'HASSAN', 'HAVERI', 'HUBLI', 'KALABURAGI', 'KODAGU', 'KOLAR', 'KOPPAL', 'MANDYA', 'MANGALORE', 'MYSORE', 'MYSURU', 'RAICHUR', 'RAMANAGARA', 'TUMAKURU', 'UDUPI', 'VIJAYAPURA', 'YADGIR']    
+
+Categories (17):
+['AYUSH Therapy Centre', 'Allied Health Professional Centre', 'Blood Bank', 'Clinic/Polyclinic Only Consultation', 'Clinic/Polyclinic with Diagnostic Support', 'Clinic/Polyclinic with Dispensary', 'Clinic/Polyclinic with Observation', 'Dental Lab or Clinic', 'Diagnostic Imaging Centre', 'Health Check-up Centre', 'Hospital (Level 1A)', 'Hospital (Level 1B)', 'Hospital (Level 2)', 'Hospital (Level 3)(Non-Teaching with Super Specialty Services)', 'Hospital (Level 4)(Teaching)', 'Medical Diagnostic Laboratory', 'Specialty / Super-Specialty Specific Hospital']
+
+Systems of Medicine (6):
+['Allopathy', 'Ayurveda', 'Homeopathy', 'Integrated System', 'Unani', 'Yoga and Naturopathy']
+
+================================================================================
+MISSING VALUE ANALYSIS (%)
+================================================================================
+building_area_sqft      57.5
+land_area_sqft          56.4
+district                44.7
+latitude                11.5
+longitude               11.5
+num_beds                10.1
+email                   10.1
+phone                   10.1
+certificate_validity     0.0
+certificate_number       0.0
+address                  0.0
+system_of_medicine       0.0
+establishment_name       0.0
+category                 0.0
+id                       0.0
+page_number              0.0
+dtype: float64
+
+================================================================================
+NUMERIC COLUMN STATISTICS
+================================================================================
+       num_beds  land_area_sqft  building_area_sqft      latitude    longitude
+count    899.00          436.00              425.00  8.850000e+02       885.00
+mean       8.04        13553.77            11575.70  8.539202e+06     28093.79
+std       45.51        92472.07           105369.72  2.540319e+08    630122.11
+min        0.00            0.00                0.00  1.060000e+00         5.04
+25%        0.00          300.00              300.00  1.292000e+01        75.22
+50%        0.00         1135.00              900.00  1.330000e+01        76.62
+75%        0.00         2502.00             2261.00  1.535000e+01        77.53
+max      950.00      1089000.00          1500000.00  7.557181e+09  17103026.00
+
+================================================================================
+LOGICAL CONSISTENCY CHECKS
+================================================================================
+Records where building_area_sqft > land_area_sqft: 76
+Clinics with beds > 0: 1
+
+================================================================================
+CERTIFICATE NUMBER PATTERNS
+================================================================================
+
+Sample certificate numbers:
+  BEL00172ALDEN
+  RMG00053UNATC
+  BLU02901ALCWO
+  BLG00639ALCOC
+  BDR00032ALCOC
+  BDR00136AYCOC
+  SMG00201ALHL2
+  GLB00181ALH1A
+  BLG00833AYCOC
+  BLU03037ALMDL
+
+Pattern match rate (heuristic): 100.00%
+
+================================================================================
+BEDS DISTRIBUTION BY CATEGORY
+================================================================================
+                                                    count    mean     std   min    25%    50%     75%    max
+category
+AYUSH Therapy Centre                                 14.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Allied Health Professional Centre                     4.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Blood Bank                                            1.0    0.00     NaN   0.0   0.00    0.0    0.00    0.0       
+Clinic/Polyclinic Only Consultation                 289.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Clinic/Polyclinic with Diagnostic Support            82.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Clinic/Polyclinic with Dispensary                    89.0    0.01    0.11   0.0   0.00    0.0    0.00    1.0       
+Clinic/Polyclinic with Observation                   47.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Dental Lab or Clinic                                 69.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Diagnostic Imaging Centre                            23.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Health Check-up Centre                                4.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Hospital (Level 1A)                                  91.0   20.66   13.82   5.0  10.00   15.0   30.00   50.0       
+Hospital (Level 1B)                                  40.0   20.85   15.40   3.0  10.00   13.5   28.50   65.0       
+Hospital (Level 2)                                   44.0   27.80   18.74   3.0  13.75   28.0   36.25  100.0       
+Hospital (Level 3)(Non-Teaching with Super Spec...    5.0  128.80  120.51  48.0  56.00  100.0  100.00  340.0       
+Hospital (Level 4)(Teaching)                          7.0  135.71  359.07   0.0   0.00    0.0    0.00  950.0       
+Medical Diagnostic Laboratory                        80.0    0.00    0.00   0.0   0.00    0.0    0.00    0.0       
+Specialty / Super-Specialty Specific Hospital        10.0  169.50  224.97   9.0  55.25   97.5  185.00  784.0       
+
+================================================================================
+GEO / LOCATION COVERAGE
+================================================================================
+Records with both latitude & longitude: 883 (88.30%)
+
+================================================================================
+EDA COMPLETE
+================================================================================

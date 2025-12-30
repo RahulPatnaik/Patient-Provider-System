@@ -1,0 +1,118 @@
+id,establishment_name,category,system_of_medicine,address,district,certificate_number,certificate_validity,latitude,longitude,email,phone,num_beds,land_area_sqft,building_area_sqft,page_number
+74,Kiranagi Clinic,Clinic/Polyclinic with Diagnostic Support,Allopathy,Near T.V Station Humnabad road Kalaburagi-585103,KALABURAGI,GLB00490ALCDS,13 Mar 2027,,,bmkiranagi71@gmai.com,9591265625.0,0.0,950.0,500.0,4
+86,NU Hospitals Private Limited,Specialty / Super-Specialty Specific Hospital,Allopathy,"4/1, West of Chord Road, Near ISKCON Temple,Rajajingar, Bangalore",BANGALORE,BLU12533ALSSH,05 Nov 2030,,77.5527,Phone:,9663943146.0,95.0,,,1
+226,ULTRA DIAGNOSTIC SERVICES,Clinic/Polyclinic with Diagnostic Support,Allopathy,"#38/113 Kathriguppe Main Road,Near ITI Layout Bus Stop,BSK 3rd Stage,Bangalore 85",BANGALORE,BLU02861ALCDS,05 Jan 2027,12.9311835,,Phone:,8722690533.0,0.0,1200.0,1000.0,3
+234,Shivam Ayurvedic Clinic,AYUSH Therapy Centre,Ayurveda,"Melkar, Panemangalore",MANGALORE,DKA01711AYATC,05 Jul 2028,,,skmanjalagiri@gmail.com,9449944138.0,0.0,50000.0,2150.0,3
+244,SRI PAMPAPATI AYURVEDA CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,"SRI PAMPAPATI COMPLEX, OPP SVM COLLEGE, NEAR BUS STAND, ILKAL.",,BGK00040AYCOC,11 Nov 2025,,,drbasugs@gmail.com,9449355869.0,0.0,275.0,1200.0,4
+378,MAAX HOSPITAL,Hospital (Level 2),Allopathy,"Near Kamat petrol Bunk, N.T. Road, Shimoga",,SMG00045ALHL2,03 May 2026,,,narudvg@gmail.com,8884575555.0,100.0,,,5
+479,Nava Chaithanya Clinic,Clinic/Polyclinic Only Consultation,Ayurveda,"#7 M.R.Complex, Opp to V.M.Medowds apts , Horamavu underpass, Horamavu Main Road , Bangalore 560113",BANGALORE,BLU02136AYCOC,29 Jul 2026,,,drveereshp02@gmail.com,8861295084.0,0.0,300.0,290.0,5
+614,SDM COLLEGE OF MEDICAL SCIENCES AND HOSPITAL,Hospital (Level 4)(Teaching),Allopathy,"Manjushree Nagar, Sattur, Dharwad.",DHARWAD,DWR00197ALHL4,15 Feb 2026,,,,,,,,7
+617,CATHERINE MARIAM CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,Shameer mohalla mulbagal,,KLR00128ALCOC,28 Feb 2027,,78.383596,sandeeprayappa17@gmail.com,7411498332.0,0.0,1020.0,260.0,7
+629,IKSHA SUPERSPECIALTY EYE HOSPITAL,Clinic/Polyclinic with Diagnostic Support,Allopathy,"134/34 RACE COURSE ROAD, NEAR LIC OFFICE, MADIKERI",,KDG00035ALCDS,01 Aug 2026,,,ikshaeye@gmail.com,9880411711.0,0.0,,,8
+654,DR. MALAJI HOSPITAL,Hospital (Level 1A),Allopathy,"C/O. TELSANG HOSPITAL BUILDING, NEAR RURAL POLICE STATION, LAXMI NAGAR, BAGALKOT",,BGK00024ALH1A,29 Sep 2025,,,malajiprabhu@gmail.com,9448466652.0,28.0,5000.0,3000.0,7
+663,VACHANASHREE HITECH LAB,Medical Diagnostic Laboratory,Allopathy,"C/o. Dr. Malaji Hospital, Telsang Hospital Building, Laxmi Nagar, Bagalkot",,BGK00025ALMDL,29 Sep 2025,,,malajiprabhu@gmail.com,9448466652.0,0.0,5000.0,3000.0,7
+666,RAMESH CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"Kuvempu Road, Opp. Mc. Gann Hospital, Shimoga.",,SMG00018ALCOC,18 Feb 2026,,,gnnagesho@gmail.com,8147328275.0,0.0,,,7
+677,SWAPNA DIAGNOSTIC CENTRE,Medical Diagnostic Laboratory,Allopathy,OPP OLD ING VYASHA BANK VIJAYAPUR,,BLR00126ALMDL,15 Jan 2027,,,rnshindhe@gmail.com,9035307335.0,0.0,1500.0,1200.0,8
+799,ASHWINI DIAGNOSTIC LABORATORY,Diagnostic Imaging Centre,Allopathy,WARD NO 21 DURGIGUDI 1st Parallel Road,,SMG00206ALDIC,28 Apr 2027,,,lnt51gopala2017@gmail.com,8710015358.0,0.0,1200.0,1000.0,6
+818,Narayana Multispeciality Clinic,Clinic/Polyclinic with Diagnostic Support,Allopathy,"#558/558/933, Ground Floor, Kuvempu Road, Shimoga",,SMG00075ALCDS,01 Nov 2026,13.94034,,info.shimoga@narayanahealth.org,8884416899.0,0.0,3045.0,5997.0,7
+828,Kashyap Orthopaedic and Womens Clinic,Clinic/Polyclinic with Diagnostic Support,Allopathy,"79/a, 22 cross, 19th main road, 2 block, Rajajinagar, Bangalore 560010",BANGALORE,BLU01403ALCDS,24 Jan 2026,,,kashyap.clinic@gmail.com,9739511777.0,0.0,,,6
+839,PRACTO CARE SURGERIES,Clinic/Polyclinic with Diagnostic Support,Allopathy,"Ground Floor, No. L-166, Sector 6, 5th Main Service Road, Outer Ring Road, HSR Layout, Bangalore - 550102",BANGALORE,BLU03180ALCDS,18 Mar 2027,,,,,,,,10
+900,prabhu clinic,Clinic/Polyclinic Only Consultation,Allopathy,"prabhu clinic, opposit post office, main road kalasa",,CKM00118ALCOC,15 May 2027,,,,,,,,10
+902,SANGAMESHWAR MEDICAL AND HEALTH CARE CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,NEAR CHIDRI BIDAR,BIDAR,BDR00124ALCOC,19 Apr 2027,,,,,,,,10
+903,ARCHANA CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"1ST MAIN ,8TH CROSS,NEAR AMBAMAHESHWARI TEMPLE,KAMAKSHIPALYA ,BANGALORE -79",BANGALORE,BLU03203ALCOC,29 Mar 2027,,,,,,,,10
+905,Dr Vishals Saisha Homoeo Hub And Health Care,Clinic/Polyclinic with Dispensary,Homeopathy,"No 5, 1st floor, Kothanur Main Road, Puttenahalli, Opp Brigade Milleneum, J P Nagar 7th phase, Bangalore",BANGALORE,BLU05374HOCWD,31 Aug 2028,,,,,,,,10
+907,SHRI SHIVANAND HOSPITAL,Hospital (Level 1A),Allopathy,"KASABA ONI, KEMPAGASI ROAD, NARGUND",,GDG00141ALH1A,18 Jul 2027,,,,,,,,10
+908,HEALTH CARE THE POLY CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"NEW ASIF COMPLEX, RAILWAY STATION ROAD CHITTAPUR DIST.KALABURAGI-585211",KALABURAGI,GLB00847ALCOC,31 Aug 2028,,,,,,,,10
+910,Arogyavardhini Clinic,Clinic/Polyclinic with Dispensary,Ayurveda,Ishwaramangala Post,,DKA01118AYCWD,19 Jun 2027,,,,,,,,10
+912,APOLLO WHITE DENTAL A UNIT OF ALLIANCE DENTAL CARE LTD,Dental Lab or Clinic,Allopathy,"NO.4, 80 FEET ROAD, HMT LAYOUT, RT NAGAR, BANGALORE",BANGALORE,BLU03292ALDEN,10 Apr 2027,,,,,,,,10
+914,Vijaya Clinic,Clinic/Polyclinic with Dispensary,Ayurveda,Galimukha Post Karnoor,,DKA01097AYCWD,14 Jun 2027,,,,,,,,10
+915,Microbiological Laboratory,Medical Diagnostic Laboratory,Allopathy,"No. 22D3, KIADB Industrial Area,Phase 1 Kumbalagodu,Bangalore-560074",BANGALORE,BLU03467ALMDL,15 Jun 2027,,,,,,,,10
+917,PRANAVA HEALTH CARE,Clinic/Polyclinic with Diagnostic Support,Allopathy,"# 29A, K BLOCK ADICHUNCHANAGIRI ROAD, KUVEMPUNAGAR, MYSORE - 570023",MYSORE,MYS00848ALCDS,11 Jun 2028,,,,,,,,10
+919,PADMASHREE LABORATORY,Medical Diagnostic Laboratory,Allopathy,"PADMASHREE LABORATORY 1ST FLOOR SAI CENTRE BUILDING,OPPOSITE LAXMINARAYAN TEMPLE,KUNDAPURA",,UDP00685ALMDL,18 May 2027,,,,,,,,10
+920,VIshal Laboratory,Medical Diagnostic Laboratory,Allopathy,"Maruti Nagar, 2nd Main, 1st Cross, Ranebennur",,HVR00472ALMDL,01 Mar 2028,,,,,,,,10
+922,DR VEENA UNISPECIALITY CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"KASHYAPA COMPLEX,SRIRAMPET,SULLIA.",,DKA01016ALCOC,25 May 2027,,,,,,,,10
+924,BHAGYALAXMIDIAGANOSTICCENTRE,Medical Diagnostic Laboratory,Allopathy,APMC ROAD AMAN NAGAR MUDALAGI,,BLG00835ALMDL,18 Sep 2027,,,,,,,,10
+926,Shanta Hospital,Clinic/Polyclinic Only Consultation,Ayurveda,Kallatti Galli Near Kamana Katti Terdal,,BGK00837AYCOC,11 Jul 2029,,,,,,,,10
+927,SRIDEVI CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,"Madihalli, Hagare, Belur taluk.",,HSN00249AYCOC,09 Nov 2027,,,,,,,,10
+929,FAMILY CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,COLLEGE ROAD MADIKERI,,KDG00121ALCOC,13 Jul 2027,,,,,,,,10
+930,ST JOSEPHS HOSPITAL,Hospital (Level 1A),Allopathy,N.M.ROAD PANDAVAPURA,,MAN00259ALH1A,20 Nov 2027,,,,,,,,10
+932,PAVAMANA Ayurveda Chikithsalaya,Clinic/Polyclinic with Dispensary,Ayurveda,"N H 66,Thekkatte-576231,Kundapura Tq,Udupi Dist.",UDUPI,UDP00833AYCWD,24 Aug 2027,,,,,,,,10
+933,RENOCARE THE KIDNEY CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"127, FIRST FLOOR, MILESTONE-25, BALMATTA, MANGALORE",MANGALORE,DKA01154ALCOC,21 Jul 2027,,,,,,,,10
+934,GIRIJA CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"PIONEER GNP COMPLEX , MSK MILL BUS STOP , KALABURAGI-585103",KALABURAGI,GLB00617ALCOC,25 Sep 2027,,,,,,,,10
+935,JANATA CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,CHAVADI CIRCLE A/P TERDAL 587315,,BGK00806AYCOC,10 Jul 2029,,,,,,,,10
+937,Aesthalign Dentta Care,Dental Lab or Clinic,Allopathy,"No. 3226, Opp. Jus Trufs, 7th Block, Arkavathi Layout, K V Jayaram Road,Jakkur, Bangalore-560064",BANGALORE,BLU03539ALDEN,01 Aug 2027,,,,,,,,10
+939,A l Aesthetics,Clinic/Polyclinic with Observation,Allopathy,"No.169/2, 2nd Floor, Varthur Main Road, Gunjur Village and Post, Varthur hobli, Bengaluru-560087",BENGALURU,BLU03823ALCWO,30 Sep 2027,,,,,,,,10
+940,LIA MIND CARE,Hospital (Level 1A),Allopathy,"#29, Ramanna Garden, Doddabetahalli Layout, Vidyaranyapura Post, Bangalore-560097,",BANGALORE,BLU03608ALH1A,25 Aug 2027,,,,,,,,10
+942,SADGURU SHRIDHARAKRIPA AYURVEDASHRAMA,Clinic/Polyclinic with Dispensary,Ayurveda,"DR SRIKANTACHARYA, SADGURU SHRIDHARAKRIPA AYURVEDASHRAMA,NEAR GURUKULA KUMBASHI,KUNDAPURA, UDUPI",UDUPI,UDP00822AYCWD,23 Aug 2027,,,,,,,,10
+944,SANJEEVINI SKIN CENTRE,Clinic/Polyclinic Only Consultation,Allopathy,"2ND FLOOR, ARUNDATHI CENTRE, 1779, KABIR ROAD, MANDI MOHALLA, MYSURU-21",MYSURU,MYS00625ALCOC,18 Jul 2027,,,,,,,,10
+945,LAKSHMI CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"# 2591808/1, NEAR RING ROAD, CIRCLE, BANNUR RAOD, MYSORE",MYSORE,MYS00678ALCOC,01 Sep 2027,,,,,,,,10
+947,GYNAE SPECIALITY CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"SHOP NO.6, 1ST FLOOR, ESSEL CHAMBERS, NEAR BUNTS HOSTEL, KARANGALPADY, MANGALORE 575003",MANGALORE,DKA01253ALCOC,21 Sep 2027,,,,,,,,10
+949,MANJU CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,NH 206 OPPSITE TO CANARA BANK,,CKM00187ALCOC,05 Aug 2027,,,,,,,,10
+951,GURU HOMOEO CARE,Clinic/Polyclinic with Dispensary,Homeopathy,"#47/955, Ekambaram Road, Near Govt Girls PU College, Bangarpet",,KLR00294HOCWD,09 Aug 2028,,,,,,,,10
+952,DHANAVANTRI CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,HALEPETH GALLI A/P TERDAL 587315,,BGK00808AYCOC,10 Jul 2029,,,,,,,,10
+953,Blossom dental clinic,Dental Lab or Clinic,Allopathy,"#365, Nagondanahalli Channasadra main road, Nagondanahalli, Whitefield, Bangalore-560066",BANGALORE,BLU06353ALDEN,03 Jan 2029,,,,,,,,10
+954,Anaira Health Care,Clinic/Polyclinic with Diagnostic Support,Allopathy,"D. No. 113/28, Heera Bhag, Bannanje, Udupi",UDUPI,UDP00845ALCDS,22 Sep 2027,,,,,,,,10
+955,BELAKU POLYCLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"Ground Floor, Silver Springs, Bejai New Road, Bejai Post, Mangaluru 575004",,DKA01196ALCOC,24 Aug 2027,,,,,,,,10
+956,Complete Care Clinic,Clinic/Polyclinic Only Consultation,Homeopathy,"Government Hospital Road,Napoklu,Madikeri Taluk,Kodagu District - 571214",KODAGU,KDG00152HOCOC,23 Jan 2028,,,,,,,,10
+957,SUSHEELA CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,AVR Road 1 st Floor kanakpura Town,,RMG00105ALCOC,15 Feb 2028,,,,,,,,10
+958,PREETHI CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"3rd Street, Anjinaya Reddy Building, Temple Street, Dodabanaswadi, Bangalore - 560043.",BANGALORE,BLU03677ALCOC,07 Sep 2027,,,,,,,,10
+959,SHREE BALAJI CLINIC,Clinic/Polyclinic Only Consultation,Homeopathy,"CLINIC MAIN ROAD, SULIBELE, HOSKOTE TALUK, BENGALURU RURAL DISTRICT",BENGALURU,BLR00422HOCOC,11 Jul 2028,,,,,,,,10
+960,DR SILVAS DENTAL CLINIC,Dental Lab or Clinic,Allopathy,"FIRST FLOOR, KUMUDAVATHY BUILDING, BALMATTA, MANGALORE",MANGALORE,DKA01283ALDEN,30 Sep 2027,,,,,,,,10
+961,SK DIAGNOSTICS,Medical Diagnostic Laboratory,Allopathy,"1st floor, Above Sri Manjunatha MEdicals Opp.Mayura Bekary,Near New Bus Stand KS Road Vijayapura-562135.Devanahalli Taluk,Bangalore Rural Dist.",VIJAYAPURA,BLR00459ALMDL,27 Dec 2028,,,,,,,,10
+962,AL ANSAAR HOSPITAL,Hospital (Level 2),Allopathy,"# 3208, 3210, L1 MOHAMMED SAIT BLOCK, LASHKAR MOHALLA, MYSURU",MYSURU,MYS00753ALHL2,15 Jan 2028,,,,,,,,10
+963,VINAYAK DENTAL CARE,Dental Lab or Clinic,Allopathy,"Gokarna, Kumta Taluk, U.K District",,UKA00225ALDEN,29 Aug 2027,,,,,,,,10
+964,NG IMAGING And DIAGNOSTICS A Unit of Suman Ultrasound Centre,Clinic/Polyclinic with Diagnostic Support,Allopathy,"#98/2, 17th Cross, 1st Block, Near Navaranga Theatre And Nalapak Hotel,Rajajinagar, Bengaluru-560010",BENGALURU,BLU03656ALCDS,06 Sep 2027,,,,,,,,10
+965,ASHIRWAD DIGITAL X RAY CENTRE,Diagnostic Imaging Centre,Allopathy,"Vanashree Road, Alnavar, Alnavar Tq. Dharwad Dist.",DHARWAD,DWR00475ALDIC,13 Aug 2027,,,,,,,,10
+966,SRI GURU BASAVA SIDDALINGESHWARA TAPOVANA,Clinic/Polyclinic with Dispensary,Ayurveda,"#111/14, SSM Towers, Opp Om Public School, P, B Road, Ranebennur.",,HVR00473AYCWD,01 Mar 2028,,,,,,,,10
+967,BALAJI POLY CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,"DODDADUNNASANDRA, DEVANAGUNTHI POST, HOSKOTE TALUK, BENGALURU RURAL DISTRICT- 560067",BENGALURU,BLR00386AYCOC,04 May 2028,,,,,,,,10
+968,DR SARADHA CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"Corporation Bank Building, O Daniel Road, Andersonpet, KGF",,KLR00194ALCOC,25 Dec 2027,,,,,,,,10
+969,Sanjeevini Clinic,Clinic/Polyclinic Only Consultation,Allopathy,"1st floor, Prabhakar shet building, koppa main road",,CKM00204ALCOC,14 Oct 2027,,,,,,,,10
+970,SHREE SAMARTH J J HEART CENTRE,Clinic/Polyclinic Only Consultation,Allopathy,1ST FLOOR ADJ VIJAY VANI OFFICE OLD JEWARGI ROAD KALABURAGI-585102,KALABURAGI,GLB00597ALCOC,25 Jul 2027,,,,,,,,10
+971,VISHWARATNA HOSPITAL,Hospital (Level 2),Allopathy,"CCB, 76 NEAR SP RESIDENCE OPP STATE EXCISE OFFICE OLD PB ROAD, BEALAGAVI-590016",,BLG00950ALHL2,03 Jan 2028,,,,,,,,10
+972,DR SANIJAS MULTI SPECIALITY DENTAL CLINIC,Dental Lab or Clinic,Allopathy,"3RD FLOOR, KUDVAS GRANDUER, SURATHKAL, MANGALORE",MANGALORE,DKA01289ALDEN,30 Sep 2027,,,,,,,,10
+973,Dr Rajarao clinic,Clinic/Polyclinic Only Consultation,Allopathy,SLN Road Knakapura town,,RMG00138ALCOC,14 Mar 2028,,,,,,,,10
+974,SWATHI DENTAL CARE AND IMPLANT CENTRE,Dental Lab or Clinic,Allopathy,"NEAR SBI KAKOLU ROAD, RAJANUKUNTE, BANGALORE",BANGALORE,BLU07334ALDEN,09 Apr 2029,,,,,,,,10
+975,Karthik Consultation Centre,Clinic/Polyclinic with Diagnostic Support,Allopathy,"Ashwath Complex, J.P.N Road, 2nd Cross, Shimoga-577201",,SMG00320ALCDS,30 Dec 2027,,,,,,,,10
+976,CHARISMA DENTAL AND MEDICAL CARE,Clinic/Polyclinic with Diagnostic Support,Allopathy,"No. 151/1, 1st, Floor, Land Mark Towers, Wheelers Road, Frazer Town, Bengaluru - 560005",BENGALURU,BLU03676ALCDS,07 Sep 2027,,,,,,,,10
+977,EXPERT DIAGNOSTICS CENTRE,Medical Diagnostic Laboratory,Allopathy,"no.13/1,17th cross,22nd main,shamanna garden,opp.silver home J.P.NAGAR, BENGALURU 560078",BENGALURU,BLU03572ALMDL,09 Aug 2027,,,,,,,,10
+978,VIDHI DIAGNOSTIC CENTRE,Diagnostic Imaging Centre,Allopathy,PLOT NO.1201/5/B1 BUS STAND ROAD NESARAGI TQ.BAILHONGAL DT.BELAGAVI-591121,BELAGAVI,BLG00839ALDIC,18 Sep 2027,,,,,,,,10
+979,Adichunchanagiri Ayurvedic Medical College Hospital Research Centre,Hospital (Level 4)(Teaching),Ayurveda,"No. 112, BGS Vijnatham South Campus, Nagarur, Bengaluru North - 562123",BENGALURU,BLU07733AYHL4,28 May 2029,,,,,,,,10
+980,NAVANEET DENTAL CLINIC,Dental Lab or Clinic,Allopathy,"Manohar Heights, Near Tatwadarsha Hospital, Shreya Nagar, Gokul Road, Hubballi",,DWR00734ALDEN,09 Jun 2028,,,,,,,,10
+981,Prasad Dental Care,Dental Lab or Clinic,Allopathy,"No.305/66, 40th Cross, 8th Block, Jayanagar, Bengaluru-560082",BENGALURU,BLU09482ALDEN,24 Oct 2029,,,,,,,,10
+982,B K BALTE HOSPITAL,Hospital (Level 1A),Allopathy,OPP SBI BANK STATION ROAD BHALKI,,BDR00209ALH1A,21 Dec 2027,,,,,,,,10
+983,V TWO POLYCLINIC,Clinic/Polyclinic with Dispensary,Ayurveda,"D NO 3-111/B, GROUND FLOOR, SHAGUN COMPLEX, KURKAL VILLAGE, KATPADI, SHIRVA MAIN ROAD, SHANKARPURA, UDUPI",UDUPI,UDP00939AYCWD,11 Jan 2028,,,,,,,,10
+984,SRI KATTE BASVESHWARA CLINICAL LAB,Medical Diagnostic Laboratory,Allopathy,BELLARI ROAD VALMIKI CIRCLE MOKA,,BEL00528ALMDL,13 Dec 2028,,,,,,,,10
+985,NAYANADHAMA EYE HOSPITAL,Hospital (Level 2),Allopathy,"SAI LEELA, NEAR SIT COLLEGE, B H ROAD, TUMKUR-572103",,TMK00519ALHL2,21 Dec 2027,,,,,,,,10
+986,SAMARTH CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,AGALAKOTE HAND POST MAGADI TALLUK RAMANAGARA DISTRICT,RAMANAGARA,RMG00118AYCOC,20 Feb 2028,,,,,,,,10
+987,SHREE MATA CLINIC,Clinic/Polyclinic with Dispensary,Homeopathy,"Bazar Road, Hardekar Circle, Tilavalli - Vill, Hanagal - Tq - 581101",,HVR00568HOCWD,17 Aug 2028,,,,,,,,10
+988,Kshema Clinic,Clinic/Polyclinic with Dispensary,Ayurveda,162 Ground floor Shonima ward no 3 near Total gas Bypass road Karkala,,UDP00975AYCWD,08 Mar 2028,,,,,,,,10
+989,Bangalore Institute of Respiratory Diseases and Sleep Disorders,Clinic/Polyclinic with Diagnostic Support,Allopathy,"1381 , EAST END MAIN ROAD , JAYANAGAR 9TH BLOCK , EAST END CIRCLE , BANGALORE-560068",BANGALORE,BLU06492ALCDS,16 Jan 2029,,,,,,,,10
+990,First Smile Pediatric and Multispeciality Dental Clinic,Dental Lab or Clinic,Allopathy,"478, 7th B Main, Hebbal First Stage, Mysuru",MYSURU,MYS00759ALDEN,16 Jan 2028,,,,,,,,10
+991,DURGA CLINIC,Clinic/Polyclinic with Dispensary,Ayurveda,"1-97G, SRI RATNA TOWERS, NEAR UDUPI CO OPERATIVE BANK, KARKALA ROAD, PADUBIDRI, NADSAL, UDUPI",UDUPI,UDP00940AYCWD,11 Jan 2028,,,,,,,,10
+992,KIRAN DENTAL CLINIC,Dental Lab or Clinic,Allopathy,INFRONT OF 1ST SAINIK SCHOOL GATE SHASTRI NAGAR BIJAPUR,,BIJ00660ALDEN,30 Jan 2028,,,,,,,,10
+993,M K PILES AND FISTULA CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,"SALAGAME ROAD, HASSAN",HASSAN,HSN00427AYCOC,10 Nov 2029,,,,,,,,10
+994,B M DIAGNOSTIC CENTRE,Medical Diagnostic Laboratory,Allopathy,"1ST MAIN, T G EXTENSION, HOSAKOTE TOWN",,BLR00319ALMDL,08 Jan 2028,,,,,,,,10
+995,SUVIDHA HEALTH CENTER,Clinic/Polyclinic with Diagnostic Support,Allopathy,BAGURU ROAD CHANNARAYAPATNA HASSAN DISTRICT,HASSAN,HSN00300ALCDS,08 Mar 2028,,,,,,,,10
+996,LAXMI CLINIC,Clinic/Polyclinic with Dispensary,Allopathy,"FARANGIPET, BANTWAL",,DKA01621ALCWD,18 May 2028,,,,,,,,10
+997,Aasha scans and diagnostics,Diagnostic Imaging Centre,Allopathy,"Below kvg bank, maigur road, Desai circle, jamkhandi, bagalkot dist",,BGK00537ALDIC,12 Feb 2028,,,,,,,,10
+998,WELL CARE POLYCLINIC,Clinic/Polyclinic with Diagnostic Support,Allopathy,"#1016, Shivapura Main Road, Adarsha Nagar, Arshinakunte, Kasaba Hobli, Nelamangala Taluk, Bangalore Rural District - 562123",BANGALORE,BLR00086ALCDS,20 Oct 2026,,,,,,,,10
+999,Taahaa Clinic,Clinic/Polyclinic Only Consultation,Homeopathy,"C. B. Pura road, Millath Nagar, Kolar",KOLAR,KLR00025HOCOC,07 Aug 2026,,,,,,,,10
+1000,TRUST IN HOSPITAL NMPC HEALTHCARE PVT.LTD.,Hospital (Level 3)(Non-Teaching with Super Specialty Services),Allopathy,"NO.12/1, M.V. APPA COMPLEX, HORAMAVU MAIN ROAD, BENGALURU-560043.",BENGALURU,BLU01844ALHL3,21 Apr 2026,,,,,,,,10
+1001,Shree Krishna Homoeopathic Clinic,Clinic/Polyclinic Only Consultation,Homeopathy,"1st Floor, Srinivas Complex, Near M R Nayak Petrol Pump, Palace Road, Vittal 574243",,DKA00734HOCOC,23 Mar 2027,,,,,,,,10
+1002,VIJAYA DENTAL CLINIC,Dental Lab or Clinic,Allopathy,"1ST FLOOR, SONA COMPLEX, KALAMMA STREET, BALLARI",BALLARI,BEL00297ALDEN,04 Jan 2027,,,,,,,,10
+1003,AROGYA CLINIC,Clinic/Polyclinic with Dispensary,Ayurveda,"NO 1-187-5, shop no 3, first floor, Janaki commercial centre, Haleangadi",,DKA00529AYCWD,17 Aug 2026,,,,,,,,10
+1004,SUSHRUTA MEDICAL AID AND RESEARCH HOSPITAL LIMITED,Specialty / Super-Specialty Specific Hospital,Allopathy,NO.202 RASHTRIYA VIDYALAYA ROAD BASAVANGUDI BANGALORE 560004,BANGALORE,BLU03321ALSSH,25 Apr 2027,,,,,,,,10
+1005,CHILDRENS CLINIC,Clinic/Polyclinic Only Consultation,Allopathy,"CHILDRENS CLINIC, CARAVAN COMPLEX OPP HARSHA,K.M.MARG UDUPI-576101",UDUPI,UDP00468ALCOC,28 Nov 2026,,,,,,,,10
+1006,SHAFFI HERBAL & HIJAMA CLINIC,Clinic/Polyclinic with Dispensary,Unani,"1ST FLOOR, KATCHI MASJID BUILDING, BUNDER, MANGALORE",MANGALORE,DKA00531UNCWD,17 Aug 2026,,,,,,,,10
+1007,Nitte Deemed to be University Satellite Centre,Dental Lab or Clinic,Allopathy,"Mangalore University Health Centre Mangalagangothri, Konaje",MANGALORE,DKA00760ALDEN,31 Mar 2027,,,,,,,,10
+1008,RajaRajeswari Medical College & Hospital,Hospital (Level 4)(Teaching),Allopathy,"No. 202 Kambipura, Mysore Road, Bangalore 560074.",MYSORE,BLU01940ALHL4,16 May 2026,,,,,,,,10
+1009,SHANTI AYURVEDA GENERAL CLINIC,Clinic/Polyclinic with Dispensary,Ayurveda,"Chandavarkar Compound, Naer Syndicate Bank, Bazar Road, Honnavar, U.K District.",,UKA00062AYCWD,27 Oct 2026,,,,,,,,10
+1010,ABHAYA PSYCHIATRIC REHABILITATION CENTRE,Allied Health Professional Centre,Allopathy,"ANNAPPA NAGAR, HARADY, SALIKERI POST, BRAHMAVARA UDUPI",UDUPI,UDP00145ALAHC,24 Jun 2026,,,,,,,,10
+1011,Sri Banadeshwar Hi Tech Lab & Scanning Centre,Diagnostic Imaging Centre,Allopathy,Opp New Bus Stand Yadagir,,YDR00124ALDIC,22 Sep 2026,,,,,,,,10
+1012,MALLESHWARA CLINIC,Clinic/Polyclinic Only Consultation,Ayurveda,"# 1 , PARVATHINAGAR BUS STOP , LAGGERE MAIN ROAD , BANGALORE -58",BANGALORE,BLU03540AYCOC,01 Aug 2027,,,,,,,,10
+1013,SANJEEVINI HOSPITAL,Hospital (Level 1A),Allopathy,"NO SIC AND SID, S NIJALINGAPPA EXTENSION , NEAR RING ROAD, DAVANAGERE",DAVANAGERE,DVG00201ALH1A,23 Aug 2026,,,,,,,,10
+1014,Dr. Lal Pathlabs Limited,Medical Diagnostic Laboratory,Allopathy,"#33/81, 2nd floor, College road, Belagavi , 590001",BELAGAVI,BLG00311ALMDL,25 Jul 2026,,,,,,,,10
+1015,Manthale Dental Clinic,Dental Lab or Clinic,Allopathy,Main road Haralayya circle,,BDR00134ALDEN,12 Jun 2027,,,,,,,,10
+1016,St.Marys Hospital,Hospital (Level 1A),Allopathy,GONIKOPPA ROAD,,MYS00141ALH1A,20 Sep 2026,,,,,,,,10
+1017,NAGURI MEDICARE LABORATORY,Medical Diagnostic Laboratory,Allopathy,"CHIRAG BALLAL SANIL PLAZA, SHOP NO.8, NAGORI, MANGALORE",MANGALORE,DKA00668ALMDL,15 Mar 2027,,,,,,,,10
+1018,SRL LIMITED,Medical Diagnostic Laboratory,Allopathy,"#275,/19, Corporation Division, No.60, 37th ‘B’ Cross,28th Main Road, Jayanagar 9th Block, Bangalore - 560061",BANGALORE,BLU01899ALMDL,05 May 2026,,,,,,,,10
