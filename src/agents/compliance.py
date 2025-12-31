@@ -1,12 +1,14 @@
 # ------------------------------------------------------
-# Deterministic Compliance Agent (HARDENED)
-# Karnataka KPME Healthcare Establishments
+# Standards-Aligned Compliance Agent (FINAL)
 # ------------------------------------------------------
-# - NO LLMs
-# - NO APIs
-# - Handles dirty real-world data
-# - Never crashes
-# - Hard + Soft compliance checks
+# Frameworks referenced:
+# - ISO/IEC 25012 (Data Quality Model)
+# - ISO 8000 (Master Data Quality)
+# - WHO Digital Health Indicator Framework
+#
+# Key principle:
+#   Regulatory Validity is a HARD GATE.
+#   Readiness is scored only after legality is confirmed.
 # ------------------------------------------------------
 
 from pathlib import Path
@@ -66,18 +68,22 @@ class FieldIssue(BaseModel):
 
 
 class ComplianceResult(BaseModel):
-    compliance_score: float
     decision: str
-    metrics: Dict[str, float]
+    regulatory_validity: float
+    temporal_validity: float
+    completeness: float
+    structural_accuracy: float
+    operational_readiness: float
+    readiness_score: float
     issues: List[FieldIssue]
     reasoning: List[str]
 
 
 # ======================================================
-# SAFE HELPERS (CRITICAL)
+# SAFE HELPERS
 # ======================================================
 
-def add_issue(issues: List[FieldIssue], field: str, issue: str, description: str):
+def add_issue(issues, field, issue, description):
     issues.append(FieldIssue(
         field=field,
         issue=issue,
@@ -111,138 +117,121 @@ def safe_date(val):
 
 
 # ======================================================
-# COMPLIANCE AGENT
+# COMPLIANCE AGENT (STANDARDS-ALIGNED)
 # ======================================================
 
 class ComplianceAgent:
     """
-    Fully deterministic, defensive compliance validator.
+    Gated compliance evaluation aligned with healthcare
+    registry and ISO data quality frameworks.
     """
 
     def run(self, record: Dict) -> ComplianceResult:
         issues: List[FieldIssue] = []
         reasoning: List[str] = []
 
-        # --------------------------------------------------
-        # 1. COMPLETENESS (HARD)
-        # --------------------------------------------------
-        required_fields = [
-            "establishment_name",
-            "category",
-            "system_of_medicine",
-            "certificate_number",
-            "certificate_validity",
-        ]
-
-        missing = [f for f in required_fields if not safe_str(record.get(f))]
-        completeness = 1 - (len(missing) / len(required_fields))
-
-        for f in missing:
-            add_issue(issues, f, "MISSING", "Mandatory field missing")
-
-        # --------------------------------------------------
-        # 2. VALIDITY (HARD)
-        # --------------------------------------------------
-        validity_checks = 4
-        validity_failures = 0
-
-        district = safe_str(record.get("district"))
-        if district and district.upper() not in VALID_DISTRICTS:
-            validity_failures += 1
-            add_issue(issues, "district", "INVALID", "Not a valid Karnataka district")
+        # ==================================================
+        # 1. REGULATORY VALIDITY (HARD GATE)
+        # ==================================================
+        rv_checks = 4
+        rv_failures = 0
 
         if record.get("category") not in VALID_CATEGORIES:
-            validity_failures += 1
-            add_issue(issues, "category", "INVALID", "Unknown healthcare category")
+            rv_failures += 1
+            add_issue(issues, "category", "INVALID", "Invalid healthcare category")
 
         if record.get("system_of_medicine") not in VALID_SYSTEMS:
-            validity_failures += 1
+            rv_failures += 1
             add_issue(issues, "system_of_medicine", "INVALID", "Unsupported system of medicine")
 
         if not CERTIFICATE_REGEX.match(str(record.get("certificate_number", ""))):
-            validity_failures += 1
-            add_issue(issues, "certificate_number", "INVALID_FORMAT", "Invalid certificate format")
+            rv_failures += 1
+            add_issue(issues, "certificate_number", "INVALID_FORMAT", "Invalid certificate number")
 
-        validity = 1 - (validity_failures / validity_checks)
-
-        # --------------------------------------------------
-        # 3. AUTHENTICITY (HARD)
-        # --------------------------------------------------
-        expiry = safe_date(record.get("certificate_validity"))
-
-        if expiry is None:
-            authenticity = 0.0
-            add_issue(issues, "certificate_validity", "INVALID_FORMAT", "Invalid certificate date")
-        elif expiry < datetime.now():
-            authenticity = 0.3
-            add_issue(issues, "certificate_validity", "EXPIRED", "Certificate expired")
-        else:
-            authenticity = 1.0
-
-        # --------------------------------------------------
-        # 4. CONSISTENCY (HARD)
-        # --------------------------------------------------
-        consistency = 1.0
         beds = safe_float(record.get("num_beds"))
         category = record.get("category")
-
         if beds is not None and category in MAX_BEDS_BY_CATEGORY:
             if beds > MAX_BEDS_BY_CATEGORY[category]:
-                consistency = 0.0
+                rv_failures += 1
                 add_issue(
                     issues,
                     "num_beds",
                     "INCONSISTENT",
-                    f"Beds exceed allowed limit for {category}"
+                    f"Beds exceed permitted limit for {category}"
                 )
 
-        # --------------------------------------------------
-        # 5. SOFT QUALITY CHECKS (DEFENSIVE)
-        # --------------------------------------------------
-        soft_checks = 0
-        soft_passed = 0
+        regulatory_validity = 1 - (rv_failures / rv_checks)
 
-        # Address
-        soft_checks += 1
-        if safe_str(record.get("address")):
-            soft_passed += 1
-        else:
-            add_issue(issues, "address", "MISSING", "Address not provided")
+        if regulatory_validity < 0.75:
+            reasoning.append("Failed regulatory validity gate")
+            return ComplianceResult(
+                decision="REJECT",
+                regulatory_validity=round(regulatory_validity, 2),
+                temporal_validity=0.0,
+                completeness=0.0,
+                structural_accuracy=0.0,
+                operational_readiness=0.0,
+                readiness_score=0.0,
+                issues=issues,
+                reasoning=reasoning,
+            )
 
-        # Phone
-        soft_checks += 1
-        phone = safe_str(record.get("phone"))
-        if phone and phone.isdigit() and len(phone) == 10:
-            soft_passed += 1
+        # ==================================================
+        # 2. TEMPORAL VALIDITY (ISO: Timeliness)
+        # ==================================================
+        expiry = safe_date(record.get("certificate_validity"))
+        if expiry is None:
+            temporal_validity = 0.0
+            add_issue(issues, "certificate_validity", "INVALID_FORMAT", "Invalid expiry date")
+        elif expiry < datetime.now():
+            temporal_validity = 0.0
+            add_issue(issues, "certificate_validity", "EXPIRED", "Registration expired")
         else:
-            add_issue(issues, "phone", "INVALID_FORMAT", "Invalid or missing phone number")
+            temporal_validity = 1.0
 
-        # Email
-        soft_checks += 1
-        email = safe_str(record.get("email"))
-        if email and EMAIL_REGEX.match(email):
-            soft_passed += 1
+        # ==================================================
+        # 3. COMPLETENESS (ISO: Completeness)
+        # ==================================================
+        required_fields = [
+            "establishment_name",
+            "address",
+            "district",
+            "phone",
+        ]
+
+        present = sum(1 for f in required_fields if safe_str(record.get(f)))
+        completeness = present / len(required_fields)
+
+        for f in required_fields:
+            if not safe_str(record.get(f)):
+                add_issue(issues, f, "MISSING", "Required field missing")
+
+        # ==================================================
+        # 4. STRUCTURAL ACCURACY (ISO: Accuracy + Consistency)
+        # ==================================================
+        sa_checks = 3
+        sa_passed = 0
+
+        # District validity
+        district = safe_str(record.get("district"))
+        if district and district.upper() in VALID_DISTRICTS:
+            sa_passed += 1
         else:
-            add_issue(issues, "email", "INVALID_FORMAT", "Invalid or missing email")
+            add_issue(issues, "district", "INVALID", "Invalid or missing district")
 
         # Geo
-        soft_checks += 1
         lat = safe_float(record.get("latitude"))
         lon = safe_float(record.get("longitude"))
         if lat is not None and lon is not None and -90 <= lat <= 90 and -180 <= lon <= 180:
-            soft_passed += 1
+            sa_passed += 1
         else:
-            add_issue(issues, "geo", "INVALID", "Invalid or missing latitude/longitude")
+            add_issue(issues, "geo", "INVALID", "Invalid latitude/longitude")
 
-        # Land vs Building area
-        soft_checks += 1
+        # Land vs Building
         land = safe_float(record.get("land_area_sqft"))
         building = safe_float(record.get("building_area_sqft"))
-
-        if land is None or building is None:
-            soft_passed += 0.5  # neutral
-        elif building <= land:
-            soft_passed += 1
+        if land is None or building is None or building <= land:
+            sa_passed += 1
         else:
             add_issue(
                 issues,
@@ -251,48 +240,64 @@ class ComplianceAgent:
                 "Building area exceeds land area"
             )
 
-        soft_quality = soft_passed / soft_checks
+        structural_accuracy = sa_passed / sa_checks
 
-        # --------------------------------------------------
-        # 6. FINAL SCORE
-        # --------------------------------------------------
-        score = (
-            0.25 * completeness +
-            0.25 * validity +
-            0.25 * authenticity +
-            0.15 * consistency +
-            0.10 * soft_quality
-        ) * 100
+        # ==================================================
+        # 5. OPERATIONAL READINESS (WHO / Registry Use)
+        # ==================================================
+        or_checks = 3
+        or_passed = 0
 
-        # --------------------------------------------------
-        # 7. DECISION
-        # --------------------------------------------------
-        if authenticity < 0.5:
-            decision = "REJECT"
-            reasoning.append("Invalid or expired legal registration")
-        elif score >= 85:
-            decision = "AUTO_APPROVED"
-            reasoning.append("High compliance across hard and soft checks")
-        elif score >= 65:
-            decision = "NEEDS_ENRICHMENT"
-            reasoning.append("Soft data quality issues detected")
-        elif score >= 40:
-            decision = "MANUAL_REVIEW"
-            reasoning.append("Low confidence record")
+        phone = safe_str(record.get("phone"))
+        if phone and phone.isdigit() and len(phone) == 10:
+            or_passed += 1
         else:
-            decision = "REJECT"
-            reasoning.append("Insufficient compliance score")
+            add_issue(issues, "phone", "INVALID_FORMAT", "Invalid phone number")
+
+        email = safe_str(record.get("email"))
+        if email and EMAIL_REGEX.match(email):
+            or_passed += 1
+        else:
+            add_issue(issues, "email", "INVALID_FORMAT", "Invalid or missing email")
+
+        if safe_str(record.get("address")):
+            or_passed += 1
+        else:
+            add_issue(issues, "address", "MISSING", "Address missing")
+
+        operational_readiness = or_passed / or_checks
+
+        # ==================================================
+        # 6. READINESS SCORE (POST-GATE ONLY)
+        # ==================================================
+        readiness_score = (
+            0.20 * completeness +
+            0.20 * structural_accuracy +
+            0.20 * temporal_validity +
+            0.40 * operational_readiness
+        )
+
+        # ==================================================
+        # 7. DECISION LOGIC
+        # ==================================================
+        if operational_readiness < 0.8:
+            decision = "NEEDS_ENRICHMENT"
+            reasoning.append("Insufficient operational readiness for directory use")
+        elif readiness_score >= 0.85:
+            decision = "AUTO_APPROVED"
+            reasoning.append("Meets regulatory and directory readiness criteria")
+        else:
+            decision = "MANUAL_REVIEW"
+            reasoning.append("Moderate readiness; manual verification recommended")
 
         return ComplianceResult(
-            compliance_score=round(score, 2),
             decision=decision,
-            metrics={
-                "completeness": round(completeness, 2),
-                "validity": round(validity, 2),
-                "authenticity": round(authenticity, 2),
-                "consistency": round(consistency, 2),
-                "soft_quality": round(soft_quality, 2),
-            },
+            regulatory_validity=round(regulatory_validity, 2),
+            temporal_validity=round(temporal_validity, 2),
+            completeness=round(completeness, 2),
+            structural_accuracy=round(structural_accuracy, 2),
+            operational_readiness=round(operational_readiness, 2),
+            readiness_score=round(readiness_score, 2),
             issues=issues,
             reasoning=reasoning,
         )
