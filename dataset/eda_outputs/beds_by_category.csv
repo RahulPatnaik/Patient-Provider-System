@@ -1,0 +1,18 @@
+category,count,mean,std,min,25%,50%,75%,max
+AYUSH Therapy Centre,14.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Allied Health Professional Centre,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Blood Bank,1.0,0.0,,0.0,0.0,0.0,0.0,0.0
+Clinic/Polyclinic Only Consultation,289.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Clinic/Polyclinic with Diagnostic Support,82.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Clinic/Polyclinic with Dispensary,89.0,0.01,0.11,0.0,0.0,0.0,0.0,1.0
+Clinic/Polyclinic with Observation,47.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Dental Lab or Clinic,69.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Diagnostic Imaging Centre,23.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Health Check-up Centre,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Hospital (Level 1A),91.0,20.66,13.82,5.0,10.0,15.0,30.0,50.0
+Hospital (Level 1B),40.0,20.85,15.4,3.0,10.0,13.5,28.5,65.0
+Hospital (Level 2),44.0,27.8,18.74,3.0,13.75,28.0,36.25,100.0
+Hospital (Level 3)(Non-Teaching with Super Specialty Services),5.0,128.8,120.51,48.0,56.0,100.0,100.0,340.0
+Hospital (Level 4)(Teaching),7.0,135.71,359.07,0.0,0.0,0.0,0.0,950.0
+Medical Diagnostic Laboratory,80.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Specialty / Super-Specialty Specific Hospital,10.0,169.5,224.97,9.0,55.25,97.5,185.0,784.0

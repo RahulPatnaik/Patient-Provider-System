@@ -1,0 +1,217 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Healthcare Facility Schema",
+  "description": "Standardized schema for Karnataka healthcare facilities from multiple data sources",
+  "type": "object",
+  "required": ["facility_id", "name", "type", "address", "state"],
+  "properties": {
+    "facility_id": {
+      "type": "string",
+      "description": "Unique generated identifier for the facility",
+      "pattern": "^FAC_[A-Z0-9]{12}$"
+    },
+    "source_ids": {
+      "type": "object",
+      "description": "Original identifiers from various data sources",
+      "properties": {
+        "hfr_id": {
+          "type": ["string", "null"],
+          "description": "ABDM Health Facility Registry ID"
+        },
+        "osm_id": {
+          "type": ["string", "null"],
+          "description": "OpenStreetMap node/way ID"
+        },
+        "data_gov_id": {
+          "type": ["string", "null"],
+          "description": "Data.gov.in dataset identifier"
+        },
+        "rhs_code": {
+          "type": ["string", "null"],
+          "description": "Rural Health Statistics facility code"
+        },
+        "nhm_code": {
+          "type": ["string", "null"],
+          "description": "National Health Mission facility code"
+        }
+      }
+    },
+    "name": {
+      "type": "string",
+      "description": "Official name of the healthcare facility"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["PHC", "CHC", "SC", "Hospital", "Clinic", "Diagnostic", "Pharmacy", "AYUSH", "Other"],
+      "description": "Type of healthcare facility"
+    },
+    "subtype": {
+      "type": ["string", "null"],
+      "description": "Specific subtype (e.g., District Hospital, Medical College)"
+    },
+    "ownership": {
+      "type": "string",
+      "enum": ["Public", "Private", "PPP", "NGO", "Unknown"],
+      "description": "Ownership model of the facility"
+    },
+    "system_of_medicine": {
+      "type": "string",
+      "enum": ["Modern", "Ayurveda", "Yoga", "Unani", "Siddha", "Homeopathy", "Mixed", "Unknown"],
+      "description": "System of medicine practiced"
+    },
+    "address": {
+      "type": "object",
+      "required": ["district", "state"],
+      "properties": {
+        "line1": {
+          "type": ["string", "null"],
+          "description": "Address line 1"
+        },
+        "line2": {
+          "type": ["string", "null"],
+          "description": "Address line 2"
+        },
+        "village": {
+          "type": ["string", "null"],
+          "description": "Village name"
+        },
+        "taluk": {
+          "type": ["string", "null"],
+          "description": "Taluk/Tehsil name"
+        },
+        "district": {
+          "type": "string",
+          "description": "District name"
+        },
+        "pincode": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9]{6}$",
+          "description": "6-digit PIN code"
+        },
+        "state": {
+          "type": "string",
+          "const": "Karnataka",
+          "description": "State (must be Karnataka)"
+        }
+      }
+    },
+    "location": {
+      "type": ["object", "null"],
+      "description": "Geographic coordinates",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90,
+          "description": "Latitude in decimal degrees"
+        },
+        "longitude": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180,
+          "description": "Longitude in decimal degrees"
+        },
+        "accuracy": {
+          "type": ["string", "null"],
+          "enum": ["exact", "approximate", "geocoded", "unknown"],
+          "description": "Accuracy of coordinates"
+        }
+      },
+      "required": ["latitude", "longitude"]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "phone": {
+          "type": ["string", "null"],
+          "description": "Contact phone number"
+        },
+        "email": {
+          "type": ["string", "null"],
+          "format": "email",
+          "description": "Contact email address"
+        },
+        "website": {
+          "type": ["string", "null"],
+          "format": "uri",
+          "description": "Official website URL"
+        }
+      }
+    },
+    "capacity": {
+      "type": "object",
+      "properties": {
+        "beds": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Total number of beds"
+        },
+        "doctors": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Number of doctors"
+        },
+        "nurses": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Number of nurses"
+        },
+        "staff_total": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Total staff count"
+        }
+      }
+    },
+    "operational_status": {
+      "type": "string",
+      "enum": ["24x7", "Regular", "Partial", "Closed", "Unknown"],
+      "description": "Current operational status"
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of services provided (OPD, IPD, Emergency, Maternity, etc.)"
+    },
+    "rural_urban": {
+      "type": ["string", "null"],
+      "enum": ["Rural", "Urban", "Semi-Urban", "Unknown"],
+      "description": "Rural or urban classification"
+    },
+    "nfhs_district_code": {
+      "type": ["string", "null"],
+      "description": "NFHS district code for linking survey data"
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["HFR", "OSM", "Data.gov.in", "RHS", "NHM", "Manual"]
+      },
+      "minItems": 1,
+      "description": "List of data sources this record was compiled from"
+    },
+    "quality_score": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Data quality/completeness score (0-1)"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last update (YYYY-MM-DD)"
+    },
+    "last_verified": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Date of last verification (YYYY-MM-DD)"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Additional notes or comments"
+    }
+  }
+}
