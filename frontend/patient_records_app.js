@@ -166,7 +166,8 @@ function PatientForm({ patientData = null, onSuccess }) {
         emergency_contact_phone: '',
         blood_group: '',
         allergies: '',
-        chronic_conditions: ''
+        chronic_conditions: '',
+        medical_notes: ''
     });
     const [ocrFile, setOcrFile] = useState(null);
     const [ocrLoading, setOcrLoading] = useState(false);
@@ -204,16 +205,86 @@ function PatientForm({ patientData = null, onSuccess }) {
             const data = await response.json();
 
             if (data.success) {
-                // Auto-fill form with OCR data
+                // Auto-fill form with OCR data - clean up Mistral Vision prefixes
+                const sd = data.structured_data;
+
+                // Extract clean patient name (remove "PATIENT: " prefix)
+                let patientName = sd.patient_name || '';
+                if (patientName.startsWith('PATIENT:')) {
+                    patientName = patientName.replace('PATIENT:', '').trim();
+                }
+
+                // Extract clean address (remove "ADDRESS: " prefix)
+                let address = sd.patient_address || sd.address || '';
+                if (address.startsWith('ADDRESS:')) {
+                    address = address.replace('ADDRESS:', '').trim();
+                }
+
+                // Convert DOB format if needed (MM/DD/YYYY -> YYYY-MM-DD)
+                let dob = sd.patient_dob || '';
+                if (dob.startsWith('DOB:')) {
+                    dob = dob.replace('DOB:', '').trim();
+                }
+                // Parse MM/DD/YYYY to YYYY-MM-DD
+                if (dob && dob.match(/\d{2}\/\d{2}\/\d{4}/)) {
+                    const [month, day, year] = dob.split('/');
+                    dob = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+                }
+
+                // Extract phone (from doctor, clinic, or patient)
+                let phone = sd.clinic_phone || sd.doctor_phone || sd.phone || '';
+                if (phone.startsWith('TEL:')) {
+                    phone = phone.replace('TEL:', '').replace(/[^\d]/g, '').trim();
+                } else {
+                    phone = phone.replace(/[^\d]/g, ''); // Remove all non-digits
+                }
+                // Take last 10 digits if longer
+                if (phone.length > 10) {
+                    phone = phone.slice(-10);
+                }
+
+                // Build medical notes from prescription data
+                let medicalNotes = '';
+                if (sd.doctor_name) {
+                    medicalNotes += `Doctor: ${sd.doctor_name}\n`;
+                }
+                if (sd.doctor_license) {
+                    medicalNotes += `License: ${sd.doctor_license}\n`;
+                }
+                if (sd.clinic_name) {
+                    medicalNotes += `Clinic: ${sd.clinic_name}\n`;
+                }
+                if (sd.clinic_address) {
+                    medicalNotes += `Clinic Address: ${sd.clinic_address}\n`;
+                }
+                if (sd.prescription_date) {
+                    medicalNotes += `\nPrescription Date: ${sd.prescription_date}\n`;
+                }
+                if (sd.diagnosis) {
+                    medicalNotes += `Diagnosis: ${sd.diagnosis}\n`;
+                }
+                if (sd.medications_text || sd.medications) {
+                    medicalNotes += `\nMedications:\n${sd.medications_text || JSON.stringify(sd.medications, null, 2)}\n`;
+                }
+                if (sd.refills) {
+                    medicalNotes += `${sd.refills}\n`;
+                }
+                if (sd.notes) {
+                    medicalNotes += `\nNotes: ${sd.notes}\n`;
+                }
+
                 setFormData(prev => ({
                     ...prev,
-                    patient_name: data.structured_data.patient_name || prev.patient_name,
-                    phone: data.structured_data.phone || prev.phone
+                    patient_name: patientName || prev.patient_name,
+                    date_of_birth: dob || prev.date_of_birth,
+                    phone: phone || prev.phone,
+                    address: address || prev.address,
+                    medical_notes: medicalNotes || prev.medical_notes
                 }));
 
                 setMessage({
                     type: 'success',
-                    text: `OCR extraction successful using ${data.provider}. Patient details auto-filled.`
+                    text: `OCR extraction successful using ${data.provider}. Auto-filled: ${patientName ? 'name' : ''}${dob ? ', DOB' : ''}${phone ? ', phone' : ''}${address ? ', address' : ''}${medicalNotes ? ', medical notes (prescription details)' : ''}.`
                 });
             } else {
                 setMessage({
@@ -459,6 +530,18 @@ function PatientForm({ patientData = null, onSuccess }) {
                             onChange={handleInputChange}
                             rows="2"
                             placeholder="List any chronic medical conditions..."
+                        />
+                    </div>
+
+                    <div className="form-field" style={{ gridColumn: '1 / -1' }}>
+                        <label>Medical Notes / Doctor's Notes</label>
+                        <textarea
+                            name="medical_notes"
+                            value={formData.medical_notes}
+                            onChange={handleInputChange}
+                            rows="6"
+                            placeholder="Prescription details, doctor's notes, medications, etc. (auto-filled from OCR)"
+                            style={{ fontFamily: 'monospace', fontSize: '0.9rem' }}
                         />
                     </div>
                 </div>
@@ -735,6 +818,22 @@ function PatientDetail({ patientId, onBack }) {
                         <span className="detail-label">Chronic Conditions:</span>
                         <span>{patient.chronic_conditions || 'None reported'}</span>
                     </div>
+                    {patient.medical_notes && (
+                        <div className="detail-item" style={{ gridColumn: '1 / -1' }}>
+                            <span className="detail-label">Medical Notes:</span>
+                            <pre style={{
+                                whiteSpace: 'pre-wrap',
+                                fontFamily: 'monospace',
+                                fontSize: '0.85rem',
+                                margin: '10px 0',
+                                padding: '10px',
+                                background: '#f5f5f5',
+                                borderLeft: '3px solid var(--green-primary)'
+                            }}>
+                                {patient.medical_notes}
+                            </pre>
+                        </div>
+                    )}
                 </div>
             </div>
 

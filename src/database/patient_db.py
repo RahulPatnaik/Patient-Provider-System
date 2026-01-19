@@ -43,6 +43,7 @@ class PatientDatabase:
                 blood_group TEXT,
                 allergies TEXT,
                 chronic_conditions TEXT,
+                medical_notes TEXT,
                 created_at TEXT NOT NULL,
                 updated_at TEXT NOT NULL
             )

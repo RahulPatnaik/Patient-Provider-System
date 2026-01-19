@@ -96,4 +96,8 @@ $RECYCLE.BIN/
 # Linux
 *~
 
-/home/rahul/Desktop/Patient-Provider-System/thsemel-484714-40ab6456a1aa.json
+# Google Cloud credentials
+*.json
+!package.json
+!tsconfig.json
+thsemel-484714-*.json

@@ -6,7 +6,7 @@ Endpoints for optical character recognition of medical documents
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-from typing import Dict, Optional
+from typing import Dict, Optional, Any
 import logging
 import sys
 from pathlib import Path
@@ -27,7 +27,7 @@ class OCRResponse(BaseModel):
     """OCR extraction response"""
     success: bool
     extracted_text: str
-    structured_data: Dict[str, str]
+    structured_data: Dict[str, Any]  # Changed to Any to support lists/dicts from Mistral Vision
     provider: str
     confidence: Optional[float] = None
 
