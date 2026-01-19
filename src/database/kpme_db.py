@@ -354,13 +354,20 @@ class KPMEDatabase:
 
         stats = {}
 
+        # Check which tables exist
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        existing_tables = {row[0] for row in cursor.fetchall()}
+
         # Count establishments
         cursor.execute("SELECT COUNT(*) FROM establishments")
         stats['total_establishments'] = cursor.fetchone()[0]
 
-        # Count staff
-        cursor.execute("SELECT COUNT(*) FROM staff")
-        stats['total_staff'] = cursor.fetchone()[0]
+        # Count staff (only if table exists)
+        if 'staff' in existing_tables:
+            cursor.execute("SELECT COUNT(*) FROM staff")
+            stats['total_staff'] = cursor.fetchone()[0]
+        else:
+            stats['total_staff'] = 0
 
         # Count total unique districts
         cursor.execute("""
@@ -390,12 +397,18 @@ class KPMEDatabase:
         """)
         stats['by_system'] = [dict(row) for row in cursor.fetchall()]
 
-        # Establishments with GPS
-        cursor.execute("""
-            SELECT COUNT(*) FROM establishments
-            WHERE latitude IS NOT NULL AND latitude != ''
-        """)
-        stats['with_gps'] = cursor.fetchone()[0]
+        # Establishments with GPS (only if columns exist)
+        cursor.execute("PRAGMA table_info(establishments)")
+        columns = {row[1] for row in cursor.fetchall()}
+
+        if 'latitude' in columns:
+            cursor.execute("""
+                SELECT COUNT(*) FROM establishments
+                WHERE latitude IS NOT NULL AND latitude != ''
+            """)
+            stats['with_gps'] = cursor.fetchone()[0]
+        else:
+            stats['with_gps'] = 0
 
         return stats
 

@@ -284,10 +284,11 @@ def parse_medical_document(text: str) -> Dict[str, str]:
 @router.get("/health")
 async def ocr_health():
     """Check OCR service health and available providers"""
+    import os
     ocr_service = get_ocr_service()
 
     providers = {
-        "google_vision": bool(ocr_service.google_api_key),
+        "mistral_vision": bool(os.getenv("MISTRAL_API_KEY")),
         "ocrspace": bool(ocr_service.ocrspace_api_key),
     }
 
