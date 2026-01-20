@@ -367,6 +367,24 @@ def check_compliance(provider_data: Dict[str, Any]) -> Dict[str, Any]:
     Returns:
         Compliance result as dictionary
     """
+    # Enrich provider_data with KPME database information if certificate is provided
+    enriched_data = provider_data.copy()
+
+    if provider_data.get("certificate_number"):
+        try:
+            from database.kpme_db import get_kpme_db
+            db = get_kpme_db()
+            kpme_record = db.get_establishment_by_certificate(provider_data["certificate_number"])
+
+            if kpme_record:
+                # Merge KPME data - only fill in missing fields
+                for key, value in kpme_record.items():
+                    if value and not enriched_data.get(key):
+                        enriched_data[key] = value
+        except Exception as e:
+            # If KPME lookup fails, continue with original data
+            pass
+
     agent = ComplianceAgent()
-    result = agent.run(provider_data)
+    result = agent.run(enriched_data)
     return result.model_dump()
