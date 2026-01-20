@@ -16,6 +16,9 @@ const Chatbot = () => {
     const [inputMessage, setInputMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState('en');
+    const [isRecording, setIsRecording] = useState(false);
+    const [mediaRecorder, setMediaRecorder] = useState(null);
+    const [audioChunks, setAudioChunks] = useState([]);
     const messagesEndRef = useRef(null);
 
     // Auto-scroll to bottom when new messages arrive
@@ -100,6 +103,77 @@ const Chatbot = () => {
         { code: 'te', name: 'తెలుగు', flag: '🇮🇳' },
         { code: 'mr', name: 'मराठी', flag: '🇮🇳' },
     ];
+
+    // Start recording audio
+    const startRecording = async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            const recorder = new MediaRecorder(stream);
+            const chunks = [];
+
+            recorder.ondataavailable = (e) => {
+                if (e.data.size > 0) {
+                    chunks.push(e.data);
+                }
+            };
+
+            recorder.onstop = async () => {
+                const audioBlob = new Blob(chunks, { type: 'audio/webm' });
+                await transcribeAudio(audioBlob);
+                stream.getTracks().forEach(track => track.stop());
+            };
+
+            recorder.start();
+            setMediaRecorder(recorder);
+            setIsRecording(true);
+        } catch (error) {
+            console.error('Microphone access error:', error);
+            alert('Could not access microphone. Please allow microphone access.');
+        }
+    };
+
+    // Stop recording
+    const stopRecording = () => {
+        if (mediaRecorder && mediaRecorder.state === 'recording') {
+            mediaRecorder.stop();
+            setIsRecording(false);
+        }
+    };
+
+    // Transcribe audio using Groq Whisper API
+    const transcribeAudio = async (audioBlob) => {
+        setIsLoading(true);
+        try {
+            const formData = new FormData();
+            formData.append('file', audioBlob, 'recording.webm');
+
+            const response = await fetch('http://localhost:8000/api/v1/stt/transcribe', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error('Transcription failed');
+            }
+
+            const data = await response.json();
+            setInputMessage(data.text);
+        } catch (error) {
+            console.error('Transcription error:', error);
+            alert('Failed to transcribe audio. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    // Toggle recording
+    const toggleRecording = () => {
+        if (isRecording) {
+            stopRecording();
+        } else {
+            startRecording();
+        }
+    };
 
     return (
         <>
@@ -312,8 +386,8 @@ const Chatbot = () => {
                             value={inputMessage}
                             onChange={(e) => setInputMessage(e.target.value)}
                             onKeyPress={handleKeyPress}
-                            placeholder="Ask me anything..."
-                            disabled={isLoading}
+                            placeholder={isRecording ? "Recording..." : "Ask me anything..."}
+                            disabled={isLoading || isRecording}
                             style={{
                                 flex: 1,
                                 padding: '12px',
@@ -326,6 +400,40 @@ const Chatbot = () => {
                             onFocus={(e) => e.target.style.borderColor = '#667eea'}
                             onBlur={(e) => e.target.style.borderColor = '#e0e0e0'}
                         />
+                        {/* Microphone Button */}
+                        <button
+                            onClick={toggleRecording}
+                            disabled={isLoading}
+                            title={isRecording ? "Stop recording" : "Voice input (English)"}
+                            style={{
+                                padding: '12px',
+                                width: '48px',
+                                height: '48px',
+                                background: isRecording
+                                    ? 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+                                    : 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '8px',
+                                cursor: isLoading ? 'not-allowed' : 'pointer',
+                                fontSize: '20px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                transition: 'all 0.2s',
+                                animation: isRecording ? 'pulse 1.5s infinite' : 'none'
+                            }}
+                            onMouseEnter={(e) => {
+                                if (!isLoading) {
+                                    e.target.style.transform = 'scale(1.05)';
+                                }
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.transform = 'scale(1)';
+                            }}
+                        >
+                            {isRecording ? '⏹' : '🎤'}
+                        </button>
                         <button
                             onClick={sendMessage}
                             disabled={!inputMessage.trim() || isLoading}

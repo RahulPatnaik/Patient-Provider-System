@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routes import provider, health, admin, ocr, patients, chatbot
+from api.routes import provider, health, admin, ocr, patients, chatbot, stt
 from api.middleware import setup_middlewares
 from api.dependencies import get_database, get_cache, reset_dependencies
 
@@ -184,6 +184,9 @@ app.include_router(patients.router)
 
 # Chatbot routes
 app.include_router(chatbot.router)
+
+# Speech-to-Text routes
+app.include_router(stt.router)
 
 
 # ============================================================================
