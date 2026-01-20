@@ -1,0 +1,45 @@
+{
+  "valid_samples_for_testing": [
+    {
+      "name": "Test Sample 1 - Allopathy Clinic (Valid until 2026)",
+      "establishment_name": "DR HABIB KHAN",
+      "certificate_number": "DKA00409ALCOC",
+      "district": "MANGALORE",
+      "category": "Clinic/Polyclinic Only Consultation",
+      "system_of_medicine": "Allopathy",
+      "address": "1ST FLOOR, SHUBHA KRISHNA BUILDING, HIGHLANDS, MANGALORE"
+    },
+    {
+      "name": "Test Sample 2 - Allopathy Clinic with Diagnostics (Valid until 2030)",
+      "establishment_name": "ORTHO CLINIC",
+      "certificate_number": "DKA03159ALCDS",
+      "district": "MANGALORE",
+      "category": "Clinic/Polyclinic with Diagnostic Support",
+      "system_of_medicine": "Allopathy",
+      "address": "DHIRAJ COMPLEX,BEHIND SURATHKAL NEW BUS STAND MANGALORE"
+    },
+    {
+      "name": "Test Sample 3 - Bangalore Clinic (Valid until 2029)",
+      "establishment_name": "Shankar Clinic",
+      "certificate_number": "BLU06656ALCOC",
+      "district": "BANGALORE",
+      "category": "Clinic/Polyclinic Only Consultation",
+      "system_of_medicine": "Allopathy",
+      "address": "No. 326 3rd Main 7th Cross Srinivasanagar BSK 1st Stage Bangalore"
+    }
+  ],
+  "fast_validation_test": {
+    "note": "Use certificate_number only for fast validation",
+    "certificate_number": "DKA00409ALCOC",
+    "expected_result": "Valid (confidence: 0.9)"
+  },
+  "full_validation_test": {
+    "note": "Use all fields for full validation",
+    "establishment_name": "DR HABIB KHAN",
+    "certificate_number": "DKA00409ALCOC",
+    "district": "MANGALORE",
+    "category": "Clinic/Polyclinic Only Consultation",
+    "system_of_medicine": "Allopathy",
+    "address": "1ST FLOOR, SHUBHA KRISHNA BUILDING, HIGHLANDS, MANGALORE"
+  }
+}

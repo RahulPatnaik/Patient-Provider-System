@@ -140,7 +140,7 @@ class ManualReviewDecisionRequest(BaseModel):
 class KPMEDataResponse(BaseModel):
     """KPME validation data in API response."""
 
-    certificate_number: str
+    certificate_number: Optional[str] = None
     establishment_name: Optional[str] = None
     category: Optional[str] = None
     district: Optional[str] = None
@@ -150,6 +150,7 @@ class KPMEDataResponse(BaseModel):
     is_valid: bool
     is_expired: bool
     confidence: float = Field(ge=0.0, le=1.0)
+
 
 
 class DataQualityResponse(BaseModel):
@@ -254,7 +255,7 @@ class FastValidateResponse(BaseModel):
     request_id: str
     timestamp: datetime
     is_valid: bool
-    certificate_number: str
+    certificate_number: Optional[str] = None
     establishment_name: Optional[str] = None
     is_expired: bool
     confidence: float = Field(ge=0.0, le=1.0)

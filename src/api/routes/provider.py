@@ -121,7 +121,7 @@ async def validate_provider(
         kpme_data = None
         if result.provider_data.kpme_data:
             kpme_data = KPMEDataResponse(
-                certificate_number=result.provider_data.kpme_data.get("certificate_number", ""),
+                certificate_number=result.provider_data.kpme_data.get("certificate_number") or None,
                 establishment_name=result.provider_data.kpme_data.get("establishment_name"),
                 category=result.provider_data.kpme_data.get("category"),
                 district=result.provider_data.kpme_data.get("district"),
@@ -324,7 +324,7 @@ async def batch_validate(
                 kpme_data = None
                 if result.provider_data.kpme_data:
                     kpme_data = KPMEDataResponse(
-                        certificate_number=result.provider_data.kpme_data.get("certificate_number", ""),
+                        certificate_number=result.provider_data.kpme_data.get("certificate_number") or None,
                         establishment_name=result.provider_data.kpme_data.get("establishment_name"),
                         category=result.provider_data.kpme_data.get("category"),
                         district=result.provider_data.kpme_data.get("district"),
