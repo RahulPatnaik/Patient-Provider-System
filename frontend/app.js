@@ -331,7 +331,7 @@ function FullValidation() {
         }
     };
 
-    const loadTestData = () => {
+    const loadNonWorkingTestData = () => {
         setFormData({
             establishment_name: 'AAROGYA HOSPITAL',
             certificate_number: 'BDR00172ALHL2',
@@ -339,6 +339,17 @@ function FullValidation() {
             email: 'aarogya@example.com',
             district: 'Bangalore Urban',
             address: '123 Main Street, Bangalore',
+        });
+    };
+
+    const loadValidTestData = () => {
+        setFormData({
+            establishment_name: 'DR HABIB KHAN',
+            certificate_number: 'DKA00409ALCOC',
+            district: 'MANGALORE',
+            category: 'Clinic/Polyclinic Only Consultation',
+            system_of_medicine: 'Allopathy',
+            address: '1ST FLOOR, SHUBHA KRISHNA BUILDING, HIGHLANDS, MANGALORE',
         });
     };
 
@@ -432,8 +443,11 @@ function FullValidation() {
                         <button type="submit" className="btn btn-primary" disabled={loading}>
                             {loading ? '⏳ Validating...' : '✓ Validate Provider'}
                         </button>
-                        <button type="button" className="btn btn-secondary" onClick={loadTestData}>
-                            📋 Load Test Data
+                        <button type="button" className="btn btn-secondary" onClick={loadValidTestData}>
+                            ✅ Load Valid Test Data
+                        </button>
+                        <button type="button" className="btn btn-secondary" onClick={loadNonWorkingTestData}>
+                            📋 Non-Working Test Data
                         </button>
                     </div>
                 </form>
@@ -558,11 +572,19 @@ function FastValidation() {
         }
     };
 
-    const loadTestData = () => {
+    const loadNonWorkingTestData = () => {
         setFormData({
             certificate_number: 'BDR00172ALHL2',
             provider_name: 'AAROGYA HOSPITAL',
             phone: '9448452147',
+        });
+    };
+
+    const loadValidTestData = () => {
+        setFormData({
+            certificate_number: 'DKA00409ALCOC',
+            provider_name: 'DR HABIB KHAN',
+            phone: '',
         });
     };
 
@@ -608,8 +630,11 @@ function FastValidation() {
                         <button type="submit" className="btn btn-primary" disabled={loading}>
                             {loading ? '⏳ Validating...' : '⚡ Fast Validate'}
                         </button>
-                        <button type="button" className="btn btn-secondary" onClick={loadTestData}>
-                            📋 Load Test Data
+                        <button type="button" className="btn btn-secondary" onClick={loadValidTestData}>
+                            ✅ Load Valid Test Data
+                        </button>
+                        <button type="button" className="btn btn-secondary" onClick={loadNonWorkingTestData}>
+                            📋 Non-Working Test Data
                         </button>
                     </div>
                 </form>
@@ -643,11 +668,11 @@ function FastValidationResult({ result }) {
                 <div className="result-details">
                     <div className="detail-item">
                         <span className="detail-label">Certificate:</span>
-                        <span className="detail-value">{result.certificate_number}</span>
+                        <span className="detail-value">{result.certificate_number || 'N/A'}</span>
                     </div>
                     <div className="detail-item">
                         <span className="detail-label">Provider:</span>
-                        <span className="detail-value">{result.provider_name || 'N/A'}</span>
+                        <span className="detail-value">{result.establishment_name || 'N/A'}</span>
                     </div>
                     <div className="detail-item">
                         <span className="detail-label">Cache Hit:</span>
@@ -658,6 +683,45 @@ function FastValidationResult({ result }) {
                         <span className="detail-value">{result.execution_time_ms}ms</span>
                     </div>
                 </div>
+
+                {/* AI Explainability Section */}
+                {result.confidence > 0 && (
+                    <div className="reasoning-section">
+                        <h4 className="reasoning-title">🤖 AI Confidence Breakdown</h4>
+                        <div className="explainability-box">
+                            <div className="explanation-item">
+                                <span className="explain-label">✓ KPME Database Validation:</span>
+                                <span className="explain-score">
+                                    {result.is_expired ? '50%' : '90%'} confidence
+                                </span>
+                            </div>
+                            <div className="explanation-details">
+                                {result.is_valid && !result.is_expired && (
+                                    <>
+                                        <p>✓ Certificate found in KPME Karnataka database</p>
+                                        <p>✓ Certificate is currently valid (not expired)</p>
+                                        <p>✓ Establishment details match: <strong>{result.establishment_name}</strong></p>
+                                    </>
+                                )}
+                                {result.is_valid && result.is_expired && (
+                                    <>
+                                        <p>⚠️ Certificate found in KPME database</p>
+                                        <p>⚠️ Certificate has expired - reduced confidence to 50%</p>
+                                    </>
+                                )}
+                                {!result.is_valid && (
+                                    <>
+                                        <p>✗ Certificate not found in KPME database</p>
+                                        <p>✗ No matching establishment records</p>
+                                    </>
+                                )}
+                            </div>
+                            <div className="validation-source">
+                                <small>Validation Source: KPME Karnataka Database (Direct Lookup)</small>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 {result.message && (
                     <div className="message-box">
