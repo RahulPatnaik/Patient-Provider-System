@@ -24,13 +24,15 @@ class ChatMessage(BaseModel):
 class ChatRequest(BaseModel):
     """Chat request model"""
     messages: List[ChatMessage] = Field(..., description="Conversation history")
+    language: str = Field(default="en", description="User's preferred language (en, hi, kn, ta, te, etc.)")
 
     class Config:
         json_schema_extra = {
             "example": {
                 "messages": [
                     {"role": "user", "content": "How do I validate a provider?"}
-                ]
+                ],
+                "language": "en"
             }
         }
 
@@ -42,7 +44,9 @@ class ChatResponse(BaseModel):
 
 
 # System context about the Patient-Provider system
-SYSTEM_CONTEXT = """You are a helpful assistant for the KPME Patient-Provider Validation System. Your role is to help users understand how to use the system.
+SYSTEM_CONTEXT_TEMPLATE = """You are a helpful assistant for the KPME Patient-Provider Validation System. Your role is to help users understand how to use the system.
+
+IMPORTANT: The user's preferred language is {language}. Please respond in {language_name} to match their preference.
 
 ## System Overview:
 This is a healthcare provider validation and patient records management system for Karnataka, India.
@@ -109,6 +113,7 @@ async def chat(request: ChatRequest):
     Chat with the assistant about the system
 
     Uses Mistral AI to provide helpful responses about using the system.
+    Supports multiple languages - Mistral will respond in the user's preferred language.
     """
     try:
         # Get Mistral API key
@@ -122,9 +127,28 @@ async def chat(request: ChatRequest):
         # Initialize Mistral client
         client = Mistral(api_key=api_key)
 
-        # Prepare messages with system context
+        # Language mapping for better context
+        language_names = {
+            "en": "English",
+            "hi": "Hindi (हिंदी)",
+            "kn": "Kannada (ಕನ್ನಡ)",
+            "ta": "Tamil (தமிழ்)",
+            "te": "Telugu (తెలుగు)",
+            "mr": "Marathi (मराठी)",
+            "bn": "Bengali (বাংলা)",
+            "gu": "Gujarati (ગુજરાતી)"
+        }
+        
+        language_name = language_names.get(request.language, "English")
+        
+        # Prepare messages with language-aware system context
+        system_context = SYSTEM_CONTEXT_TEMPLATE.format(
+            language=request.language,
+            language_name=language_name
+        )
+        
         messages = [
-            {"role": "system", "content": SYSTEM_CONTEXT}
+            {"role": "system", "content": system_context}
         ]
 
         # Add conversation history

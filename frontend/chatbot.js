@@ -15,6 +15,7 @@ const Chatbot = () => {
     ]);
     const [inputMessage, setInputMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [selectedLanguage, setSelectedLanguage] = useState('en');
     const messagesEndRef = useRef(null);
 
     // Auto-scroll to bottom when new messages arrive
@@ -25,6 +26,7 @@ const Chatbot = () => {
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
+
 
     const sendMessage = async () => {
         if (!inputMessage.trim()) return;
@@ -44,7 +46,8 @@ const Chatbot = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    messages: newMessages
+                    messages: newMessages,
+                    language: selectedLanguage
                 })
             });
 
@@ -87,6 +90,16 @@ const Chatbot = () => {
     const handleQuickQuestion = (question) => {
         setInputMessage(question);
     };
+
+    // Language options
+    const languages = [
+        { code: 'en', name: 'English', flag: '🇬🇧' },
+        { code: 'hi', name: 'हिंदी', flag: '🇮🇳' },
+        { code: 'kn', name: 'ಕನ್ನಡ', flag: '🇮🇳' },
+        { code: 'ta', name: 'தமிழ்', flag: '🇮🇳' },
+        { code: 'te', name: 'తెలుగు', flag: '🇮🇳' },
+        { code: 'mr', name: 'मराठी', flag: '🇮🇳' },
+    ];
 
     return (
         <>
@@ -156,8 +169,30 @@ const Chatbot = () => {
                         <div style={{ fontSize: '24px' }}>🤖</div>
                         <div style={{ flex: 1 }}>
                             <div style={{ fontWeight: 'bold', fontSize: '16px' }}>System Assistant</div>
-                            <div style={{ fontSize: '12px', opacity: 0.9 }}>Here to help you</div>
+                            <div style={{ fontSize: '12px', opacity: 0.9 }}>
+                                {languages.find(l => l.code === selectedLanguage)?.flag} {languages.find(l => l.code === selectedLanguage)?.name}
+                            </div>
                         </div>
+                        <select
+                            value={selectedLanguage}
+                            onChange={(e) => setSelectedLanguage(e.target.value)}
+                            style={{
+                                padding: '6px 10px',
+                                borderRadius: '6px',
+                                border: 'none',
+                                background: 'rgba(255,255,255,0.2)',
+                                color: 'white',
+                                fontSize: '13px',
+                                cursor: 'pointer',
+                                outline: 'none'
+                            }}
+                        >
+                            {languages.map(lang => (
+                                <option key={lang.code} value={lang.code} style={{ color: '#333' }}>
+                                    {lang.flag} {lang.name}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
                     {/* Messages Area */}
