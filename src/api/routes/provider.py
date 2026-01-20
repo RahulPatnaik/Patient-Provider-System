@@ -15,6 +15,8 @@ from api.models import (
     BatchValidateResponse,
     FastValidateRequest,
     FastValidateResponse,
+    ExplainValidationRequest,
+    ExplainValidationResponse,
     ValidationDecision,
     ValidationPath,
     ConfidenceLevel,
@@ -32,6 +34,7 @@ from api.dependencies import (
 )
 from agents.supervisor import SupervisorAgent
 from agents.fast_validator import FastValidatorAgent
+from services.mistral_explainer import get_mistral_explainer
 
 
 router = APIRouter(prefix="/api/v1/providers", tags=["Provider Validation"])
@@ -405,3 +408,64 @@ async def batch_validate(
     )
 
     return response
+
+
+@router.post(
+    "/explain",
+    response_model=ExplainValidationResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Explain Validation Result",
+    description="Generate AI-powered explanation for a full validation result",
+    responses={
+        200: {"description": "Explanation generated successfully"},
+        400: {"model": ErrorResponse, "description": "Invalid request data"},
+        500: {"model": ErrorResponse, "description": "Explanation generation failed"}
+    }
+)
+async def explain_validation(
+    request: ExplainValidationRequest,
+    api_key: str = Depends(verify_api_key)
+):
+    """
+    Generate AI-powered explanation for validation result.
+    
+    Uses Mistral AI to provide:
+    - Clear reasoning for the decision
+    - Agent-by-agent contribution breakdown
+    - Confidence score explanation
+    """
+    try:
+        explainer = get_mistral_explainer()
+        
+        if request.validation_type == "fast":
+            result = await explainer.explain_fast_validation(request.validation_result)
+            
+            # Format response for fast validation
+            return ExplainValidationResponse(
+                overall_explanation=result.get("explanation", ""),
+                agent_breakdown=[],
+                confidence_explanation="",
+                full_text=result.get("explanation", ""),
+                success=result.get("success", False),
+                fallback=result.get("fallback", False)
+            )
+        else:
+            result = await explainer.explain_full_validation(request.validation_result)
+            
+            return ExplainValidationResponse(
+                overall_explanation=result.get("overall_explanation", ""),
+                agent_breakdown=result.get("agent_breakdown", []),
+                confidence_explanation=result.get("confidence_explanation", ""),
+                full_text=result.get("full_text", ""),
+                success=result.get("success", False),
+                fallback=result.get("fallback", False)
+            )
+            
+    except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
+        print(f"ERROR in explain_validation: {error_details}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Explanation generation failed: {str(e)}"
+        )

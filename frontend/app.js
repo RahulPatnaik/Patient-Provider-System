@@ -56,6 +56,16 @@ const api = {
         const params = new URLSearchParams({ query, limit: limit.toString() });
         return this.request(`/api/v1/admin/search/establishments?${params}`);
     },
+
+    async explainValidation(validationResult, validationType) {
+        return this.request('/api/v1/providers/explain', {
+            method: 'POST',
+            body: JSON.stringify({
+                validation_result: validationResult,
+                validation_type: validationType
+            }),
+        });
+    },
 };
 
 // OCR Scanner Component
@@ -463,6 +473,10 @@ function FullValidation() {
 // Validation Result Component
 function ValidationResult({ result }) {
     const [showJSON, setShowJSON] = useState(false);
+    const [showExplanation, setShowExplanation] = useState(false);
+    const [explanation, setExplanation] = useState(null);
+    const [loadingExplanation, setLoadingExplanation] = useState(false);
+    const [explanationError, setExplanationError] = useState('');
 
     const getDecisionBadgeClass = (decision) => {
         if (decision === 'auto_approved') return 'badge-success';
@@ -474,6 +488,21 @@ function ValidationResult({ result }) {
         if (confidence >= 0.8) return 'confidence-high';
         if (confidence >= 0.5) return 'confidence-medium';
         return 'confidence-low';
+    };
+
+    const fetchExplanation = async () => {
+        setLoadingExplanation(true);
+        setExplanationError('');
+
+        try {
+            const explanationResult = await api.explainValidation(result, 'full');
+            setExplanation(explanationResult);
+            setShowExplanation(true);
+        } catch (err) {
+            setExplanationError('Failed to generate AI explanation: ' + err.message);
+        } finally {
+            setLoadingExplanation(false);
+        }
     };
 
     return (
@@ -525,6 +554,76 @@ function ValidationResult({ result }) {
                         </ul>
                     </div>
                 )}
+
+                {/* AI Explanation Section */}
+                <div className="ai-explanation-container">
+                    {!showExplanation && !loadingExplanation && (
+                        <button
+                            className="btn btn-primary btn-sm ai-explain-btn"
+                            onClick={fetchExplanation}
+                        >
+                            🤖 Get AI Explanation
+                        </button>
+                    )}
+
+                    {loadingExplanation && (
+                        <div className="ai-loading">
+                            <div className="spinner"></div>
+                            <span>Generating AI explanation...</span>
+                        </div>
+                    )}
+
+                    {explanationError && (
+                        <div className="error-message">{explanationError}</div>
+                    )}
+
+                    {showExplanation && explanation && (
+                        <div className="ai-explanation-section">
+                            <div className="ai-explanation-header">
+                                <h4 className="reasoning-title">🤖 AI Explanation</h4>
+                                <button
+                                    className="btn btn-secondary btn-sm"
+                                    onClick={() => setShowExplanation(false)}
+                                >
+                                    ✕ Hide
+                                </button>
+                            </div>
+
+                            {explanation.fallback && (
+                                <div className="ai-fallback-notice">
+                                    ℹ️ Using fallback explanation (Mistral AI unavailable)
+                                </div>
+                            )}
+
+                            <div className="ai-explanation-content">
+                                <div className="explanation-section">
+                                    <h5 className="explanation-subtitle">Overall Decision</h5>
+                                    <div className="explanation-text" dangerouslySetInnerHTML={{ __html: marked.parse(explanation.overall_explanation || '') }}></div>
+                                </div>
+
+                                {explanation.agent_breakdown && explanation.agent_breakdown.length > 0 && (
+                                    <div className="explanation-section">
+                                        <h5 className="explanation-subtitle">Agent Contributions</h5>
+                                        <div className="agent-breakdown">
+                                            {explanation.agent_breakdown.map((agent, idx) => (
+                                                <div key={idx} className="agent-item">
+                                                    <div className="explanation-text" dangerouslySetInnerHTML={{ __html: marked.parse(agent.text || agent.contribution || JSON.stringify(agent)) }}></div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {explanation.confidence_explanation && (
+                                    <div className="explanation-section">
+                                        <h5 className="explanation-subtitle">Confidence Breakdown</h5>
+                                        <div className="explanation-text" dangerouslySetInnerHTML={{ __html: marked.parse(explanation.confidence_explanation) }}></div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
 
                 <div className="json-toggle">
                     <button
@@ -650,6 +749,25 @@ function FastValidation() {
 // Fast Validation Result Component
 function FastValidationResult({ result }) {
     const [showJSON, setShowJSON] = useState(false);
+    const [showAIExplanation, setShowAIExplanation] = useState(false);
+    const [aiExplanation, setAIExplanation] = useState(null);
+    const [loadingExplanation, setLoadingExplanation] = useState(false);
+    const [explanationError, setExplanationError] = useState('');
+
+    const fetchAIExplanation = async () => {
+        setLoadingExplanation(true);
+        setExplanationError('');
+
+        try {
+            const explanationResult = await api.explainValidation(result, 'fast');
+            setAIExplanation(explanationResult);
+            setShowAIExplanation(true);
+        } catch (err) {
+            setExplanationError('Failed to generate AI explanation: ' + err.message);
+        } finally {
+            setLoadingExplanation(false);
+        }
+    };
 
     return (
         <div className="result-section">
@@ -682,6 +800,55 @@ function FastValidationResult({ result }) {
                         <span className="detail-label">Execution Time:</span>
                         <span className="detail-value">{result.execution_time_ms}ms</span>
                     </div>
+                </div>
+
+                {/* Enhanced AI Explanation Section */}
+                <div className="ai-explanation-container">
+                    {!showAIExplanation && !loadingExplanation && (
+                        <button
+                            className="btn btn-primary btn-sm ai-explain-btn"
+                            onClick={fetchAIExplanation}
+                        >
+                            🤖 Get AI Explanation
+                        </button>
+                    )}
+
+                    {loadingExplanation && (
+                        <div className="ai-loading">
+                            <div className="spinner"></div>
+                            <span>Generating AI explanation...</span>
+                        </div>
+                    )}
+
+                    {explanationError && (
+                        <div className="error-message">{explanationError}</div>
+                    )}
+
+                    {showAIExplanation && aiExplanation && (
+                        <div className="ai-explanation-section">
+                            <div className="ai-explanation-header">
+                                <h4 className="reasoning-title">🤖 AI Explanation</h4>
+                                <button
+                                    className="btn btn-secondary btn-sm"
+                                    onClick={() => setShowAIExplanation(false)}
+                                >
+                                    ✕ Hide
+                                </button>
+                            </div>
+
+                            {aiExplanation.fallback && (
+                                <div className="ai-fallback-notice">
+                                    ℹ️ Using fallback explanation (Mistral AI unavailable)
+                                </div>
+                            )}
+
+                            <div className="ai-explanation-content">
+                                <div className="explanation-section">
+                                    <div className="explanation-text" dangerouslySetInnerHTML={{ __html: marked.parse(aiExplanation.overall_explanation || aiExplanation.explanation || '') }}></div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* AI Explainability Section */}

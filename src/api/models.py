@@ -200,6 +200,7 @@ class ValidateProviderResponse(BaseModel):
     execution_time_ms: int = Field(..., description="Total execution time in milliseconds")
     cache_hit: bool = Field(False, description="Whether result was served from cache")
     reasoning: List[str] = Field(default_factory=list, description="Decision reasoning")
+    ai_explanation: Optional[Dict[str, Any]] = Field(None, description="AI-generated explanation (optional)")
 
     class Config:
         json_schema_extra = {
@@ -262,6 +263,7 @@ class FastValidateResponse(BaseModel):
     execution_time_ms: int
     cache_hit: bool
     details: Dict[str, Any] = Field(default_factory=dict)
+    ai_explanation: Optional[str] = Field(None, description="AI-generated explanation (optional)")
 
     class Config:
         json_schema_extra = {
@@ -275,6 +277,61 @@ class FastValidateResponse(BaseModel):
                 "confidence": 0.9,
                 "execution_time_ms": 2,
                 "cache_hit": True
+            }
+        }
+
+
+class ExplainValidationRequest(BaseModel):
+    """Request model for validation explanation."""
+    
+    validation_result: Dict[str, Any] = Field(..., description="Validation result to explain")
+    validation_type: str = Field(..., description="Type of validation: 'full' or 'fast'")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "validation_result": {
+                    "decision": "auto_approved",
+                    "final_confidence": 0.92,
+                    "kpme_data": {"is_valid": True}
+                },
+                "validation_type": "full"
+            }
+        }
+
+
+class AgentExplanation(BaseModel):
+    """Explanation for an individual agent's contribution."""
+    
+    agent_name: str = Field(..., description="Name of the agent")
+    contribution: str = Field(..., description="Explanation of agent's contribution")
+    confidence: float = Field(..., ge=0.0, le=1.0, description="Agent's confidence score")
+
+
+class ExplainValidationResponse(BaseModel):
+    """Response model for validation explanation."""
+    
+    overall_explanation: str = Field(..., description="Overall decision explanation")
+    agent_breakdown: List[Dict[str, Any]] = Field(default_factory=list, description="Individual agent explanations")
+    confidence_explanation: str = Field(..., description="Confidence score calculation explanation")
+    full_text: str = Field(..., description="Complete explanation text")
+    success: bool = Field(..., description="Whether explanation was generated successfully")
+    fallback: bool = Field(False, description="Whether fallback explanation was used")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "overall_explanation": "This provider was approved based on valid KPME certificate and good data quality.",
+                "agent_breakdown": [
+                    {
+                        "agent": "KPME Validator",
+                        "contribution": "Found valid certificate in database"
+                    }
+                ],
+                "confidence_explanation": "Confidence calculated from KPME (90%), data quality (85%), and compliance (80%).",
+                "full_text": "Complete explanation...",
+                "success": True,
+                "fallback": False
             }
         }
 

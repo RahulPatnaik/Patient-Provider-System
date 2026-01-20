@@ -1134,3 +1134,270 @@ body::before {
     outline: 3px solid var(--saffron-primary);
     outline-offset: 2px;
 }
+
+/* ============================================================================
+   AI EXPLANATION SECTIONS
+   ============================================================================ */
+
+.ai-explanation-container {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 2px dotted var(--green-primary);
+}
+
+.ai-explain-btn {
+    margin: var(--space-lg) auto;
+    display: block;
+}
+
+.ai-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-xl);
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+    color: var(--saffron-primary);
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--cream-dark);
+    border-top-color: var(--saffron-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.ai-explanation-section {
+    background: linear-gradient(135deg, rgba(247, 147, 30, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%);
+    border: var(--border-medium) solid var(--saffron-primary);
+    padding: var(--space-xl);
+    margin-top: var(--space-lg);
+    position: relative;
+}
+
+.ai-explanation-section::before {
+    content: '\ud83e\udd16 AI POWERED';
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-family: var(--font-code);
+    font-size: 0.7rem;
+    color: var(--saffron-primary);
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--saffron-primary);
+    background: var(--white);
+}
+
+.ai-explanation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--saffron-primary);
+}
+
+.ai-fallback-notice {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--black);
+}
+
+.ai-explanation-content {
+    font-family: var(--font-serif);
+    line-height: 1.8;
+}
+
+.explanation-section {
+    margin-bottom: var(--space-xl);
+}
+
+.explanation-subtitle {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--saffron-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px dashed var(--saffron-primary);
+}
+
+.explanation-text {
+    font-size: 1rem;
+    color: var(--black);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+    padding: var(--space-md);
+    background: var(--white);
+    border-left: 3px solid var(--saffron-primary);
+}
+
+.agent-breakdown {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.agent-item {
+    background: var(--white);
+    padding: var(--space-md);
+    border-left: 4px solid var(--green-secondary);
+}
+
+.agent-item .explanation-text {
+    background: transparent;
+    border-left: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .result-header {
+        flex-direction: column;
+    }
+
+    .ai-explanation-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+}
+
+/* ============================================================================
+   MARKDOWN RENDERING IN AI EXPLANATIONS
+   ============================================================================ */
+
+.explanation-text h1,
+.explanation-text h2,
+.explanation-text h3,
+.explanation-text h4,
+.explanation-text h5,
+.explanation-text h6 {
+    font-family: var(--font-mono);
+    color: var(--green-primary);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.explanation-text h1 { font-size: 1.5rem; }
+.explanation-text h2 { font-size: 1.3rem; }
+.explanation-text h3 { font-size: 1.1rem; }
+.explanation-text h4 { font-size: 1rem; }
+
+.explanation-text p {
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+}
+
+.explanation-text ul,
+.explanation-text ol {
+    margin-left: var(--space-xl);
+    margin-bottom: var(--space-md);
+}
+
+.explanation-text li {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+
+.explanation-text strong {
+    font-weight: 700;
+    color: var(--saffron-dark);
+}
+
+.explanation-text em {
+    font-style: italic;
+    color: var(--green-secondary);
+}
+
+.explanation-text code {
+    font-family: var(--font-code);
+    background: var(--cream-light);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: var(--saffron-dark);
+}
+
+.explanation-text pre {
+    background: var(--black);
+    color: var(--saffron-primary);
+    padding: var(--space-md);
+    border-left: 4px solid var(--saffron-primary);
+    overflow-x: auto;
+    margin-bottom: var(--space-md);
+}
+
+.explanation-text pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.explanation-text blockquote {
+    border-left: 4px solid var(--saffron-primary);
+    padding-left: var(--space-md);
+    margin-left: 0;
+    margin-bottom: var(--space-md);
+    color: var(--black);
+    opacity: 0.9;
+}
+
+.explanation-text a {
+    color: var(--saffron-primary);
+    text-decoration: underline;
+}
+
+.explanation-text a:hover {
+    color: var(--saffron-dark);
+}
+
+.explanation-text hr {
+    border: none;
+    border-top: 2px dotted var(--green-primary);
+    margin: var(--space-lg) 0;
+}
+
+.explanation-text table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-md);
+}
+
+.explanation-text th,
+.explanation-text td {
+    padding: var(--space-sm);
+    border: 1px solid var(--green-primary);
+    text-align: left;
+}
+
+.explanation-text th {
+    background: var(--green-primary);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.explanation-text td {
+    background: var(--white);
+}
