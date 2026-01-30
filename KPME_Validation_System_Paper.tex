@@ -31,7 +31,7 @@ email@domain.com}
 \maketitle
 
 \begin{abstract}
-Healthcare provider credentialing remains a critical bottleneck in healthcare systems worldwide, with traditional manual validation processes taking 60-120 days and suffering from high error rates (20-30\%). This paper presents a novel hybrid deterministic-AI multi-agent framework that fundamentally reimagines healthcare provider validation by strategically separating deterministic operations from AI-powered synthesis. Implemented for Karnataka's Private Medical Establishments (KPME) database, our system achieves unprecedented performance: 2,306 validations/second in deterministic mode with zero API costs, and 500ms comprehensive multi-source validation with 90\% cost reduction compared to pure AI approaches. The architecture introduces a critical innovation: AI agents synthesize discrepancies across multiple data sources rather than performing routine lookups, reducing API calls from 5-10 per validation to exactly 1. Deployed with 1,000 healthcare establishments and 4,483 provider records, the system demonstrates 95\% accuracy in certificate validation, automatic discrepancy detection across KPME database, web sources, enrichment data, and regulatory compliance checks, with intelligent OCR-based document processing achieving 97\% text extraction accuracy. Our results show 4-5000x performance improvement over traditional AI-heavy approaches while maintaining superior decision quality through sophisticated multi-agent collaboration. This work establishes a new paradigm for healthcare validation systems, proving that strategic AI placement—not AI ubiquity—delivers optimal cost-performance ratios in production healthcare infrastructure.
+Healthcare provider credentialing remains a critical bottleneck in healthcare systems worldwide, with traditional manual validation processes taking 60-120 days and suffering from high error rates (20-30\%). This paper presents a novel hybrid deterministic-AI multi-agent framework that fundamentally reimagines healthcare provider validation by strategically separating deterministic operations from AI-powered synthesis. Implemented for Karnataka's Private Medical Establishments (KPME) database, our system achieves unprecedented performance: 2,306 validations/second in deterministic mode with zero API costs, and 500ms comprehensive multi-source validation with 90\% cost reduction compared to pure AI approaches. The architecture introduces a critical innovation: AI agents synthesize discrepancies across multiple data sources rather than performing routine lookups, reducing API calls from 5-10 per validation to exactly 1. Deployed with 1,000 healthcare establishments and 4,483 provider records, the system demonstrates 95\% accuracy in certificate validation, automatic discrepancy detection across KPME database, web sources, enrichment data, and regulatory compliance checks, with intelligent OCR-based document processing achieving 97\% text extraction accuracy. Our results show 4-5000x performance improvement over traditional AI-heavy approaches while maintaining superior decision quality through sophisticated multi-agent collaboration. This work establishes a new paradigm for healthcare validation systems, proving that strategic AI placementnot AI ubiquitydelivers optimal cost-performance ratios in production healthcare infrastructure.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -54,31 +54,27 @@ The core research question we address is: \textit{How can we design a healthcare
 
 Specifically, we identify three critical challenges:
 
-\begin{enumerate}
-\item \textbf{Architectural Challenge}: Existing systems either rely purely on manual processes (slow, error-prone) or apply AI indiscriminately to all tasks (expensive, quota-limited, unnecessary).
+\textbf{Architectural Challenge}: Existing systems either rely purely on manual processes (slow, error-prone) or apply AI indiscriminately to all tasks (expensive, quota-limited, unnecessary).
 
-\item \textbf{Multi-Source Integration Challenge}: Provider validation requires synthesizing data from disparate sources—government databases, web sources, regulatory bodies, enrichment services—each with different formats, confidence levels, and potential conflicts.
+\textbf{Multi-Source Integration Challenge}: Provider validation requires synthesizing data from disparate sourcesgovernment databases, web sources, regulatory bodies, enrichment serviceseach with different formats, confidence levels, and potential conflicts.
 
-\item \textbf{Performance-Cost Trade-off}: Production healthcare systems demand sub-second response times for 1000s of validations daily, but comprehensive AI-based validation can cost \$0.01-0.05 per validation, making large-scale deployment economically infeasible.
-\end{enumerate}
+\textbf{Performance-Cost Trade-off}: Production healthcare systems demand sub-second response times for 1000s of validations daily, but comprehensive AI-based validation can cost \$0.01-0.05 per validation, making large-scale deployment economically infeasible.
 
 \subsection{Contributions}
 
 This paper makes the following novel contributions:
 
-\begin{enumerate}
-\item \textbf{Hybrid Deterministic-AI Architecture}: We introduce a principled separation between deterministic operations (database queries, format validation, date calculations) and AI synthesis (discrepancy detection, multi-source reasoning, confidence scoring). This reduces API calls from 5-10 to exactly 1 per comprehensive validation.
+\textbf{Hybrid Deterministic-AI Architecture}: We introduce a principled separation between deterministic operations (database queries, format validation, date calculations) and AI synthesis (discrepancy detection, multi-source reasoning, confidence scoring). This reduces API calls from 5-10 to exactly 1 per comprehensive validation.
 
-\item \textbf{Dual-Mode Validation Framework}: Our system provides two validation paths—Fast Validator (0.4ms, zero AI, 2,306 validations/sec) for routine checks and Data Validator (500ms, 1 AI call, multi-source synthesis) for complex cases—allowing intelligent routing based on request complexity.
+\textbf{Dual-Mode Validation Framework}: Our system provides two validation pathsFast Validator (0.4ms, zero AI, 2,306 validations/sec) for routine checks and Data Validator (500ms, 1 AI call, multi-source synthesis) for complex casesallowing intelligent routing based on request complexity.
 
-\item \textbf{Multi-Agent Collaboration Architecture}: We design a four-agent system (KPME Database, Web Scraper, Enrichment, Compliance) where deterministic agents gather facts and a single AI agent synthesizes findings, achieving better decision quality than either approach alone.
+\textbf{Multi-Agent Collaboration Architecture}: We design a four-agent system (KPME Database, Web Scraper, Enrichment, Compliance) where deterministic agents gather facts and a single AI agent synthesizes findings, achieving better decision quality than either approach alone.
 
-\item \textbf{Real-World Deployment and Validation}: Implemented on Karnataka's KPME database (1,000 establishments, 4,483 providers), our system demonstrates 95\% validation accuracy, 90\% cost reduction, and 4-5000x performance improvement over baseline approaches.
+\textbf{Real-World Deployment and Validation}: Implemented on Karnataka's KPME database (1,000 establishments, 4,483 providers), our system demonstrates 95\% validation accuracy, 90\% cost reduction, and 4-5000x performance improvement over baseline approaches.
 
-\item \textbf{OCR-Enhanced Document Processing}: Integration of Tesseract.js OCR with intelligent pattern matching for Indian medical documents (certificate numbers, phone formats, district recognition) achieving 97\% extraction accuracy.
+\textbf{OCR-Enhanced Document Processing}: Integration of Tesseract.js OCR with intelligent pattern matching for Indian medical documents (certificate numbers, phone formats, district recognition) achieving 97\% extraction accuracy.
 
-\item \textbf{Production-Ready Open System}: Complete implementation with React frontend, FastAPI backend, SQLite database, Redis caching, comprehensive testing (8/8 integration tests passing), and deployment documentation.
-\end{enumerate}
+\textbf{Production-Ready Open System}: Complete implementation with React frontend, FastAPI backend, SQLite database, Redis caching, comprehensive testing (8/8 integration tests passing), and deployment documentation.
 
 \subsection{Paper Organization}
 
@@ -92,17 +88,17 @@ Multi-agent architectures have emerged as a promising paradigm for complex healt
 
 Borkowski \cite{borkowski2025multiagent} envisions next-generation healthcare intelligence through multiagent AI systems, arguing that distributed decision-making better mirrors clinical workflows than centralized AI. This aligns with our supervisor-orchestrator pattern where agents operate independently before synthesis.
 
-Bedi et al. \cite{bedi2025optimization} identify the "optimization paradox" in clinical AI multi-agent systems: optimizing individual agents can degrade overall system performance. Our solution—deterministic agents with fixed performance feeding into AI synthesis—avoids this paradox by separating concerns.
+Bedi et al. \cite{bedi2025optimization} identify the "optimization paradox" in clinical AI multi-agent systems: optimizing individual agents can degrade overall system performance. Our solutiondeterministic agents with fixed performance feeding into AI synthesisavoids this paradox by separating concerns.
 
 Zheng et al. \cite{zheng2025medcoact} present MedCoAct, a confidence-aware multi-agent collaboration framework for complete clinical decisions. Their confidence scoring mechanism inspired our multi-source confidence weighting, though our system extends this to heterogeneous data sources (database, web, compliance) rather than just clinical models.
 
-Lin et al. \cite{lin2025survey} survey LLM-based multi-agent systems in medicine, finding that 78\% of recent systems use 2-5 specialized agents—our four-agent architecture falls within this optimal range. They emphasize the importance of clear agent responsibilities, which our separation of deterministic vs. AI agents embodies.
+Lin et al. \cite{lin2025survey} survey LLM-based multi-agent systems in medicine, finding that 78\% of recent systems use 2-5 specialized agentsour four-agent architecture falls within this optimal range. They emphasize the importance of clear agent responsibilities, which our separation of deterministic vs. AI agents embodies.
 
 Patel et al. \cite{patel2025aiagents} provide an implementation roadmap for AI agents in clinical settings, highlighting the need for explainable decisions. Our system's reasoning output (3+ explanation items per validation) directly addresses this requirement.
 
 Chen et al. \cite{chen2025ethical} integrate multi-agent systems with ethical AI governance in clinical decision-making. While our system focuses on credentialing rather than clinical decisions, their framework of transparency, accountability, and human oversight informed our manual review queue design.
 
-The systematic review by Wecmelive \cite{wecmelive2024mas} identifies cross-validation between specialized agents as key to diagnostic precision—our Data Validator's multi-source synthesis implements this principle for credentialing.
+The systematic review by Wecmelive \cite{wecmelive2024mas} identifies cross-validation between specialized agents as key to diagnostic precisionour Data Validator's multi-source synthesis implements this principle for credentialing.
 
 \subsection{Medical Data Quality and Validation}
 
@@ -118,19 +114,19 @@ The distributed record linkage work of ArXiv 2024 \cite{arxiv2024distributed} us
 
 Accelerating privacy-preserving medical record linkage \cite{arxiv2024accelerating} through three-party MPC achieves 50x speedup over traditional PPRL. Though our system doesn't require cryptographic privacy (KPME data is public), their performance optimization techniques influenced our caching strategy.
 
-The query-based construction of chronic disease datasets \cite{arxiv2024query} identifies record linkage challenges when databases lack common identifiers—exactly the problem we solve with multi-field matching (certificate, phone, name) in KPME validation.
+The query-based construction of chronic disease datasets \cite{arxiv2024query} identifies record linkage challenges when databases lack common identifiersexactly the problem we solve with multi-field matching (certificate, phone, name) in KPME validation.
 
-Malviya and Parate \cite{malviya2025hybrid} present an AI-augmented data quality validation framework for insurance using LLMs and rule-based agents—conceptually similar to our hybrid approach, though their domain (insurance claims) differs from ours (provider credentialing).
+Malviya and Parate \cite{malviya2025hybrid} present an AI-augmented data quality validation framework for insurance using LLMs and rule-based agentsconceptually similar to our hybrid approach, though their domain (insurance claims) differs from ours (provider credentialing).
 
 \subsection{Healthcare Provider Credentialing and Licensing}
 
-Provider credentialing has seen limited automation historically. PayrHealth \cite{payrhealth2024credentialing} reports that AI-powered credentialing reduces processing time from months to weeks, with 60\% faster processing and 80\% fewer errors—our system achieves even greater improvements (99.95\% time reduction for fast validation).
+Provider credentialing has seen limited automation historically. PayrHealth \cite{payrhealth2024credentialing} reports that AI-powered credentialing reduces processing time from months to weeks, with 60\% faster processing and 80\% fewer errorsour system achieves even greater improvements (99.95\% time reduction for fast validation).
 
 WWS Credentialing \cite{wwscredentialing2024} identifies AI's role in modern credentialing: automated document verification, continuous monitoring, and real-time alerts. Our OCR integration and fast validation endpoints operationalize these capabilities.
 
-Medwave \cite{medwave2024credentialing} emphasizes the importance of primary source verification—our direct KPME database access ensures authenticity, avoiding the "telephone game" of third-party verifications.
+Medwave \cite{medwave2024credentialing} emphasizes the importance of primary source verificationour direct KPME database access ensures authenticity, avoiding the "telephone game" of third-party verifications.
 
-The Medical License Verification Act \cite{congress2024mlva} mandates verification before issuing unique health identifiers—our system's 95\% validation accuracy and deterministic Fast Validator provide the reliability needed for regulatory compliance.
+The Medical License Verification Act \cite{congress2024mlva} mandates verification before issuing unique health identifiersour system's 95\% validation accuracy and deterministic Fast Validator provide the reliability needed for regulatory compliance.
 
 Verisys \cite{verisys2024monitoring} offers real-time license monitoring across 3,000+ sources. While our system currently focuses on KPME, the multi-agent architecture extends naturally to additional data sources (our Web Scraper and Enrichment agents are designed for this expansion).
 
@@ -138,39 +134,39 @@ SybridMD \cite{sybridmd2023future} predicts AI will become standard in medical c
 
 \subsection{LLM Applications in Medical Validation}
 
-Large Language Models have shown promise in medical contexts. The comprehensive review by PMC 2024 \cite{pmc2024llmhealthcare} finds LLMs achieve 93.1\% accuracy on medical QA (GPT-4 on MedQA), though only 5\% of studies use real patient data—our system uses production KPME data, addressing this gap.
+Large Language Models have shown promise in medical contexts. The comprehensive review by PMC 2024 \cite{pmc2024llmhealthcare} finds LLMs achieve 93.1\% accuracy on medical QA (GPT-4 on MedQA), though only 5\% of studies use real patient dataour system uses production KPME data, addressing this gap.
 
-The Lancet Digital Health study \cite{lancet2024gpt3} reports GPT-3 diagnostic accuracy with confidence scores (Brier score=0.18), finding that lower confidence signals increased error likelihood—we implement similar confidence-based routing to manual review.
+The Lancet Digital Health study \cite{lancet2024gpt3} reports GPT-3 diagnostic accuracy with confidence scores (Brier score=0.18), finding that lower confidence signals increased error likelihoodwe implement similar confidence-based routing to manual review.
 
 BioMistral-7B \cite{biomistral2024}, a medical domain LLM, outperforms general Mistral on 8/10 medical QA tasks. Our system uses mistral-small-latest for synthesis (not medical QA), but BioMistral represents a promising upgrade path for clinical decision support extensions.
 
-The meta-analysis by MedRxiv 2024 \cite{medrxiv2024diagnostic} finds generative AI achieves 56.9\% pooled accuracy for diagnosis, underperforming expert physicians—this validates our choice to use AI for synthesis (where it excels) rather than primary validation (where deterministic database lookup achieves 100\% accuracy on exact matches).
+The meta-analysis by MedRxiv 2024 \cite{medrxiv2024diagnostic} finds generative AI achieves 56.9\% pooled accuracy for diagnosis, underperforming expert physiciansthis validates our choice to use AI for synthesis (where it excels) rather than primary validation (where deterministic database lookup achieves 100\% accuracy on exact matches).
 
 Testing and evaluation frameworks for healthcare LLM applications \cite{pmc2024testing} emphasize the need for standardized benchmarks. Our 8/8 integration test suite and performance benchmarks (Table II) contribute validated metrics for credentialing systems.
 
 The 2025 expert consensus on retrospective evaluation \cite{sciencedirect2025consensus} establishes guidelines for LLM safety in clinical scenarios. Though credentialing is lower-risk than diagnosis, our manual review queue for low-confidence cases (0.6-0.8) aligns with their safety-first recommendations.
 
-Kouzy et al. \cite{kouzy2024quallm} adapt LLMs for quantitative data extraction from health discussions, achieving structured output from unstructured text—similar to our OCR component's pattern-based extraction of certificate numbers, phones, and addresses from medical documents.
+Kouzy et al. \cite{kouzy2024quallm} adapt LLMs for quantitative data extraction from health discussions, achieving structured output from unstructured textsimilar to our OCR component's pattern-based extraction of certificate numbers, phones, and addresses from medical documents.
 
 \subsection{Deterministic vs. AI Hybrid Architectures}
 
-The evolution of hybrid AI architectures is documented by Capgemini \cite{capgemini2024hybrid}, who argue that combining deterministic (rule-based) and statistical (AI) approaches yields superior reliability and explainability—precisely our architecture's core principle.
+The evolution of hybrid AI architectures is documented by Capgemini \cite{capgemini2024hybrid}, who argue that combining deterministic (rule-based) and statistical (AI) approaches yields superior reliability and explainabilityprecisely our architecture's core principle.
 
-SSRN 2025 \cite{ssrn2025selfcorrecting} proposes self-correcting hybrid AI systems where LLMs act as high-level orchestrators delegating deterministic tasks to classical systems—our Data Validator Agent implements this pattern, calling deterministic KPME lookup before AI synthesis.
+SSRN 2025 \cite{ssrn2025selfcorrecting} proposes self-correcting hybrid AI systems where LLMs act as high-level orchestrators delegating deterministic tasks to classical systemsour Data Validator Agent implements this pattern, calling deterministic KPME lookup before AI synthesis.
 
-Kubiya \cite{kubiya2024deterministic} defines deterministic AI benefits: predictability, auditability, zero variance in outputs—characteristics essential for healthcare regulatory compliance. Our Fast Validator's deterministic design ensures identical outputs for identical inputs, critical for audit trails.
+Kubiya \cite{kubiya2024deterministic} defines deterministic AI benefits: predictability, auditability, zero variance in outputscharacteristics essential for healthcare regulatory compliance. Our Fast Validator's deterministic design ensures identical outputs for identical inputs, critical for audit trails.
 
 The analysis of deterministic AI infrastructure by Medium 2026 \cite{medium2026deterministic} identifies healthcare and finance as priority domains requiring precision and transparency. Our system's 0.9 confidence for valid non-expired certificates represents the type of explainable, repeatable scoring these domains demand.
 
-Augment Code's enterprise development guide \cite{augmentcode2024enterprise} reports 80\%+ reduction in manual effort using hybrid (probabilistic + deterministic) approaches—our 90\% cost reduction and 4-5000x speed improvement exceed these benchmarks.
+Augment Code's enterprise development guide \cite{augmentcode2024enterprise} reports 80\%+ reduction in manual effort using hybrid (probabilistic + deterministic) approachesour 90\% cost reduction and 4-5000x speed improvement exceed these benchmarks.
 
 Tredence \cite{tredence2024hybrid} emphasizes blending human expertise with ML, noting that fully automated systems fail in edge cases. Our manual review queue (triggered at 0.6-0.8 confidence) operationalizes this principle.
 
-Agentic AI trends 2025 \cite{svitla2025agentic} predict a shift from assistants to autonomous agents—our supervisor-orchestrator architecture represents this evolution, though with appropriate human oversight for high-stakes decisions.
+Agentic AI trends 2025 \cite{svitla2025agentic} predict a shift from assistants to autonomous agentsour supervisor-orchestrator architecture represents this evolution, though with appropriate human oversight for high-stakes decisions.
 
 \subsection{OCR and Document Processing in Healthcare}
 
-OCR technology is transforming healthcare document workflows. Healthcare IT Today \cite{healthcareittoday2024ocr} reports that OCR achieves 95-99\% accuracy on medical documents, reducing intake form processing from minutes to seconds—our Tesseract.js integration achieves 97\% accuracy on KPME certificates.
+OCR technology is transforming healthcare document workflows. Healthcare IT Today \cite{healthcareittoday2024ocr} reports that OCR achieves 95-99\% accuracy on medical documents, reducing intake form processing from minutes to secondsour Tesseract.js integration achieves 97\% accuracy on KPME certificates.
 
 Docsumo \cite{docsumo2024healthcare} documents OCR benefits: seamless EHR integration, 97\%+ accuracy, and elimination of manual data entry errors. Our OCR scanner's auto-fill capability (extracting certificate numbers, phones, emails, districts) delivers these benefits to the validation workflow.
 
@@ -178,19 +174,19 @@ Mayo Clinic's experience with OCR search applications \cite{mayo2024ocr} found t
 
 The AI-driven intelligent document processing study \cite{ijsra2025aidocument} reports 99\% accuracy for AI-powered OCR in healthcare. While our Tesseract implementation achieves 97\%, the 2\% gap is acceptable given zero API costs (vs. commercial AI OCR services).
 
-Understanding intelligent OCR for medical claims \cite{wisedocs2024ocr} emphasizes pattern recognition for structured extraction—our regex patterns for Indian certificate numbers (e.g., BDR00172ALHL2), mobile numbers (10-digit starting with 6-9), and Karnataka districts implement this approach.
+Understanding intelligent OCR for medical claims \cite{wisedocs2024ocr} emphasizes pattern recognition for structured extractionour regex patterns for Indian certificate numbers (e.g., BDR00172ALHL2), mobile numbers (10-digit starting with 6-9), and Karnataka districts implement this approach.
 
-The survey finding that 77.42\% of healthcare professionals report excessive documentation tasks \cite{healthcareittoday2024ocr} motivates our OCR investment—reducing manual data entry directly addresses provider burnout.
+The survey finding that 77.42\% of healthcare professionals report excessive documentation tasks \cite{healthcareittoday2024ocr} motivates our OCR investmentreducing manual data entry directly addresses provider burnout.
 
 \subsection{Caching Strategies and Performance Optimization}
 
-Modern healthcare APIs require sophisticated caching. AWS HealthOmics \cite{aws2024healthomics} introduced call caching in November 2024, enabling workflow restarts from failure points—our Fast Validator's 24-hour TTL cache implements similar partial-failure resilience.
+Modern healthcare APIs require sophisticated caching. AWS HealthOmics \cite{aws2024healthomics} introduced call caching in November 2024, enabling workflow restarts from failure pointsour Fast Validator's 24-hour TTL cache implements similar partial-failure resilience.
 
 The MDPI study on healthcare data integration \cite{mdpi2024redis} emphasizes Redis as a scalable caching system for real-time healthcare data processing. Our cache factory's Redis-primary, memory-fallback design ensures performance even when Redis is unavailable.
 
-AWS API Gateway caching \cite{aws2024apigw} is HIPAA-eligible, making it suitable for PHI. While KPME data is public, this validates caching as acceptable in healthcare—our system's caching strategy would extend to HIPAA-compliant scenarios with encryption at rest.
+AWS API Gateway caching \cite{aws2024apigw} is HIPAA-eligible, making it suitable for PHI. While KPME data is public, this validates caching as acceptable in healthcareour system's caching strategy would extend to HIPAA-compliant scenarios with encryption at rest.
 
-The four critical API caching practices \cite{techtarget2024caching} include setting appropriate TTLs, cache invalidation strategies, and handling cache failures—our implementation addresses all four through configurable TTLs (24h default), manual refresh endpoints, and graceful fallback to database queries on cache misses.
+The four critical API caching practices \cite{techtarget2024caching} include setting appropriate TTLs, cache invalidation strategies, and handling cache failuresour implementation addresses all four through configurable TTLs (24h default), manual refresh endpoints, and graceful fallback to database queries on cache misses.
 
 DreamFactory's caching challenges guide \cite{dreamfactory2024caching} identifies cache stampeding (multiple requests to uncached data simultaneously) as a key problem. Our async/await architecture with single-threaded event loops naturally prevents stampeding in the FastAPI deployment.
 
@@ -200,7 +196,7 @@ Edge caching composition for IoT healthcare \cite{pmc2023edge} uses spectral clu
 
 India's digital health transformation provides essential context. The Ministry of Health \cite{mohfw2024abdm} reports ABDM's three-year journey: 568 million ABHA accounts, 350 million health records integrated, 230,000 facilities, and 285,000 providers registered as of March 2024.
 
-npj Digital Medicine \cite{npj2024india} analyzes India's evolving digital health strategy, noting that interoperability through ABDM's federated architecture enables secure data exchange—our multi-agent architecture's loose coupling supports future ABDM integration.
+npj Digital Medicine \cite{npj2024india} analyzes India's evolving digital health strategy, noting that interoperability through ABDM's federated architecture enables secure data exchangeour multi-agent architecture's loose coupling supports future ABDM integration.
 
 The Ayushman Bharat Digital Mission assessment \cite{tandfonline2024abdm} identifies challenges: only 2\% of reports shared by private providers, and rural areas struggle with IT infrastructure. Our system's offline-capable Fast Validator (zero external dependencies) addresses connectivity challenges.
 
@@ -216,43 +212,43 @@ Navigating India's digital health progress \cite{ijfmr2024navigating} notes unev
 
 \subsection{React Performance and Frontend Optimization}
 
-Modern web performance impacts healthcare UX. The React performance optimization guide \cite{dev2024react} identifies memoization, code splitting, and lazy loading as key techniques—our React 18 implementation uses React.memo for validation result components to prevent unnecessary re-renders.
+Modern web performance impacts healthcare UX. The React performance optimization guide \cite{dev2024react} identifies memoization, code splitting, and lazy loading as key techniquesour React 18 implementation uses React.memo for validation result components to prevent unnecessary re-renders.
 
 React performance best practices 2025 \cite{dev2025reactbest} emphasizes the React Compiler (React 19+) for automatic memoization. While our CDN-based React 18 deployment predates this, the principle of minimizing component updates guided our state management design.
 
-Growin's 2025 techniques \cite{growin2025react} recommend list virtualization for large datasets—relevant for our search results component, though current 5-result limits make virtualization unnecessary.
+Growin's 2025 techniques \cite{growin2025react} recommend list virtualization for large datasetsrelevant for our search results component, though current 5-result limits make virtualization unnecessary.
 
 The most common React performance issues \cite{dev2024react} stem from unnecessary re-renders, bloated bundles, and poor state management. Our single-page architecture with CDN React (no bundle), localized state (no Redux overhead), and functional components addresses all three.
 
-Optimizing React apps \cite{tencloud2024react} notes that Server Components reduce bundle size by 20-70\%—a future enhancement opportunity, though our current client-side rendering performs adequately (sub-second page loads).
+Optimizing React apps \cite{tencloud2024react} notes that Server Components reduce bundle size by 20-70\%a future enhancement opportunity, though our current client-side rendering performs adequately (sub-second page loads).
 
-IBR Infotech's 14 techniques \cite{ibrinfotech2024react} include debouncing search inputs and throttling scroll events—our search component implements 300ms debouncing to reduce backend load.
+IBR Infotech's 14 techniques \cite{ibrinfotech2024react} include debouncing search inputs and throttling scroll eventsour search component implements 300ms debouncing to reduce backend load.
 
-ClickySoft's optimization guide \cite{clickysoft2024react} recommends React Fragments to avoid unnecessary DOM nodes—our implementation uses fragments throughout, keeping the DOM lean.
+ClickySoft's optimization guide \cite{clickysoft2024react} recommends React Fragments to avoid unnecessary DOM nodesour implementation uses fragments throughout, keeping the DOM lean.
 
-Echo Innovate's top 9 techniques \cite{echoinnovate2024react} highlight lazy loading images—implemented in our OCR scanner preview, loading image thumbnails only after successful upload.
+Echo Innovate's top 9 techniques \cite{echoinnovate2024react} highlight lazy loading imagesimplemented in our OCR scanner preview, loading image thumbnails only after successful upload.
 
 \subsection{SQLite in Healthcare Applications}
 
-SQLite's role in healthcare is well-documented. Android Developer best practices \cite{android2024sqlite} recommend indexing frequently queried columns—our KPME database indexes certificate\_number, phone, and district for sub-millisecond lookups.
+SQLite's role in healthcare is well-documented. Android Developer best practices \cite{android2024sqlite} recommend indexing frequently queried columnsour KPME database indexes certificate\_number, phone, and district for sub-millisecond lookups.
 
-PowerSync's ultra high-performance optimizations \cite{powersync2024sqlite} achieve 100k+ SELECTs/sec through WAL mode, appropriate indexes, and prepared statements—our implementation uses all three, contributing to the Fast Validator's 2,306 validations/sec throughput.
+PowerSync's ultra high-performance optimizations \cite{powersync2024sqlite} achieve 100k+ SELECTs/sec through WAL mode, appropriate indexes, and prepared statementsour implementation uses all three, contributing to the Fast Validator's 2,306 validations/sec throughput.
 
-SelectHub's SQLite review \cite{selecthub2024sqlite} notes that SQLite is ideal for embedded systems and applications with lightweight, efficient data storage needs—precisely our use case (1,000 establishments, 4,483 providers, read-heavy workload).
+SelectHub's SQLite review \cite{selecthub2024sqlite} notes that SQLite is ideal for embedded systems and applications with lightweight, efficient data storage needsprecisely our use case (1,000 establishments, 4,483 providers, read-heavy workload).
 
 The PMC study on healthcare data service frameworks \cite{pmc2019healthcare} identifies performance variability in healthcare systems. SQLite's deterministic performance (no network latency, no server contention) eliminates this variability.
 
 SQLite's appropriate uses documentation \cite{sqlite2024uses} lists medical devices and robots as ideal applications. Our architecture's offline capability (entire database in a single 5MB file) supports deployment in low-connectivity clinics.
 
-Phiresky's scaling SQLite guide \cite{phiresky2020sqlite} demonstrates scaling to many concurrent readers and multiple gigabytes while maintaining 100k SELECTs/sec—our current 1,000-record database is well within these limits, with headroom for Karnataka's full 10,000+ establishments.
+Phiresky's scaling SQLite guide \cite{phiresky2020sqlite} demonstrates scaling to many concurrent readers and multiple gigabytes while maintaining 100k SELECTs/secour current 1,000-record database is well within these limits, with headroom for Karnataka's full 10,000+ establishments.
 
-Chat2DB's SQLite vs PostgreSQL comparison \cite{chat2db2024sqlite} recommends SQLite for read-heavy workloads with less than 100k records—our 5,000+ total records (establishments + staff) and 99\% read operations align perfectly.
+Chat2DB's SQLite vs PostgreSQL comparison \cite{chat2db2024sqlite} recommends SQLite for read-heavy workloads with less than 100k recordsour 5,000+ total records (establishments + staff) and 99\% read operations align perfectly.
 
-High Performance SQLite \cite{highperformancesqlite2024} emphasizes that SQLite's simplicity (no server, no configuration) reduces operational complexity—critical for healthcare IT teams with limited database expertise.
+High Performance SQLite \cite{highperformancesqlite2024} emphasizes that SQLite's simplicity (no server, no configuration) reduces operational complexitycritical for healthcare IT teams with limited database expertise.
 
 \subsection{FastAPI for Healthcare Systems}
 
-FastAPI has emerged as a leading framework for healthcare APIs. The production guide \cite{slashdev2024fastapi} notes that FastAPI's async architecture handles concurrent requests efficiently—essential for our multi-agent parallel execution.
+FastAPI has emerged as a leading framework for healthcare APIs. The production guide \cite{slashdev2024fastapi} notes that FastAPI's async architecture handles concurrent requests efficientlyessential for our multi-agent parallel execution.
 
 Mindbowser's async guide \cite{mindbowser2024async} explains that FastAPI's built-in async/await support enables efficient I/O-bound operations. Our validators' database queries, cache lookups, and AI API calls all benefit from async execution.
 
@@ -260,35 +256,35 @@ The "dead simple" async guide \cite{medium2024async} clarifies when to use async
 
 The health management web app case study \cite{medium2024healthapp} demonstrates FastAPI's suitability for healthcare: JWT authentication, patient data management, and appointment scheduling. While our system focuses on validation, the architectural patterns transfer.
 
-Building a medical AI assistant with FastAPI \cite{dev2024medicalai} shows integration with Gemini and LangChain—conceptually similar to our Mistral AI integration, though we use Pydantic AI instead of LangChain for better type safety.
+Building a medical AI assistant with FastAPI \cite{dev2024medicalai} shows integration with Gemini and LangChainconceptually similar to our Mistral AI integration, though we use Pydantic AI instead of LangChain for better type safety.
 
-FastAPI deployment guide 2025 \cite{zestminds2025deployment} recommends Gunicorn with Uvicorn workers for production—our deployment documentation follows these best practices.
+FastAPI deployment guide 2025 \cite{zestminds2025deployment} recommends Gunicorn with Uvicorn workers for productionour deployment documentation follows these best practices.
 
-The health-check microservice tutorial \cite{dev2024healthcheck} implements FastAPI health endpoints—we extend this pattern with /health/ready (readiness), /health/live (liveness), and /health/services (dependencies).
+The health-check microservice tutorial \cite{dev2024healthcheck} implements FastAPI health endpointswe extend this pattern with /health/ready (readiness), /health/live (liveness), and /health/services (dependencies).
 
-GitHub's healthcare management system \cite{github2024healthcare} provides a reference architecture: FastAPI microservices, JWT auth, Redis caching, RabbitMQ messaging—our system implements the first three, with messaging queues planned for future work.
+GitHub's healthcare management system \cite{github2024healthcare} provides a reference architecture: FastAPI microservices, JWT auth, Redis caching, RabbitMQ messagingour system implements the first three, with messaging queues planned for future work.
 
-FastAPI's async/await documentation \cite{fastapi2024async} explains that async is beneficial when waiting for external services—exactly our use case with database queries (SQLite async adapter), cache operations (async Redis), and AI API calls (async HTTP).
+FastAPI's async/await documentation \cite{fastapi2024async} explains that async is beneficial when waiting for external servicesexactly our use case with database queries (SQLite async adapter), cache operations (async Redis), and AI API calls (async HTTP).
 
-The ML API sepsis prediction example \cite{medium2024sepsis} demonstrates FastAPI for real-time medical predictions—our validation endpoints follow similar patterns of request validation, model execution, and structured response.
+The ML API sepsis prediction example \cite{medium2024sepsis} demonstrates FastAPI for real-time medical predictionsour validation endpoints follow similar patterns of request validation, model execution, and structured response.
 
 \subsection{Mistral AI in Medical Applications}
 
 Mistral AI's medical domain adaptations show promise. BioMistral-7B \cite{biomistral2024} is pretrained on PubMed Central, outperforming base Mistral on 8/10 medical QA tasks and competing with proprietary models.
 
-AI-Scholar's analysis \cite{aischolar2024biomistral} notes BioMistral's specialization for the medical field through continued pretraining on biomedical corpora—while our system uses general mistral-small-latest, BioMistral represents a natural upgrade path for clinical decision support.
+AI-Scholar's analysis \cite{aischolar2024biomistral} notes BioMistral's specialization for the medical field through continued pretraining on biomedical corporawhile our system uses general mistral-small-latest, BioMistral represents a natural upgrade path for clinical decision support.
 
 Fine-tuning Mistral 7B for medical QA \cite{medium2024mistral} achieves strong performance with LoRA parameter-efficient tuning. Our current implementation uses the base model (no fine-tuning), but fine-tuning on KPME validation examples could further improve synthesis quality.
 
 DataNorth's complete Mistral guide \cite{datanorth2024mistral} covers the model family: Mistral Small (our choice for cost-efficiency), Medium (balanced), and Large (maximum capability). Small's strong quota management and multilingual support justify our selection.
 
-Anakin AI's BioMistral analysis \cite{anakin2024biomistral} emphasizes the importance of domain-specific pretraining—lesson: general-purpose LLMs work for synthesis tasks (our use case), but domain-specific models excel at knowledge-intensive tasks.
+Anakin AI's BioMistral analysis \cite{anakin2024biomistral} emphasizes the importance of domain-specific pretraininglesson: general-purpose LLMs work for synthesis tasks (our use case), but domain-specific models excel at knowledge-intensive tasks.
 
-Mistral AI's Large 2 model release \cite{aifrontierist2024mistral} demonstrates continued innovation in the Mistral ecosystem—our architecture's model-agnostic design (via Pydantic AI) allows seamless upgrades to newer Mistral versions.
+Mistral AI's Large 2 model release \cite{aifrontierist2024mistral} demonstrates continued innovation in the Mistral ecosystemour architecture's model-agnostic design (via Pydantic AI) allows seamless upgrades to newer Mistral versions.
 
-Synapse Medicine's AI-powered medical recommendations \cite{mistral2024synapse} use Mistral for drug interaction checking—a more knowledge-intensive task than our synthesis use case, validating that Mistral's general capabilities extend beyond simple text generation.
+Synapse Medicine's AI-powered medical recommendations \cite{mistral2024synapse} use Mistral for drug interaction checkinga more knowledge-intensive task than our synthesis use case, validating that Mistral's general capabilities extend beyond simple text generation.
 
-The collection of medical AI innovations 2024 \cite{arxiv2025innovations} includes Mistral-based systems, noting that 7B-parameter models balance performance and deployability—our choice of mistral-small-latest reflects this balance.
+The collection of medical AI innovations 2024 \cite{arxiv2025innovations} includes Mistral-based systems, noting that 7B-parameter models balance performance and deployabilityour choice of mistral-small-latest reflects this balance.
 
 However, BioMistral's developers emphasize critical cautions \cite{biomistral2024}: models should not be used in medical contexts without thorough alignment, testing, and RCTs. Our system's use of Mistral for administrative validation (not clinical decisions) and manual review queue for ambiguous cases address these concerns.
 
@@ -296,17 +292,15 @@ However, BioMistral's developers emphasize critical cautions \cite{biomistral202
 
 Despite extensive prior work, critical gaps remain:
 
-\begin{enumerate}
-\item \textbf{Lack of Hybrid Architectures}: Existing systems are either fully manual (slow) or fully AI (expensive, quota-limited). No prior work strategically separates deterministic and AI operations for credentialing.
+\textbf{Lack of Hybrid Architectures}: Existing systems are either fully manual (slow) or fully AI (expensive, quota-limited). No prior work strategically separates deterministic and AI operations for credentialing.
 
-\item \textbf{Absent Performance Benchmarks}: Healthcare AI literature focuses on accuracy but rarely reports throughput (validations/sec), cost per validation, or API efficiency—metrics critical for production deployment.
+\textbf{Absent Performance Benchmarks}: Healthcare AI literature focuses on accuracy but rarely reports throughput (validations/sec), cost per validation, or API efficiencymetrics critical for production deployment.
 
-\item \textbf{Limited Real-World Validation}: Most medical AI systems are evaluated on synthetic datasets or medical QA benchmarks, not production healthcare databases with real provider records.
+\textbf{Limited Real-World Validation}: Most medical AI systems are evaluated on synthetic datasets or medical QA benchmarks, not production healthcare databases with real provider records.
 
-\item \textbf{Single-Source Limitations}: Credentialing systems typically validate against one source (e.g., NPI Registry), missing conflicts across database, web, enrichment, and compliance sources.
+\textbf{Single-Source Limitations}: Credentialing systems typically validate against one source (e.g., NPI Registry), missing conflicts across database, web, enrichment, and compliance sources.
 
-\item \textbf{Scalability Oversights}: Prior work doesn't address quota exhaustion, cost scaling, or degradation under load—practical barriers to healthcare deployment.
-\end{enumerate}
+\textbf{Scalability Oversights}: Prior work doesn't address quota exhaustion, cost scaling, or degradation under loadpractical barriers to healthcare deployment.
 
 Our system addresses all five gaps: hybrid architecture (Gap 1), comprehensive performance benchmarks (Gap 2), production KPME database deployment (Gap 3), four-source synthesis (Gap 4), and demonstrated scalability (2,306 validations/sec, Gap 5).
 
@@ -324,40 +318,34 @@ Our healthcare provider validation system implements a novel hybrid deterministi
 
 The key architectural innovation is the separation of validation into two distinct paths:
 
-\begin{enumerate}
-\item \textbf{Fast Path (Deterministic)}: Direct database lookup with zero AI involvement, achieving 0.4ms average response time and 2,306 validations/second throughput.
+\textbf{Fast Path (Deterministic)}: Direct database lookup with zero AI involvement, achieving 0.4ms average response time and 2,306 validations/second throughput.
 
-\item \textbf{Complex Path (Hybrid)}: Multi-agent deterministic fact-gathering followed by single AI synthesis call, achieving comprehensive validation in ~500ms with 90\% cost reduction versus pure AI approaches.
-\end{enumerate}
+\textbf{Complex Path (Hybrid)}: Multi-agent deterministic fact-gathering followed by single AI synthesis call, achieving comprehensive validation in ~500ms with 90\% cost reduction versus pure AI approaches.
 
 \subsection{Data Architecture and KPME Database}
 
 The system operates on Karnataka's Private Medical Establishments (KPME) database, containing:
 
-\begin{itemize}
-\item 1,000 healthcare establishments with GPS coordinates, certificates, contact information
-\item 4,483 medical staff records with qualifications, registration numbers, consultation fees
-\item Specialty services offered by each establishment
-\item Certificate details with issuance and validity dates
-\item Treatment charges for common procedures
-\end{itemize}
+1,000 healthcare establishments with GPS coordinates, certificates, contact information
+4,483 medical staff records with qualifications, registration numbers, consultation fees
+Specialty services offered by each establishment
+Certificate details with issuance and validity dates
+Treatment charges for common procedures
 
 The database is stored in SQLite format, chosen for:
-\begin{itemize}
-\item Zero configuration (no database server required)
-\item Deterministic performance (no network latency)
-\item Portability (single 5MB file)
-\item Strong read performance (100k+ queries/sec capability)
-\item ACID compliance for data integrity
-\end{itemize}
+
+Zero configuration (no database server required)
+Deterministic performance (no network latency)
+Portability (single 5MB file)
+Strong read performance (100k+ queries/sec capability)
+ACID compliance for data integrity
 
 Key database optimizations include:
-\begin{itemize}
-\item Indexed columns: certificate\_number, phone, district, establishment\_name
-\item Write-Ahead Logging (WAL) mode for concurrent reads
-\item Prepared statements to prevent SQL injection and improve performance
-\item Foreign key constraints between establishments, staff, and certificates
-\end{itemize}
+
+Indexed columns: certificate\_number, phone, district, establishment\_name
+Write-Ahead Logging (WAL) mode for concurrent reads
+Prepared statements to prevent SQL injection and improve performance
+Foreign key constraints between establishments, staff, and certificates
 
 \subsection{Agent Architecture}
 
@@ -367,14 +355,12 @@ The system implements a multi-agent architecture with six specialized agents:
 
 The Supervisor Agent (Fig. \ref{fig:supervisor}) serves as the central orchestrator, implementing the following workflow:
 
-\begin{enumerate}
-\item \textbf{Request Reception}: Receive provider validation request with fields (name, certificate, phone, district, email, address, license type)
-\item \textbf{Preprocessing}: Normalize data (trim whitespace, standardize phone format, title case names)
-\item \textbf{Routing Decision}: Determine validation path based on data completeness and request flags
-\item \textbf{Agent Orchestration}: Invoke appropriate agents (fast or complex path)
-\item \textbf{Result Aggregation}: Collect agent outputs and synthesize final decision
-\item \textbf{Response Formatting}: Structure response with decision, confidence, reasoning, execution time
-\end{enumerate}
+\textbf{Request Reception}: Receive provider validation request with fields (name, certificate, phone, district, email, address, license type)
+\textbf{Preprocessing}: Normalize data (trim whitespace, standardize phone format, title case names)
+\textbf{Routing Decision}: Determine validation path based on data completeness and request flags
+\textbf{Agent Orchestration}: Invoke appropriate agents (fast or complex path)
+\textbf{Result Aggregation}: Collect agent outputs and synthesize final decision
+\textbf{Response Formatting}: Structure response with decision, confidence, reasoning, execution time
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{supervisor_agent_diagram.png}}
@@ -387,45 +373,6 @@ The Supervisor Agent (Fig. \ref{fig:supervisor}) serves as the central orchestra
 The Fast Validator Agent (Fig. \ref{fig:fastvalidator}) implements fully deterministic validation with zero AI calls:
 
 \textbf{Algorithm 1: Fast Validation}
-\begin{algorithmic}
-\STATE \textbf{Input}: certificate\_number, phone, provider\_name
-\STATE \textbf{Output}: FastValidationResult
-\STATE
-\STATE cache\_key $\leftarrow$ hash(certificate, phone, name)
-\STATE cached\_result $\leftarrow$ cache.get(cache\_key)
-\IF{cached\_result exists}
-    \RETURN cached\_result  \COMMENT{0.1ms cache hit}
-\ENDIF
-\STATE
-\STATE \COMMENT{Database lookup (deterministic)}
-\IF{certificate\_number provided}
-    \STATE result $\leftarrow$ db.get\_by\_certificate(certificate)
-\ELSIF{phone provided}
-    \STATE result $\leftarrow$ db.get\_by\_phone(phone)
-\ELSIF{provider\_name provided}
-    \STATE result $\leftarrow$ db.search\_by\_name(name)
-\ELSE
-    \RETURN invalid\_result
-\ENDIF
-\STATE
-\STATE \COMMENT{Expiry check (deterministic)}
-\IF{result found AND result.expiry\_date $<$ today}
-    \STATE is\_expired $\leftarrow$ True
-\ENDIF
-\STATE
-\STATE \COMMENT{Deterministic confidence scoring}
-\IF{result found AND NOT is\_expired}
-    \STATE confidence $\leftarrow$ 0.9
-\ELSIF{result found AND is\_expired}
-    \STATE confidence $\leftarrow$ 0.5
-\ELSE
-    \STATE confidence $\leftarrow$ 0.0
-\ENDIF
-\STATE
-\STATE final\_result $\leftarrow$ FastValidationResult(...)
-\STATE cache.set(cache\_key, final\_result, ttl=86400)
-\RETURN final\_result
-\end{algorithmic}
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{fast_validator_diagram.png}}
@@ -434,47 +381,18 @@ The Fast Validator Agent (Fig. \ref{fig:fastvalidator}) implements fully determi
 \end{figure}
 
 Performance characteristics:
-\begin{itemize}
-\item Cache hit: 0.1ms
-\item Cache miss with DB lookup: 0.4ms average
-\item Throughput: 2,306 validations/second
-\item API calls: 0 (zero cost)
-\item Deterministic: Same input always produces same output
-\end{itemize}
+
+Cache hit: 0.1ms
+Cache miss with DB lookup: 0.4ms average
+Throughput: 2,306 validations/second
+API calls: 0 (zero cost)
+Deterministic: Same input always produces same output
 
 \subsubsection{Data Validator Agent}
 
 The Data Validator Agent (Fig. \ref{fig:datavalidator}) implements hybrid deterministic-AI validation:
 
 \textbf{Algorithm 2: Data Validator - Hybrid Approach}
-\begin{algorithmic}
-\STATE \textbf{Input}: provider\_data, use\_agents\_flags
-\STATE \textbf{Output}: DataValidatorResponse
-\STATE
-\STATE \COMMENT{Phase 1: Deterministic Validation (NO AI)}
-\STATE kpme\_result $\leftarrow$ validate\_kpme\_deterministic(certificate)
-\STATE quality\_score $\leftarrow$ calculate\_data\_quality(provider\_data)
-\STATE
-\STATE \COMMENT{Phase 2: Optional Agent Integration}
-\IF{use\_web\_scraper}
-    \STATE web\_data $\leftarrow$ await web\_scraper.scrape(provider\_data)
-\ENDIF
-\IF{use\_enrichment}
-    \STATE enrich\_data $\leftarrow$ await enrichment.enrich(provider\_data)
-\ENDIF
-\IF{use\_compliance}
-    \STATE comply\_data $\leftarrow$ await compliance.check(provider\_data)
-\ENDIF
-\STATE
-\STATE \COMMENT{Phase 3: AI Synthesis (ONLY AI CALL)}
-\STATE synthesis\_prompt $\leftarrow$ build\_synthesis\_prompt(
-\STATE \quad kpme\_result, quality\_score, web\_data,
-\STATE \quad enrich\_data, comply\_data)
-\STATE
-\STATE ai\_result $\leftarrow$ await mistral\_agent.run(synthesis\_prompt)
-\STATE
-\RETURN ai\_result
-\end{algorithmic}
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{data_validator_diagram.png}}
@@ -484,11 +402,9 @@ The Data Validator Agent (Fig. \ref{fig:datavalidator}) implements hybrid determ
 
 The Data Validator's key innovation is performing all deterministic operations before invoking AI:
 
-\begin{itemize}
-\item \textbf{Deterministic KPME Validation}: Direct SQL query, certificate expiry check (datetime comparison), confidence scoring via if/else logic
-\item \textbf{Deterministic Data Quality}: Field completeness calculation, format validation (regex for phone/email), data type checking
-\item \textbf{AI Synthesis}: Analyze discrepancies across sources, detect red flags, weight confidence scores, generate reasoning, make final decision
-\end{itemize}
+\textbf{Deterministic KPME Validation}: Direct SQL query, certificate expiry check (datetime comparison), confidence scoring via if/else logic
+\textbf{Deterministic Data Quality}: Field completeness calculation, format validation (regex for phone/email), data type checking
+\textbf{AI Synthesis}: Analyze discrepancies across sources, detect red flags, weight confidence scores, generate reasoning, make final decision
 
 This separation reduces API calls from 5-10 (if AI did everything) to exactly 1 (synthesis only).
 
@@ -496,20 +412,17 @@ This separation reduces API calls from 5-10 (if AI did everything) to exactly 1 
 
 The Web Scraper Agent (Fig. \ref{fig:webscraper}) enriches provider data from web sources:
 
-\begin{itemize}
-\item Searches for establishment online presence (website, Practo, Google Maps)
-\item Extracts additional fields (operating hours, services, reviews)
-\item Validates consistency with KPME database
-\item Returns confidence score based on match quality
-\end{itemize}
+Searches for establishment online presence (website, Practo, Google Maps)
+Extracts additional fields (operating hours, services, reviews)
+Validates consistency with KPME database
+Returns confidence score based on match quality
 
 Current implementation is a placeholder returning simulated data, but architecture supports:
-\begin{itemize}
-\item Selenium-based web scraping for dynamic content
-\item BeautifulSoup parsing for static HTML
-\item API integration with healthcare directories (Practo API, Google Places API)
-\item Intelligent rate limiting and caching
-\end{itemize}
+
+Selenium-based web scraping for dynamic content
+BeautifulSoup parsing for static HTML
+API integration with healthcare directories (Practo API, Google Places API)
+Intelligent rate limiting and caching
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{web_scraper_diagram.png}}
@@ -521,12 +434,10 @@ Current implementation is a placeholder returning simulated data, but architectu
 
 The Enrichment Agent (Fig. \ref{fig:enrichment}) augments provider data with related information:
 
-\begin{itemize}
-\item Retrieves staff details (qualifications, registration numbers, fees)
-\item Fetches certificate records (issuance date, validity, issuing authority)
-\item Obtains treatment charges (common procedures, OPD fees, emergency charges)
-\item Calculates enrichment confidence based on data availability
-\end{itemize}
+Retrieves staff details (qualifications, registration numbers, fees)
+Fetches certificate records (issuance date, validity, issuing authority)
+Obtains treatment charges (common procedures, OPD fees, emergency charges)
+Calculates enrichment confidence based on data availability
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{enrichment_agent_diagram.png}}
@@ -535,22 +446,19 @@ The Enrichment Agent (Fig. \ref{fig:enrichment}) augments provider data with rel
 \end{figure}
 
 Implementation leverages KPME database foreign key relationships:
-\begin{itemize}
-\item Establishment → Staff (via establishment\_id)
-\item Establishment → Certificates (via establishment\_id)
-\item Establishment → Treatments (via establishment\_id)
-\end{itemize}
+
+Establishment → Staff (via establishment\_id)
+Establishment → Certificates (via establishment\_id)
+Establishment → Treatments (via establishment\_id)
 
 \subsubsection{Compliance Agent}
 
 The Compliance Agent (Fig. \ref{fig:compliance}) performs regulatory validation:
 
-\begin{itemize}
-\item Verifies certificate authenticity and validity
-\item Checks regulatory compliance (Karnataka PHOA requirements)
-\item Validates establishment type matches license type
-\item Identifies potential regulatory violations
-\end{itemize}
+Verifies certificate authenticity and validity
+Checks regulatory compliance (Karnataka PHOA requirements)
+Validates establishment type matches license type
+Identifies potential regulatory violations
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{compliance_agent_diagram.png}}
@@ -559,20 +467,18 @@ The Compliance Agent (Fig. \ref{fig:compliance}) performs regulatory validation:
 \end{figure}
 
 Current implementation validates:
-\begin{itemize}
-\item Certificate format compliance (Karnataka standards)
-\item Expiry date validation
-\item Establishment type regulations (hospital, clinic, diagnostic center)
-\item District-specific requirements
-\end{itemize}
+
+Certificate format compliance (Karnataka standards)
+Expiry date validation
+Establishment type regulations (hospital, clinic, diagnostic center)
+District-specific requirements
 
 Future enhancements will integrate with:
-\begin{itemize}
-\item Karnataka Medical Council API
-\item National Medical Commission (NMC) Registry
-\item ABDM Healthcare Providers Registry (HPR)
-\item State regulatory databases
-\end{itemize}
+
+Karnataka Medical Council API
+National Medical Commission (NMC) Registry
+ABDM Healthcare Providers Registry (HPR)
+State regulatory databases
 
 \subsection{AI Integration: Mistral AI}
 
@@ -580,82 +486,34 @@ The system uses Mistral AI (mistral-small-latest model) for synthesis tasks via 
 
 \subsubsection{Why Mistral AI?}
 
-\begin{itemize}
-\item \textbf{Quota Management}: Superior to Google Gemini (which suffered quota exhaustion)
-\item \textbf{Cost Efficiency}: \$0.001 per validation (vs. \$0.005+ for GPT-4)
-\item \textbf{Response Time}: 2-3 second latency (acceptable for comprehensive validation)
-\item \textbf{Multilingual Support}: Handles English, Hindi, Kannada text in KPME data
-\item \textbf{Structured Output}: Excellent at generating JSON-formatted responses via Pydantic
-\end{itemize}
+\textbf{Quota Management}: Superior to Google Gemini (which suffered quota exhaustion)
+\textbf{Cost Efficiency}: \$0.001 per validation (vs. \$0.005+ for GPT-4)
+\textbf{Response Time}: 2-3 second latency (acceptable for comprehensive validation)
+\textbf{Multilingual Support}: Handles English, Hindi, Kannada text in KPME data
+\textbf{Structured Output}: Excellent at generating JSON-formatted responses via Pydantic
 
 \subsubsection{Pydantic AI Framework}
 
 Pydantic AI provides type-safe AI agent development:
 
-\begin{verbatim}
-class DataValidatorAgent:
-    def __init__(self):
-        self.agent = Agent(
-            "mistral:mistral-small-latest",
-            output_type=DataValidatorResponse,
-            deps_type=DataValidatorDeps,
-            system_prompt=self._build_system_prompt()
-        )
-
-    async def validate(self, provider_data):
-        result = await self.agent.run(
-            user_prompt=self._build_user_prompt(data),
-            deps=DataValidatorDeps(...)
-        )
-        return result.output
-\end{verbatim}
-
 Benefits:
-\begin{itemize}
-\item Type checking at development time
-\item Automatic validation of AI outputs
-\item Structured error handling
-\item Easy testing with mock dependencies
-\end{itemize}
+
+Type checking at development time
+Automatic validation of AI outputs
+Structured error handling
+Easy testing with mock dependencies
 
 \subsubsection{System Prompt Engineering}
 
 The Data Validator's system prompt instructs the AI to:
 
-\begin{enumerate}
-\item Synthesize findings from all agents (KPME, Web, Enrichment, Compliance)
-\item Identify discrepancies and red flags
-\item Calculate weighted confidence score
-\item Make final decision: auto\_approved (confidence $>$ 0.85), manual\_review (0.60-0.85), auto\_rejected (confidence $<$ 0.60)
-\item Generate 3+ reasoning items explaining the decision
-\end{enumerate}
+Synthesize findings from all agents (KPME, Web, Enrichment, Compliance)
+Identify discrepancies and red flags
+Calculate weighted confidence score
+Make final decision: auto\_approved (confidence $>$ 0.85), manual\_review (0.60-0.85), auto\_rejected (confidence $<$ 0.60)
+Generate 3+ reasoning items explaining the decision
 
 Example synthesis prompt:
-\begin{verbatim}
-You are a healthcare provider validation expert.
-Analyze the following validation results:
-
-KPME Database:
-- Valid: True
-- Confidence: 0.90
-- Certificate: BDR00172ALHL2
-- District: BIDAR
-
-Web Scraper:
-- Found: True
-- Confidence: 0.85
-- Website: www.aarogyahospital.com
-
-Compliance:
-- Valid: False
-- Confidence: 0.00
-- Issues: ["District mismatch: Input=Bangalore,
-           DB=BIDAR"]
-
-Synthesize these findings. Detect discrepancies.
-Calculate final confidence. Make decision.
-Provide reasoning.
-\end{verbatim}
 
 \subsection{Caching Strategy}
 
@@ -664,46 +522,31 @@ The system implements a two-tier caching architecture:
 \subsubsection{Primary Cache: Redis}
 
 When available, Redis provides:
-\begin{itemize}
-\item Distributed caching across multiple API servers
-\item Persistence (survives server restarts)
-\item Sub-millisecond access times
-\item Atomic operations for cache consistency
-\item TTL-based automatic expiration
-\end{itemize}
+
+Distributed caching across multiple API servers
+Persistence (survives server restarts)
+Sub-millisecond access times
+Atomic operations for cache consistency
+TTL-based automatic expiration
 
 Configuration:
-\begin{itemize}
-\item Connection pooling (max 10 connections)
-\item Retry logic (3 attempts with exponential backoff)
-\item JSON serialization for complex objects
-\item Namespace prefixing (kpme\_fast:, kpme\_data:)
-\end{itemize}
+
+Connection pooling (max 10 connections)
+Retry logic (3 attempts with exponential backoff)
+JSON serialization for complex objects
+Namespace prefixing (kpme\_fast:, kpme\_data:)
 
 \subsubsection{Fallback Cache: Memory}
 
 When Redis unavailable, in-memory cache activates:
-\begin{itemize}
-\item LRU eviction policy (max 1000 entries)
-\item TTL support via timestamp checking
-\item Thread-safe operations (async locks)
-\item Zero external dependencies
-\item Automatic cleanup on memory pressure
-\end{itemize}
+
+LRU eviction policy (max 1000 entries)
+TTL support via timestamp checking
+Thread-safe operations (async locks)
+Zero external dependencies
+Automatic cleanup on memory pressure
 
 \subsubsection{Cache Factory Pattern}
-
-\begin{verbatim}
-def get_cache_instance():
-    try:
-        redis_client = RedisCache()
-        redis_client.test_connection()
-        return redis_client
-    except:
-        logger.warning("Redis unavailable,
-                       using memory cache")
-        return MemoryCache()
-\end{verbatim}
 
 This pattern ensures the system remains operational even without Redis, critical for deployment flexibility.
 
@@ -711,20 +554,11 @@ This pattern ensures the system remains operational even without Redis, critical
 
 Keys incorporate all identifying information to prevent false hits:
 
-\begin{verbatim}
-# Fast Validator
-key = f"kpme_fast:{hash(cert, phone, name)}"
-
-# Data Validator
-key = f"kpme_data:{certificate_number}"
-\end{verbatim}
-
 TTL is set to 24 hours, balancing:
-\begin{itemize}
-\item Freshness (daily updates to KPME database)
-\item Hit rate (repeat validations within business day)
-\item Memory usage (automatic expiration prevents growth)
-\end{itemize}
+
+Freshness (daily updates to KPME database)
+Hit rate (repeat validations within business day)
+Memory usage (automatic expiration prevents growth)
 
 \subsection{Frontend Architecture}
 
@@ -732,69 +566,45 @@ The frontend implements a single-page React 18 application loaded from CDN (no b
 
 \subsubsection{Technology Stack}
 
-\begin{itemize}
-\item \textbf{React 18}: Component-based UI from CDN
-\item \textbf{Babel Standalone}: JSX transformation in browser
-\item \textbf{Tesseract.js}: Client-side OCR for document processing
-\item \textbf{Custom CSS}: Retro-futuristic Indian government aesthetic
-\end{itemize}
+\textbf{React 18}: Component-based UI from CDN
+\textbf{Babel Standalone}: JSX transformation in browser
+\textbf{Tesseract.js}: Client-side OCR for document processing
+\textbf{Custom CSS}: Retro-futuristic Indian government aesthetic
 
 \subsubsection{Key Features}
 
-\begin{enumerate}
-\item \textbf{Full Provider Validation}: Multi-field form with real-time validation, confidence visualization, reasoning display, test data support
+\textbf{Full Provider Validation}: Multi-field form with real-time validation, confidence visualization, reasoning display, test data support
 
-\item \textbf{Fast Certificate Validation}: Minimal input form, sub-second response, cache indicators, performance metrics
+\textbf{Fast Certificate Validation}: Minimal input form, sub-second response, cache indicators, performance metrics
 
-\item \textbf{OCR Document Scanner}: Drag-and-drop image upload, Tesseract.js text extraction, intelligent pattern matching (certificate numbers, phone numbers, districts), auto-fill validation form
+\textbf{OCR Document Scanner}: Drag-and-drop image upload, Tesseract.js text extraction, intelligent pattern matching (certificate numbers, phone numbers, districts), auto-fill validation form
 
-\item \textbf{Establishment Search}: Real-time search by name, detailed results with certificate/district/contact info
+\textbf{Establishment Search}: Real-time search by name, detailed results with certificate/district/contact info
 
-\item \textbf{System Health Dashboard}: API status, database health, cache status, service uptime
+\textbf{System Health Dashboard}: API status, database health, cache status, service uptime
 
-\item \textbf{System Statistics}: Database metrics (establishments, staff, districts), validation metrics (approved, rejected, manual review)
-\end{enumerate}
+\textbf{System Statistics}: Database metrics (establishments, staff, districts), validation metrics (approved, rejected, manual review)
 
 \subsubsection{OCR Pattern Matching}
 
 The OCR scanner uses regex patterns optimized for Indian medical documents:
 
-\begin{verbatim}
-// Karnataka certificate format
-const certPattern = /[A-Z]{2,4}\d{4,10}[A-Z]{0,4}/;
-
-// Indian mobile number (10 digits, starts 6-9)
-const phonePattern = /(?:\+91|0)?[\s-]?([6-9]\d{9})/;
-
-// Email
-const emailPattern =
-  /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
-
-// Karnataka districts (29 recognized)
-const districts = [
-    'Bangalore Urban', 'Bangalore Rural', 'Mysore',
-    'Mangalore', 'Belgaum', 'Hubli', 'Bidar', ...
-];
-\end{verbatim}
-
 After OCR extraction, the parser:
-\begin{enumerate}
-\item Runs regex patterns on extracted text
-\item Fuzzy matches district names (accounting for OCR errors)
-\item Identifies establishment name (typically longest capitalized phrase)
-\item Auto-fills validation form fields
-\item Highlights extracted data for user verification
-\end{enumerate}
+
+Runs regex patterns on extracted text
+Fuzzy matches district names (accounting for OCR errors)
+Identifies establishment name (typically longest capitalized phrase)
+Auto-fills validation form fields
+Highlights extracted data for user verification
 
 \subsubsection{UI/UX Design Principles}
 
 The interface follows "Retro-Futuristic Indian Government" aesthetic:
-\begin{itemize}
-\item \textbf{Typography}: Courier Prime (monospace), Space Mono (code), Crimson Pro (serif) – avoiding generic fonts (Inter, Roboto)
-\item \textbf{Colors}: Saffron orange (\#FF6B35), forest green (\#2D5016), cream backgrounds (\#FFF8F0) – Indian national colors
-\item \textbf{Visual Elements}: Government seal corners, rubber stamp animations, CRT scanlines, form numbers (KPME/2026/VAL)
-\item \textbf{Interactions}: Satisfying button presses, stamp-down success animations, scanline effects
-\end{itemize}
+
+\textbf{Typography}: Courier Prime (monospace), Space Mono (code), Crimson Pro (serif) – avoiding generic fonts (Inter, Roboto)
+\textbf{Colors}: Saffron orange (\#FF6B35), forest green (\#2D5016), cream backgrounds (\#FFF8F0) – Indian national colors
+\textbf{Visual Elements}: Government seal corners, rubber stamp animations, CRT scanlines, form numbers (KPME/2026/VAL)
+\textbf{Interactions}: Satisfying button presses, stamp-down success animations, scanline effects
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=\columnwidth]{ui_screenshot_validation.png}}
@@ -814,38 +624,31 @@ The FastAPI backend exposes 12 RESTful endpoints organized into three categories
 
 \subsubsection{Validation Endpoints}
 
-\begin{itemize}
-\item \texttt{POST /api/v1/providers/validate} - Full validation with AI synthesis
-\item \texttt{POST /api/v1/providers/validate/fast} - Fast deterministic validation
-\item \texttt{POST /api/v1/providers/validate/batch} - Batch validation (up to 100 providers)
-\end{itemize}
+\texttt{POST /api/v1/providers/validate} - Full validation with AI synthesis
+\texttt{POST /api/v1/providers/validate/fast} - Fast deterministic validation
+\texttt{POST /api/v1/providers/validate/batch} - Batch validation (up to 100 providers)
 
 \subsubsection{Health Endpoints}
 
-\begin{itemize}
-\item \texttt{GET /api/v1/health} - Basic health check (returns "healthy")
-\item \texttt{GET /api/v1/health/ready} - Readiness probe (checks database, cache)
-\item \texttt{GET /api/v1/health/live} - Liveness probe (checks API responsiveness)
-\item \texttt{GET /api/v1/health/services} - Services health (DB, cache, agents status)
-\end{itemize}
+\texttt{GET /api/v1/health} - Basic health check (returns "healthy")
+\texttt{GET /api/v1/health/ready} - Readiness probe (checks database, cache)
+\texttt{GET /api/v1/health/live} - Liveness probe (checks API responsiveness)
+\texttt{GET /api/v1/health/services} - Services health (DB, cache, agents status)
 
 \subsubsection{Admin Endpoints}
 
-\begin{itemize}
-\item \texttt{GET /api/v1/admin/stats} - System statistics (DB counts, validation metrics)
-\item \texttt{GET /api/v1/admin/search/establishments} - Search by name
-\item \texttt{GET /api/v1/admin/search/staff} - Search staff by registration number
-\end{itemize}
+\texttt{GET /api/v1/admin/stats} - System statistics (DB counts, validation metrics)
+\texttt{GET /api/v1/admin/search/establishments} - Search by name
+\texttt{GET /api/v1/admin/search/staff} - Search staff by registration number
 
 All endpoints include:
-\begin{itemize}
-\item Request ID tracking (X-Request-ID header)
-\item Response time headers (X-Response-Time)
-\item CORS configuration (frontend at localhost:3000)
-\item Pydantic request/response validation
-\item Structured error responses
-\item Comprehensive logging
-\end{itemize}
+
+Request ID tracking (X-Request-ID header)
+Response time headers (X-Response-Time)
+CORS configuration (frontend at localhost:3000)
+Pydantic request/response validation
+Structured error responses
+Comprehensive logging
 
 \subsection{Deployment Architecture}
 
@@ -853,49 +656,9 @@ The system supports multiple deployment modes:
 
 \subsubsection{Development Mode}
 
-\begin{verbatim}
-# Backend
-python src/main.py  # uvicorn on 0.0.0.0:8000
-
-# Frontend
-cd frontend && python -m http.server 3000
-
-# Or one-command:
-python start_app.py
-\end{verbatim}
-
 \subsubsection{Production Mode}
 
-\begin{verbatim}
-# Gunicorn with Uvicorn workers
-gunicorn src.main:app \
-  --workers 4 \
-  --worker-class uvicorn.workers.UvicornWorker \
-  --bind 0.0.0.0:8000 \
-  --timeout 120
-
-# Nginx for frontend
-server {
-    listen 80;
-    root /var/www/frontend;
-
-    location / { try_files $uri /index.html; }
-    location /api { proxy_pass http://localhost:8000; }
-}
-\end{verbatim}
-
 \subsubsection{Docker Deployment}
-
-\begin{verbatim}
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 8000
-CMD ["uvicorn", "src.main:app",
-     "--host", "0.0.0.0", "--port", "8000"]
-\end{verbatim}
 
 \subsection{Testing Strategy}
 
@@ -904,39 +667,36 @@ The system implements comprehensive testing at multiple levels:
 \subsubsection{Integration Tests}
 
 8 integration tests validate end-to-end functionality:
-\begin{enumerate}
-\item Backend health check
-\item Frontend accessibility
-\item Fast certificate validation
-\item Full provider validation
-\item Services health check
-\item System statistics retrieval
-\item Establishment search
-\item CORS configuration
-\end{enumerate}
+
+Backend health check
+Frontend accessibility
+Fast certificate validation
+Full provider validation
+Services health check
+System statistics retrieval
+Establishment search
+CORS configuration
 
 All tests passed (8/8) with realistic test data from KPME database.
 
 \subsubsection{Unit Tests}
 
 Component-level tests for:
-\begin{itemize}
-\item Agent validation logic
-\item Cache hit/miss behavior
-\item Database query correctness
-\item Confidence scoring algorithms
-\item Error handling paths
-\end{itemize}
+
+Agent validation logic
+Cache hit/miss behavior
+Database query correctness
+Confidence scoring algorithms
+Error handling paths
 
 \subsubsection{Performance Tests}
 
 Benchmarks for:
-\begin{itemize}
-\item Fast Validator throughput (2,306 validations/sec measured)
-\item Cache latency (0.1ms hit, 0.4ms miss measured)
-\item Full validation response time (500-3000ms measured)
-\item Concurrent request handling (100+ simultaneous)
-\end{itemize}
+
+Fast Validator throughput (2,306 validations/sec measured)
+Cache latency (0.1ms hit, 0.4ms miss measured)
+Full validation response time (500-3000ms measured)
+Concurrent request handling (100+ simultaneous)
 
 \section{Implementation Details}
 
@@ -971,55 +731,19 @@ The KPME database schema consists of five primary tables:
 
 \subsubsection{Establishments Table}
 
-\begin{verbatim}
-CREATE TABLE establishments (
-    id INTEGER PRIMARY KEY,
-    certificate_number TEXT UNIQUE NOT NULL,
-    establishment_name TEXT NOT NULL,
-    establishment_type TEXT,
-    address TEXT,
-    district TEXT,
-    pincode TEXT,
-    phone TEXT,
-    email TEXT,
-    latitude REAL,
-    longitude REAL,
-    issuance_date TEXT,
-    validity_date TEXT,
-    INDEX idx_certificate (certificate_number),
-    INDEX idx_phone (phone),
-    INDEX idx_district (district)
-);
-\end{verbatim}
-
 Contains 1,000 records with full geographic and contact data.
 
 \subsubsection{Staff Table}
-
-\begin{verbatim}
-CREATE TABLE staff (
-    id INTEGER PRIMARY KEY,
-    establishment_id INTEGER,
-    staff_name TEXT NOT NULL,
-    qualification TEXT,
-    registration_number TEXT UNIQUE,
-    specialization TEXT,
-    consultation_fee REAL,
-    FOREIGN KEY (establishment_id)
-        REFERENCES establishments(id)
-);
-\end{verbatim}
 
 Contains 4,483 provider records linked to establishments.
 
 \subsubsection{Certificates, Specialties, Treatments Tables}
 
 Additional tables store:
-\begin{itemize}
-\item Certificate details (issuance authority, renewal status)
-\item Specialty services offered
-\item Treatment charges (OPD, emergency, procedures)
-\end{itemize}
+
+Certificate details (issuance authority, renewal status)
+Specialty services offered
+Treatment charges (OPD, emergency, procedures)
 
 All linked via foreign keys to establishments table.
 
@@ -1027,108 +751,66 @@ All linked via foreign keys to establishments table.
 
 Environment-based configuration via .env file:
 
-\begin{verbatim}
-# AI Configuration
-MISTRAL_API_KEY=<your-key>
-
-# Cache Configuration
-REDIS_URL=redis://localhost:6379/0
-REDIS_PASSWORD=
-CACHE_TTL=86400  # 24 hours
-
-# API Configuration
-API_HOST=0.0.0.0
-API_PORT=8000
-CORS_ORIGINS=http://localhost:3000
-
-# Database Configuration
-DATABASE_PATH=src/database/kpme.db
-
-# Validation Thresholds
-AUTO_APPROVE_THRESHOLD=0.85
-MANUAL_REVIEW_LOWER=0.60
-AUTO_REJECT_THRESHOLD=0.60
-\end{verbatim}
-
 \subsection{Error Handling}
 
 Comprehensive error handling at all layers:
 
 \subsubsection{API Layer}
-\begin{itemize}
-\item Pydantic validation errors (422 responses)
-\item Database errors (500 responses with request ID)
-\item Cache failures (graceful fallback to DB)
-\item AI API errors (retry logic, timeout handling)
-\end{itemize}
+
+Pydantic validation errors (422 responses)
+Database errors (500 responses with request ID)
+Cache failures (graceful fallback to DB)
+AI API errors (retry logic, timeout handling)
 
 \subsubsection{Agent Layer}
-\begin{itemize}
-\item Expected output testing mode (bypass validation)
-\item Timeout handling (120s default)
-\item Partial agent failure (continue with available data)
-\item AI synthesis errors (fallback to deterministic confidence)
-\end{itemize}
+
+Expected output testing mode (bypass validation)
+Timeout handling (120s default)
+Partial agent failure (continue with available data)
+AI synthesis errors (fallback to deterministic confidence)
 
 \subsubsection{Data Layer}
-\begin{itemize}
-\item SQLite locking (WAL mode prevents)
-\item Connection pooling (prevent exhaustion)
-\item Foreign key constraint violations (rollback transactions)
-\end{itemize}
+
+SQLite locking (WAL mode prevents)
+Connection pooling (prevent exhaustion)
+Foreign key constraint violations (rollback transactions)
 
 \subsection{Logging and Monitoring}
 
 Structured logging throughout:
 
-\begin{verbatim}
-logger.info(
-    "Fast validation completed",
-    extra={
-        "request_id": request_id,
-        "certificate": cert_number,
-        "cache_hit": cache_hit,
-        "execution_time_ms": elapsed_ms
-    }
-)
-\end{verbatim}
-
 Logged metrics:
-\begin{itemize}
-\item Request ID (all requests)
-\item Execution time (all endpoints)
-\item Cache hit rate (Fast Validator)
-\item Agent execution times (Data Validator)
-\item AI API latency (Data Validator)
-\item Error rates and types
-\end{itemize}
+
+Request ID (all requests)
+Execution time (all endpoints)
+Cache hit rate (Fast Validator)
+Agent execution times (Data Validator)
+AI API latency (Data Validator)
+Error rates and types
 
 \subsection{Security Considerations}
 
 \subsubsection{Input Validation}
-\begin{itemize}
-\item Pydantic models enforce type safety
-\item SQL injection prevented (prepared statements)
-\item XSS prevention (React auto-escapes)
-\item CORS restricted to localhost:3000 (dev)
-\end{itemize}
+
+Pydantic models enforce type safety
+SQL injection prevented (prepared statements)
+XSS prevention (React auto-escapes)
+CORS restricted to localhost:3000 (dev)
 
 \subsubsection{Data Privacy}
-\begin{itemize}
-\item No PII stored in cache (only results)
-\item KPME data is public (no privacy concerns)
-\item Future HIPAA compliance: encrypt cache at rest
-\item API key management via environment variables
-\end{itemize}
+
+No PII stored in cache (only results)
+KPME data is public (no privacy concerns)
+Future HIPAA compliance: encrypt cache at rest
+API key management via environment variables
 
 \subsubsection{Rate Limiting}
 
 Future enhancement:
-\begin{itemize}
-\item Per-IP rate limiting (100 req/min)
-\item API key-based quotas
-\item Burst allowance for batch operations
-\end{itemize}
+
+Per-IP rate limiting (100 req/min)
+API key-based quotas
+Burst allowance for batch operations
 
 \section{Results and Evaluation}
 
@@ -1211,22 +893,6 @@ Mixed (80/20) & 2,000 & \$2.00 & +96\% \\
 
 Load testing results using Apache Bench (ab):
 
-\begin{verbatim}
-# Fast Validator (10,000 requests)
-Requests per second: 2,306.47 [#/sec]
-Time per request: 0.433 [ms] (mean)
-Time per request: 0.022 [ms] (mean, across all)
-Transfer rate: 1,847.33 [Kbytes/sec]
-Failed requests: 0
-
-# Full Validator (1,000 requests)
-Requests per second: 2.13 [#/sec]
-Time per request: 469.483 [ms] (mean)
-Time per request: 23.474 [ms] (mean, across all)
-Transfer rate: 8.94 [Kbytes/sec]
-Failed requests: 0
-\end{verbatim}
-
 \subsection{Cache Performance}
 
 Cache effectiveness measured over 24-hour period:
@@ -1278,20 +944,6 @@ Overall & 94.7\% & 870 \\
 \subsection{Integration Test Results}
 
 Comprehensive integration test suite (8 tests):
-
-\begin{verbatim}
-Test 1: Backend Health................PASS (14ms)
-Test 2: Frontend Accessibility.........PASS (89ms)
-Test 3: Fast Validation................PASS (624ms)
-Test 4: Full Validation................PASS (3659ms)
-Test 5: Services Health................PASS (234ms)
-Test 6: System Statistics..............PASS (45ms)
-Test 7: Establishment Search...........PASS (128ms)
-Test 8: CORS Configuration.............PASS (12ms)
-
-Results: 8/8 tests passed (100% pass rate)
-Total execution time: 4.8 seconds
-\end{verbatim}
 
 \subsection{Real-World Usage Statistics}
 
@@ -1357,24 +1009,22 @@ Our system makes several unprecedented contributions to healthcare validation:
 \subsubsection{Architectural Innovation}
 
 The hybrid deterministic-AI architecture represents a paradigm shift. Prior systems treat AI as either:
-\begin{enumerate}
-\item Completely absent (manual/traditional software)
-\item Ubiquitously applied (everything routed through LLM)
-\end{enumerate}
 
-Our approach—deterministic operations first, AI synthesis last—achieves the best of both: reliability and explainability of deterministic systems, plus reasoning and flexibility of AI systems. The 90-100\% cost reduction demonstrates this architecture's superiority for production deployment.
+Completely absent (manual/traditional software)
+Ubiquitously applied (everything routed through LLM)
+
+Our approachdeterministic operations first, AI synthesis lastachieves the best of both: reliability and explainability of deterministic systems, plus reasoning and flexibility of AI systems. The 90-100\% cost reduction demonstrates this architecture's superiority for production deployment.
 
 \subsubsection{Performance at Scale}
 
 Achieving 2,306 validations/second in deterministic mode sets a new benchmark. For context:
-\begin{itemize}
-\item Manual credentialing: 10-20 per day
-\item Traditional software: 100-500 per day
-\item Pure AI systems: 500-1000 per day (quota-limited)
-\item Our system: 100,000+ per day (deterministic) or 10,000+ per day (comprehensive)
-\end{itemize}
 
-This 100-10,000x improvement over manual processes enables real-time point-of-care validation—previously impossible.
+Manual credentialing: 10-20 per day
+Traditional software: 100-500 per day
+Pure AI systems: 500-1000 per day (quota-limited)
+Our system: 100,000+ per day (deterministic) or 10,000+ per day (comprehensive)
+
+This 100-10,000x improvement over manual processes enables real-time point-of-care validationpreviously impossible.
 
 \subsubsection{Cost Effectiveness}
 
@@ -1390,10 +1040,8 @@ Integrating KPME database, web sources, enrichment data, and compliance checks i
 
 Our results validate the hypothesis that \textit{strategic AI placement outperforms ubiquitous AI application}. Specifically:
 
-\begin{itemize}
-\item \textbf{Deterministic tasks} (database lookup, format validation, date comparison): 100\% accuracy, 0.4ms latency, \$0 cost
-\item \textbf{Synthesis tasks} (discrepancy detection, multi-source reasoning): 94\% accuracy, 500ms latency, \$0.001 cost
-\end{itemize}
+\textbf{Deterministic tasks} (database lookup, format validation, date comparison): 100\% accuracy, 0.4ms latency, \$0 cost
+\textbf{Synthesis tasks} (discrepancy detection, multi-source reasoning): 94\% accuracy, 500ms latency, \$0.001 cost
 
 Routing 80\% of requests to deterministic path and 20\% to AI synthesis yields superior cost-performance ratio (96\% cost reduction, 4-5000x speed improvement) versus routing 100\% to AI.
 
@@ -1402,12 +1050,11 @@ This principle generalizes beyond credentialing: \textit{identify deterministic 
 \subsubsection{Multi-Agent Collaboration}
 
 The four-agent architecture (KPME, Web, Enrichment, Compliance) demonstrates specialization benefits. Each agent:
-\begin{itemize}
-\item Has clear responsibility (single source of truth)
-\item Operates independently (parallel execution)
-\item Reports confidence (enables weighting)
-\item Fails gracefully (partial results acceptable)
-\end{itemize}
+
+Has clear responsibility (single source of truth)
+Operates independently (parallel execution)
+Reports confidence (enables weighting)
+Fails gracefully (partial results acceptable)
 
 The supervisor's synthesis combines outputs more effectively than any single agent could, validating collaborative intelligence theory.
 
@@ -1416,33 +1063,30 @@ The supervisor's synthesis combines outputs more effectively than any single age
 \subsubsection{Healthcare Accessibility}
 
 Real-time validation enables:
-\begin{itemize}
-\item Instant telemedicine provider verification (seconds vs. days)
-\item Point-of-care credentialing for walk-in patients
-\item Rapid emergency department provider checks
-\item Accelerated insurance claim processing
-\end{itemize}
+
+Instant telemedicine provider verification (seconds vs. days)
+Point-of-care credentialing for walk-in patients
+Rapid emergency department provider checks
+Accelerated insurance claim processing
 
 These improvements directly enhance healthcare access, particularly in India's rural areas with limited administrative infrastructure.
 
 \subsubsection{Regulatory Compliance}
 
 The system's 95\% validation accuracy and comprehensive audit trails support regulatory compliance:
-\begin{itemize}
-\item Karnataka PHOA requirements
-\item National Medical Commission (NMC) regulations
-\item ABDM provider registry standards
-\item Insurance empanelment requirements
-\end{itemize}
+
+Karnataka PHOA requirements
+National Medical Commission (NMC) regulations
+ABDM provider registry standards
+Insurance empanelment requirements
 
 \subsubsection{Economic Benefits}
 
 For a mid-sized hospital network (1000 providers, 500 validations/day):
-\begin{itemize}
-\item Manual cost: \$50 × 500 = \$25,000/day
-\item Our system: \$0.001 × 100 (full) + \$0 × 400 (fast) = \$0.10/day
-\item Annual savings: \$9.1 million
-\end{itemize}
+
+Manual cost: \$50 × 500 = \$25,000/day
+Our system: \$0.001 × 100 (full) + \$0 × 400 (fast) = \$0.10/day
+Annual savings: \$9.1 million
 
 These savings justify deployment even at large scale.
 
@@ -1453,55 +1097,50 @@ Despite strong results, several limitations exist:
 \subsubsection{Single-Region Deployment}
 
 Current implementation focuses on Karnataka KPME database. Extending to:
-\begin{itemize}
-\item Other Indian states (28 additional medical councils)
-\item National Medical Commission (NMC) registry
-\item International registries (NPI for USA, GMC for UK)
-\end{itemize}
+
+Other Indian states (28 additional medical councils)
+National Medical Commission (NMC) registry
+International registries (NPI for USA, GMC for UK)
 
 requires additional data integration, though the multi-agent architecture supports this extension.
 
 \subsubsection{OCR Accuracy}
 
 97\% OCR accuracy is excellent but not perfect. Errors occur with:
-\begin{itemize}
-\item Handwritten documents (83\% accuracy)
-\item Low-quality scans (<150 DPI)
-\item Non-standard certificate formats
-\item Watermarked or stamped documents
-\end{itemize}
+
+Handwritten documents (83\% accuracy)
+Low-quality scans (<150 DPI)
+Non-standard certificate formats
+Watermarked or stamped documents
 
 Commercial OCR services (Google Cloud Vision, AWS Textract) achieve 99\%+ accuracy but introduce API costs and latency.
 
 \subsubsection{Static Database}
 
 The KPME database is loaded from CSV (updated manually). Dynamic integration with Karnataka Medical Council's live API would provide:
-\begin{itemize}
-\item Real-time certificate revocations
-\item Newly issued licenses (same-day availability)
-\item Status changes (suspended, renewed)
-\end{itemize}
+
+Real-time certificate revocations
+Newly issued licenses (same-day availability)
+Status changes (suspended, renewed)
 
 This requires Karnataka government API access (currently unavailable to public).
 
 \subsubsection{Limited Agent Implementations}
 
 Web Scraper, Enrichment, and Compliance agents currently return simulated data (placeholder implementations). Full implementations require:
-\begin{itemize}
-\item Web scraping infrastructure (Selenium, proxies, rate limiting)
-\item Additional data sources (Practo API, Google Places)
-\item Regulatory database integration (NMC, state councils)
-\end{itemize}
+
+Web scraping infrastructure (Selenium, proxies, rate limiting)
+Additional data sources (Practo API, Google Places)
+Regulatory database integration (NMC, state councils)
 
 \subsubsection{Validation Metrics Tracking}
 
 Current system doesn't persist validation history (no database table for completed validations). This prevents:
-\begin{itemize}
-\item Accuracy tracking over time
-\item Provider validation history
-\item Audit trail for regulatory compliance
-\item Machine learning on validation patterns
-\end{itemize}
+
+Accuracy tracking over time
+Provider validation history
+Audit trail for regulatory compliance
+Machine learning on validation patterns
 
 Adding a validations table with (provider, decision, confidence, timestamp) would address this.
 
@@ -1510,60 +1149,54 @@ Adding a validations table with (provider, decision, confidence, timestamp) woul
 \subsubsection{vs. Zodiac (Zhou et al.)}
 
 Zodiac \cite{zhou2024zodiac} achieves cardiologist-level diagnostic accuracy through multi-agent collaboration for clinical diagnosis. Similarities:
-\begin{itemize}
-\item Multi-agent architecture
-\item Specialized agent roles
-\item Synthesis of diverse expertise
-\end{itemize}
+
+Multi-agent architecture
+Specialized agent roles
+Synthesis of diverse expertise
 
 Differences:
-\begin{itemize}
-\item Zodiac: All agents are AI (5-10 API calls)
-\item Ours: Hybrid deterministic + AI (0-1 API calls)
-\item Zodiac: Clinical diagnosis (high-stakes, accuracy-critical)
-\item Ours: Administrative validation (speed-critical, cost-sensitive)
-\end{itemize}
+
+Zodiac: All agents are AI (5-10 API calls)
+Ours: Hybrid deterministic + AI (0-1 API calls)
+Zodiac: Clinical diagnosis (high-stakes, accuracy-critical)
+Ours: Administrative validation (speed-critical, cost-sensitive)
 
 Our architecture is more cost-effective for administrative workflows; Zodiac's pure AI approach is justified for high-stakes clinical decisions.
 
 \subsubsection{vs. PayrHealth (AI Credentialing)}
 
 PayrHealth \cite{payrhealth2024credentialing} reports 60\% faster processing and 80\% fewer errors with AI credentialing. Our improvements:
-\begin{itemize}
-\item Speed: 99.95\% time reduction (0.4ms vs. 60-120 days)
-\item Errors: 95\% accuracy (similar to PayrHealth)
-\item Cost: 96\% reduction (vs. unreported in PayrHealth)
-\end{itemize}
+
+Speed: 99.95\% time reduction (0.4ms vs. 60-120 days)
+Errors: 95\% accuracy (similar to PayrHealth)
+Cost: 96\% reduction (vs. unreported in PayrHealth)
 
 PayrHealth appears to use AI throughout; our hybrid approach delivers greater cost savings.
 
 \subsubsection{vs. BioMistral (Medical Domain LLM)}
 
 BioMistral \cite{biomistral2024} achieves 80\% accuracy on medical QA through domain-specific pretraining. Comparison:
-\begin{itemize}
-\item BioMistral: Medical knowledge tasks (diagnosis, treatment)
-\item Ours: Administrative validation (credentialing, licensing)
-\end{itemize}
+
+BioMistral: Medical knowledge tasks (diagnosis, treatment)
+Ours: Administrative validation (credentialing, licensing)
 
 BioMistral's domain-specific approach is valuable for clinical AI; our general-purpose Mistral model suffices for administrative synthesis.
 
 \subsubsection{vs. Traditional Credentialing Software}
 
 Commercial systems (MD-Staff, Medallion, Verifiable) offer:
-\begin{itemize}
-\item Automated license monitoring
-\item Primary source verification
-\item Compliance tracking
-\end{itemize}
+
+Automated license monitoring
+Primary source verification
+Compliance tracking
 
 Our advantages:
-\begin{itemize}
-\item Open-source (vs. proprietary)
-\item 2,306x faster (Fast mode vs. batch processing)
-\item Local database (vs. API dependencies)
-\item Customizable (vs. closed platforms)
-\item India-specific (vs. USA-focused)
-\end{itemize}
+
+Open-source (vs. proprietary)
+2,306x faster (Fast mode vs. batch processing)
+Local database (vs. API dependencies)
+Customizable (vs. closed platforms)
+India-specific (vs. USA-focused)
 
 Commercial systems are mature but lack our performance and regional customization.
 
@@ -1574,101 +1207,92 @@ Several promising research directions emerge:
 \subsubsection{Multi-Region Expansion}
 
 Extend architecture to:
-\begin{itemize}
-\item All 28 Indian state medical councils
-\item National Medical Commission (NMC) registry
-\item ABDM Healthcare Providers Registry (HPR)
-\item International registries (NPI, GMC, etc.)
-\end{itemize}
+
+All 28 Indian state medical councils
+National Medical Commission (NMC) registry
+ABDM Healthcare Providers Registry (HPR)
+International registries (NPI, GMC, etc.)
 
 Technical challenges: API integration, data standardization, entity resolution across registries.
 
 \subsubsection{Advanced Agent Implementations}
 
 Fully implement placeholder agents:
-\begin{itemize}
-\item Web Scraper: Selenium-based scraping of healthcare directories
-\item Enrichment: Integration with hospital management systems
-\item Compliance: Real-time regulatory database queries
-\end{itemize}
+
+Web Scraper: Selenium-based scraping of healthcare directories
+Enrichment: Integration with hospital management systems
+Compliance: Real-time regulatory database queries
 
 \subsubsection{Machine Learning Enhancements}
 
 Apply ML to validation patterns:
-\begin{itemize}
-\item Learn optimal confidence thresholds from manual review feedback
-\item Predict validation path (fast vs. full) from input features
-\item Detect anomalous provider profiles (fraud detection)
-\item Fine-tune Mistral model on KPME validation examples
-\end{itemize}
+
+Learn optimal confidence thresholds from manual review feedback
+Predict validation path (fast vs. full) from input features
+Detect anomalous provider profiles (fraud detection)
+Fine-tune Mistral model on KPME validation examples
 
 \subsubsection{Blockchain Integration}
 
 Immutable audit trail via blockchain:
-\begin{itemize}
-\item Hash validation results on-chain
-\item Timestamped certificate verification records
-\item Distributed consensus on provider status
-\item Prevent tampering with validation history
-\end{itemize}
+
+Hash validation results on-chain
+Timestamped certificate verification records
+Distributed consensus on provider status
+Prevent tampering with validation history
 
 \subsubsection{Mobile Deployment}
 
 Edge deployment for offline scenarios:
-\begin{itemize}
-\item React Native mobile app
-\item SQLite database on device
-\item Offline Fast Validator (zero connectivity required)
-\item Sync to cloud when online
-\end{itemize}
+
+React Native mobile app
+SQLite database on device
+Offline Fast Validator (zero connectivity required)
+Sync to cloud when online
 
 Critical for rural clinics with intermittent internet.
 
 \subsubsection{Continuous Learning}
 
 Implement feedback loop:
-\begin{itemize}
-\item Manual reviewers provide ground truth labels
-\item System learns from corrections
-\item Automatically adjust confidence thresholds
-\item Periodically retrain AI synthesis model
-\end{itemize}
+
+Manual reviewers provide ground truth labels
+System learns from corrections
+Automatically adjust confidence thresholds
+Periodically retrain AI synthesis model
 
 \subsubsection{Interoperability}
 
 Integrate with broader healthcare ecosystem:
-\begin{itemize}
-\item ABDM FHIR APIs (patient data exchange)
-\item Hospital EMR systems (auto-validate providers)
-\item Insurance claim systems (real-time credentialing)
-\item Telemedicine platforms (instant provider verification)
-\end{itemize}
+
+ABDM FHIR APIs (patient data exchange)
+Hospital EMR systems (auto-validate providers)
+Insurance claim systems (real-time credentialing)
+Telemedicine platforms (instant provider verification)
 
 \section{Conclusion}
 
 This paper presented a novel hybrid deterministic-AI multi-agent framework for healthcare provider validation, addressing critical gaps in existing credentialing approaches. Our key contributions include:
 
-\begin{enumerate}
-\item \textbf{Architectural Innovation}: Strategic separation of deterministic operations from AI synthesis, reducing API calls from 5-10 to 0-1 per validation
+\textbf{Architectural Innovation}: Strategic separation of deterministic operations from AI synthesis, reducing API calls from 5-10 to 0-1 per validation
 
-\item \textbf{Unprecedented Performance}: 2,306 validations/second in deterministic mode (5000x improvement over traditional approaches) and 500ms comprehensive validation (4x improvement over pure AI)
+\textbf{Unprecedented Performance}: 2,306 validations/second in deterministic mode (5000x improvement over traditional approaches) and 500ms comprehensive validation (4x improvement over pure AI)
 
-\item \textbf{Cost Effectiveness}: 90-100\% cost reduction through elimination of unnecessary AI calls, making large-scale deployment economically viable
+\textbf{Cost Effectiveness}: 90-100\% cost reduction through elimination of unnecessary AI calls, making large-scale deployment economically viable
 
-\item \textbf{Production Deployment}: Real-world implementation on Karnataka KPME database (1,000 establishments, 4,483 providers) with 95\% validation accuracy and 8/8 integration tests passing
+\textbf{Production Deployment}: Real-world implementation on Karnataka KPME database (1,000 establishments, 4,483 providers) with 95\% validation accuracy and 8/8 integration tests passing
 
-\item \textbf{Multi-Source Synthesis}: Integration of KPME database, web sources, enrichment data, and compliance checks through intelligent AI synthesis
+\textbf{Multi-Source Synthesis}: Integration of KPME database, web sources, enrichment data, and compliance checks through intelligent AI synthesis
 
-\item \textbf{Enhanced UX}: OCR-enabled document processing with 97\% extraction accuracy, reducing manual data entry from minutes to seconds
-\end{enumerate}
+\textbf{Enhanced UX}: OCR-enabled document processing with 97\% extraction accuracy, reducing manual data entry from minutes to seconds
 
-Our results demonstrate that strategic AI placement—not AI ubiquity—delivers optimal cost-performance ratios in production healthcare infrastructure. The system achieves 96\% cost reduction and 4-5000x performance improvement over baseline approaches while maintaining superior decision quality through sophisticated multi-agent collaboration.
+Our results demonstrate that strategic AI placementnot AI ubiquitydelivers optimal cost-performance ratios in production healthcare infrastructure. The system achieves 96\% cost reduction and 4-5000x performance improvement over baseline approaches while maintaining superior decision quality through sophisticated multi-agent collaboration.
 
-The implications extend beyond credentialing: our hybrid architecture provides a blueprint for applying AI to administrative healthcare workflows without incurring prohibitive costs or quota limitations. As healthcare digitization accelerates globally—exemplified by India's 568 million ABDM accounts—systems that balance AI's reasoning capabilities with deterministic operations' efficiency will prove essential infrastructure.
+The implications extend beyond credentialing: our hybrid architecture provides a blueprint for applying AI to administrative healthcare workflows without incurring prohibitive costs or quota limitations. As healthcare digitization accelerates globallyexemplified by India's 568 million ABDM accountssystems that balance AI's reasoning capabilities with deterministic operations' efficiency will prove essential infrastructure.
 
 Future work will extend this architecture to multi-region deployment (28 Indian states, NMC, international registries), implement advanced agent capabilities (web scraping, regulatory integration), and explore machine learning enhancements (threshold learning, fraud detection, model fine-tuning). Additionally, mobile deployment for offline rural clinics and blockchain-based audit trails represent promising research directions.
 
-In conclusion, this work establishes that hybrid deterministic-AI architectures can deliver production-grade healthcare validation with unprecedented performance, cost-effectiveness, and decision quality—a critical foundation for next-generation digital health infrastructure.
+In conclusion, this work establishes that hybrid deterministic-AI architectures can deliver production-grade healthcare validation with unprecedented performance, cost-effectiveness, and decision qualitya critical foundation for next-generation digital health infrastructure.
 
 \section*{Acknowledgments}
 
@@ -1713,7 +1337,7 @@ A. Jarmakovica, "Machine learning-based strategies for improving healthcare data
 Y. Lin et al., "A Survey of LLM-based Multi-agent Systems in Medicine," Oct. 2025, doi: 10.20944/preprints202510.1448.v1.
 
 \bibitem{patel2025aiagents}
-D. Patel et al., "AI Agents in Modern Healthcare: From Foundation to Pioneer -- A Comprehensive Review and Implementation Roadmap for Impact and Integration in Clinical Settings," Mar. 2025, doi: 10.20944/preprints202503.1352.v1.
+D. Patel et al., "AI Agents in Modern Healthcare: From Foundation to Pioneer  A Comprehensive Review and Implementation Roadmap for Impact and Integration in Clinical Settings," Mar. 2025, doi: 10.20944/preprints202503.1352.v1.
 
 \bibitem{malviya2025hybrid}
 S. Malviya and V. Parate, "AI-Augmented Data Quality Validation in P\&C Insurance: A Hybrid Framework Using Large Language Models and Rule-Based Agents," \textit{International Journal of Computational and Experimental Science and Engineering}, vol. 11, no. 3, Jul. 2025, doi: 10.22399/ijcesen.3613.
@@ -2028,7 +1652,7 @@ S. Jaiswal, "Caching Strategies for APIs: Improving Performance and Reducing Loa
 "OCR with Tesseract, Amazon Textract, and Google Document AI: a benchmarking experiment," \textit{Journal of Computational Social Science}, Springer, 2021.
 
 \bibitem{dev2024react}
-T. Ogunleye, "Optimize React Performance in 2024 — Best Practices," DEV Community, 2024.
+T. Ogunleye, "Optimize React Performance in 2024  Best Practices," DEV Community, 2024.
 
 \bibitem{dev2025reactbest}
 A. Bobes, "React Performance Optimization: 15 Best Practices for 2025," DEV Community, 2025.
